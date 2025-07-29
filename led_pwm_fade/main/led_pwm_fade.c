@@ -7,7 +7,7 @@
 
 #define LEDC_TIMER          LEDC_TIMER_0
 #define LEDC_MODE           LEDC_LOW_SPEED_MODE
-#define LEDC_OUTPUT_IO      (2)
+#define LEDC_OUTPUT_IO      (9)
 #define LEDC_CHANNEL        LEDC_CHANNEL_0
 #define LEDC_DUTY_RES       LEDC_TIMER_13_BIT
 #define LED_FREQUENCY       (1000)
