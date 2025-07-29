@@ -1,0 +1,321 @@
+[0;32mI (259) heap_init: At 600FE01ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048841
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1750
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 29 2025 13:22:14[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (71) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0a4d0h ( 42192) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001a4f8 vaddr=3fc91600 size=0288ch ( 10380) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001cd8c vaddr=40374000 size=0328ch ( 12940) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18bd8h (101336) map[0m
+[0;32mI (143) esp_image: segment 4: paddr=00038c00 vaddr=4037728c size=0a340h ( 41792) load[0m
+[0;32mI (158) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (158) boot: Disabling RNG early entropy source...[0m
+[0;32mI (169) cpu_start: Multicore app[0m
+[0;32mI (170) cpu_start: Pro cpu up.[0m
+[0;32mI (170) cpu_start: Starting app cpu, entry point is 0x4037527c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (188) cpu_start: Pro cpu start user code[0m
+[0;32mI (188) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (188) cpu_start: Application information:[0m
+[0;32mI (191) cpu_start: Project name:     led_pwm_fade[0m
+[0;32mI (196) cpu_start: App version:      cf6003f-dirty[0m
+[0;32mI (202) cpu_start: Compile time:     Jul 29 2025 13:20:55[0m
+[0;32mI (208) cpu_start: ELF file SHA256:  111658995cec56f0...[0m
+[0;32mI (214) cpu_start: ESP-IDF:          v5.1.2[0m
+[0;32mI (219) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (223) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (228) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (233) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (240) heap_init: At 3FC94718 len 00054FF8 (339 KiB): DRAM[0m
+[0;32mI (246) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (253) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (259) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (266) spi_flash: detected chip: boya[0m
+[0;32mI (270) spi_flash: flash io: dio[0m
+[0;33mW (274) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (287) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (294) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (301) app_start: Starting scheduler on CPU0[0m
+[0;32mI (306) app_start: Starting scheduler on CPU1[0m
+[0;32mI (306) main_task: Started on CPU0[0m
+[0;32mI (316) main_task: Calling app_main()[0m
+[0;32mI (316) PWM_FADE: Configuring LEDC PWM....[0m
+[0;32mI (326) PWM_FADE: Fading in.... [0m
+[0;32mI (4426) PWM_FADE: Fading out....[0m
+[0;32mI (8526) PWM_FADE: Fading in.... [0m
+[0;32mI (12626) PWM_FADE: Fading out....[0m
+[0;32mI (16726) PWM_FADE: Fading in.... [0m
+[0;32mI (20826) PWM_FADE: Fading out....[0m
+[0;32mI (24926) PWM_FADE: Fading in.... [0m
+[0;32mI (29026) PWM_FADE: Fading out....[0m
+[0;32mI (33126) PWM_FADE: Fading in.... [0m
+[0;32mI (37226) PWM_FADE: Fading out....[0m
+[0;32mI (41326) PWM_FADE: Fading in.... [0m
+[0;32mI (45426) PWM_FADE: Fading out....[0m
+[0;32mI (49526) PWM_FADE: Fading in.... [0m
+[0;32mI (53626) PWM_FADE: Fading out....[0m
+[0;32mI (57726) PWM_FADE: Fading in.... [0m
+[0;32mI (61826) PWM_FADE: Fading out....[0m
+[0;32mI (65926) PWM_FADE: Fading in.... [0m
+[0;32mI (70026) PWM_FADE: Fading out....[0m
+[0;32mI (74126) PWM_FADE: Fading in.... [0m
+[0;32mI (78226) PWM_FADE: Fading out....[0m
+[0;32mI (82326) PWM_FADE: Fading in.... [0m
+[0;32mI (86426) PWM_FADE: Fading out....[0m
+[0;32mI (90526) PWM_FADE: Fading in.... [0m
+[0;32mI (94626) PWM_FADE: Fading out....[0m
+[0;32mI (98726) PWM_FADE: Fading in.... [0m
+[0;32mI (102826) PWM_FADE: Fading out....[0m
+[0;32mI (106926) PWM_FADE: Fading in.... [0m
+[0;32mI (111026) PWM_FADE: Fading out....[0m
+[0;32mI (115126) PWM_FADE: Fading in.... [0m
+[0;32mI (119226) PWM_FADE: Fading out....[0m
+[0;32mI (123326) PWM_FADE: Fading in.... [0m
+[0;32mI (127426) PWM_FADE: Fading out....[0m
+[0;32mI (131526) PWM_FADE: Fading in.... [0m
+[0;32mI (135626) PWM_FADE: Fading out....[0m
+[0;32mI (139726) PWM_FADE: Fading in.... [0m
+[0;32mI (143826) PWM_FADE: Fading out....[0m
+[0;32mI (147926) PWM_FADE: Fading in.... [0m
+[0;32mI (152026) PWM_FADE: Fading out....[0m
+[0;32mI (156126) PWM_FADE: Fading in.... [0m
+[0;32mI (160226) PWM_FADE: Fading out....[0m
+[0;32mI (164326) PWM_FADE: Fading in.... [0m
+[0;32mI (168426) PWM_FADE: Fading out....[0m
+[0;32mI (172526) PWM_FADE: Fading in.... [0m
+[0;32mI (176626) PWM_FADE: Fading out....[0m
+[0;32mI (180726) PWM_FADE: Fading in.... [0m
+[0;32mI (184826) PWM_FADE: Fading out....[0m
+[0;32mI (188926) PWM_FADE: Fading in.... [0m
+[0;32mI (193026) PWM_FADE: Fading out....[0m
+[0;32mI (197126) PWM_FADE: Fading in.... [0m
+[0;32mI (201226) PWM_FADE: Fading out....[0m
+[0;32mI (205326) PWM_FADE: Fading in.... [0m
+[0;32mI (209426) PWM_FADE: Fading out....[0m
+[0;32mI (213526) PWM_FADE: Fading in.... [0m
+[0;32mI (217626) PWM_FADE: Fading out....[0m
+[0;32mI (221726) PWM_FADE: Fading in.... [0m
+[0;32mI (225826) PWM_FADE: Fading out....[0m
+[0;32mI (229926) PWM_FADE: Fading in.... [0m
+[0;32mI (234026) PWM_FADE: Fading out....[0m
+[0;32mI (238126) PWM_FADE: Fading in.... [0m
+[0;32mI (242226) PWM_FADE: Fading out....[0m
+[0;32mI (246326) PWM_FADE: Fading in.... [0m
+[0;32mI (250426) PWM_FADE: Fading out....[0m
+[0;32mI (254526) PWM_FADE: Fading in.... [0m
+[0;32mI (258626) PWM_FADE: Fading out....[0m
+[0;32mI (262726) PWM_FADE: Fading in.... [0m
+[0;32mI (266826) PWM_FADE: Fading out....[0m
+[0;32mI (270926) PWM_FADE: Fading in.... [0m
+[0;32mI (275026) PWM_FADE: Fading out....[0m
+[0;32mI (279126) PWM_FADE: Fading in.... [0m
+[0;32mI (283226) PWM_FADE: Fading out....[0m
+[0;32mI (287326) PWM_FADE: Fading in.... [0m
+[0;32mI (291426) PWM_FADE: Fading out....[0m
+[0;32mI (295526) PWM_FADE: Fading in.... [0m
+[0;32mI (299626) PWM_FADE: Fading out....[0m
+[0;32mI (303726) PWM_FADE: Fading in.... [0m
+[0;32mI (307826) PWM_FADE: Fading out....[0m
+[0;32mI (311926) PWM_FADE: Fading in.... [0m
+[0;32mI (316026) PWM_FADE: Fading out....[0m
+[0;32mI (320126) PWM_FADE: Fading in.... [0m
+[0;32mI (324226) PWM_FADE: Fading out....[0m
+[0;32mI (328326) PWM_FADE: Fading in.... [0m
+[0;32mI (332426) PWM_FADE: Fading out....[0m
+[0;32mI (336526) PWM_FADE: Fading in.... [0m
+[0;32mI (340626) PWM_FADE: Fading out....[0m
+[0;32mI (344726) PWM_FADE: Fading in.... [0m
+[0;32mI (348826) PWM_FADE: Fading out....[0m
+[0;32mI (352926) PWM_FADE: Fading in.... [0m
+[0;32mI (357026) PWM_FADE: Fading out....[0m
+[0;32mI (361126) PWM_FADE: Fading in.... [0m
+[0;32mI (365226) PWM_FADE: Fading out....[0m
+[0;32mI (369326) PWM_FADE: Fading in.... [0m
+[0;32mI (373426) PWM_FADE: Fading out....[0m
+[0;32mI (377526) PWM_FADE: Fading in.... [0m
+[0;32mI (381626) PWM_FADE: Fading out....[0m
+[0;32mI (385726) PWM_FADE: Fading in.... [0m
+[0;32mI (389826) PWM_FADE: Fading out....[0m
+[0;32mI (393926) PWM_FADE: Fading in.... [0m
+[0;32mI (398026) PWM_FADE: Fading out....[0m
+[0;32mI (402126) PWM_FADE: Fading in.... [0m
+[0;32mI (406226) PWM_FADE: Fading out....[0m
+[0;32mI (410326) PWM_FADE: Fading in.... [0m
+[0;32mI (414426) PWM_FADE: Fading out....[0m
+[0;32mI (418526) PWM_FADE: Fading in.... [0m
+[0;32mI (422626) PWM_FADE: Fading out....[0m
+[0;32mI (426726) PWM_FADE: Fading in.... [0m
+[0;32mI (430826) PWM_FADE: Fading out....[0m
+[0;32mI (434926) PWM_FADE: Fading in.... [0m
+[0;32mI (439026) PWM_FADE: Fading out....[0m
+[0;32mI (443126) PWM_FADE: Fading in.... [0m
+[0;32mI (447226) PWM_FADE: Fading out....[0m
+[0;32mI (451326) PWM_FADE: Fading in.... [0m
+[0;32mI (455426) PWM_FADE: Fading out....[0m
+[0;32mI (459526) PWM_FADE: Fading in.... [0m
+[0;32mI (463626) PWM_FADE: Fading out....[0m
+[0;32mI (467726) PWM_FADE: Fading in.... [0m
+[0;32mI (471826) PWM_FADE: Fading out....[0m
+[0;32mI (475926) PWM_FADE: Fading in.... [0m
+[0;32mI (480026) PWM_FADE: Fading out....[0m
+[0;32mI (484126) PWM_FADE: Fading in.... [0m
+[0;32mI (488226) PWM_FADE: Fading out....[0m
+[0;32mI (492326) PWM_FADE: Fading in.... [0m
+[0;32mI (496426) PWM_FADE: Fading out....[0m
+[0;32mI (500526) PWM_FADE: Fading in.... [0m
+[0;32mI (504626) PWM_FADE: Fading out....[0m
+[0;32mI (508726) PWM_FADE: Fading in.... [0m
+[0;32mI (512826) PWM_FADE: Fading out....[0m
+[0;32mI (516926) PWM_FADE: Fading in.... [0m
+[0;32mI (521026) PWM_FADE: Fading out....[0m
+[0;32mI (525126) PWM_FADE: Fading in.... [0m
+[0;32mI (529226) PWM_FADE: Fading out....[0m
+[0;32mI (533326) PWM_FADE: Fading in.... [0m
+[0;32mI (537426) PWM_FADE: Fading out....[0m
+[0;32mI (541526) PWM_FADE: Fading in.... [0m
+[0;32mI (545626) PWM_FADE: Fading out....[0m
+[0;32mI (549726) PWM_FADE: Fading in.... [0m
+[0;32mI (553826) PWM_FADE: Fading out....[0m
+[0;32mI (557926) PWM_FADE: Fading in.... [0m
+[0;32mI (562026) PWM_FADE: Fading out....[0m
+[0;32mI (566126) PWM_FADE: Fading in.... [0m
+[0;32mI (570226) PWM_FADE: Fading out....[0m
+[0;32mI (574326) PWM_FADE: Fading in.... [0m
+[0;32mI (578426) PWM_FADE: Fading out....[0m
+[0;32mI (582526) PWM_FADE: Fading in.... [0m
+[0;32mI (586626) PWM_FADE: Fading out....[0m
+[0;32mI (590726) PWM_FADE: Fading in.... [0m
+[0;32mI (594826) PWM_FADE: Fading out....[0m
+[0;32mI (598926) PWM_FADE: Fading in.... [0m
+[0;32mI (603026) PWM_FADE: Fading out....[0m
+[0;32mI (607126) PWM_FADE: Fading in.... [0m
+[0;32mI (611226) PWM_FADE: Fading out....[0m
+[0;32mI (615326) PWM_FADE: Fading in.... [0m
+[0;32mI (619426) PWM_FADE: Fading out....[0m
+[0;32mI (623526) PWM_FADE: Fading in.... [0m
+[0;32mI (627626) PWM_FADE: Fading out....[0m
+[0;32mI (631726) PWM_FADE: Fading in.... [0m
+[0;32mI (635826) PWM_FADE: Fading out....[0m
+[0;32mI (639926) PWM_FADE: Fading in.... [0m
+[0;32mI (644026) PWM_FADE: Fading out....[0m
+[0;32mI (648126) PWM_FADE: Fading in.... [0m
+[0;32mI (652226) PWM_FADE: Fading out....[0m
+[0;32mI (656326) PWM_FADE: Fading in.... [0m
+[0;32mI (660426) PWM_FADE: Fading out....[0m
+[0;32mI (664526) PWM_FADE: Fading in.... [0m
+[0;32mI (668626) PWM_FADE: Fading out....[0m
+[0;32mI (672726) PWM_FADE: Fading in.... [0m
+[0;32mI (676826) PWM_FADE: Fading out....[0m
+[0;32mI (680926) PWM_FADE: Fading in.... [0m
+[0;32mI (685026) PWM_FADE: Fading out....[0m
+[0;32mI (689126) PWM_FADE: Fading in.... [0m
+[0;32mI (693226) PWM_FADE: Fading out....[0m
+[0;32mI (697326) PWM_FADE: Fading in.... [0m
+[0;32mI (701426) PWM_FADE: Fading out....[0m
+[0;32mI (705526) PWM_FADE: Fading in.... [0m
+[0;32mI (709626) PWM_FADE: Fading out....[0m
+[0;32mI (713726) PWM_FADE: Fading in.... [0m
+[0;32mI (717826) PWM_FADE: Fading out....[0m
+[0;32mI (721926) PWM_FADE: Fading in.... [0m
+[0;32mI (726026) PWM_FADE: Fading out....[0m
+[0;32mI (730126) PWM_FADE: Fading in.... [0m
+[0;32mI (734226) PWM_FADE: Fading out....[0m
+[0;32mI (738326) PWM_FADE: Fading in.... [0m
+[0;32mI (742426) PWM_FADE: Fading out....[0m
+[0;32mI (746526) PWM_FADE: Fading in.... [0m
+[0;32mI (750626) PWM_FADE: Fading out....[0m
+[0;32mI (754726) PWM_FADE: Fading in.... [0m
+[0;32mI (758826) PWM_FADE: Fading out....[0m
+[0;32mI (762926) PWM_FADE: Fading in.... [0m
+[0;32mI (767026) PWM_FADE: Fading out....[0m
+[0;32mI (771126) PWM_FADE: Fading in.... [0m
+[0;32mI (775226) PWM_FADE: Fading out....[0m
+[0;32mI (779326) PWM_FADE: Fading in.... [0m
+[0;32mI (783426) PWM_FADE: Fading out....[0m
+[0;32mI (787526) PWM_FADE: Fading in.... [0m
+[0;32mI (791626) PWM_FADE: Fading out....[0m
+[0;32mI (795726) PWM_FADE: Fading in.... [0m
+[0;32mI (799826) PWM_FADE: Fading out....[0m
+[0;32mI (803926) PWM_FADE: Fading in.... [0m
+[0;32mI (808026) PWM_FADE: Fading out....[0m
+[0;32mI (812126) PWM_FADE: Fading in.... [0m
+[0;32mI (816226) PWM_FADE: Fading out....[0m
+[0;32mI (820326) PWM_FADE: Fading in.... [0m
+[0;32mI (824426) PWM_FADE: Fading out....[0m
+[0;32mI (828526) PWM_FADE: Fading in.... [0m
+[0;32mI (832626) PWM_FADE: Fading out....[0m
+[0;32mI (836726) PWM_FADE: Fading in.... [0m
+[0;32mI (840826) PWM_FADE: Fading out....[0m
+[0;32mI (844926) PWM_FADE: Fading in.... [0m
+[0;32mI (849026) PWM_FADE: Fading out....[0m
+[0;32mI (853126) PWM_FADE: Fading in.... [0m
+[0;32mI (857226) PWM_FADE: Fading out....[0m
+[0;32mI (861326) PWM_FADE: Fading in.... [0m
+[0;32mI (865426) PWM_FADE: Fading out....[0m
+[0;32mI (869526) PWM_FADE: Fading in.... [0m
+[0;32mI (873626) PWM_FADE: Fading out....[0m
+[0;32mI (877726) PWM_FADE: Fading in.... [0m
+[0;32mI (881826) PWM_FADE: Fading out....[0m
+[0;32mI (885926) PWM_FADE: Fading in.... [0m
+[0;32mI (890026) PWM_FADE: Fading out....[0m
+[0;32mI (894126) PWM_FADE: Fading in.... [0m
+[0;32mI (898226) PWM_FADE: Fading out....[0m
+[0;32mI (902326) PWM_FADE: Fading in.... [0m
+[0;32mI (906426) PWM_FADE: Fading out....[0m
+[0;32mI (910526) PWM_FADE: Fading in.... [0m
+[0;32mI (914626) PWM_FADE: Fading out....[0m
+[0;32mI (918726) PWM_FADE: Fading in.... [0m
+[0;32mI (922826) PWM_FADE: Fading out....[0m
+[0;32mI (926926) PWM_FADE: Fading in.... [0m
+[0;32mI (931026) PWM_FADE: Fading out....[0m
+[0;32mI (935126) PWM_FADE: Fading in.... [0m
+[0;32mI (939226) PWM_FADE: Fading out....[0m
+[0;32mI (943326) PWM_FADE: Fading in.... [0m
+[0;32mI (947426) PWM_FADE: Fading out....[0m
+[0;32mI (951526) PWM_FADE: Fading in.... [0m
+[0;32mI (955626) PWM_FADE: Fading out....[0m
+[0;32mI (959726) PWM_FADE: Fading in.... [0m
+[0;32mI (963826) PWM_FADE: Fading out....[0m
+[0;32mI (967926) PWM_FADE: Fading in.... [0m
+[0;32mI (972026) PWM_FADE: Fading out....[0m
+[0;32mI (976126) PWM_FADE: Fading in.... [0m
+[0;32mI (980226) PWM_FADE: Fading out....[0m
+[0;32mI (984326) PWM_FADE: Fading in.... [0m
+[0;32mI (988426) PWM_FADE: Fading out....[0m
+[0;32mI (992526) PWM_FADE: Fading in.... [0m
+[0;32mI (996626) PWM_FADE: Fading out....[0m
+[0;32mI (1000726) PWM_FADE: Fading in.... [0m
+[0;32mI (1004826) PWM_FADE: Fading out....[0m
+[0;32mI (1008926) PWM_FADE: Fading in.... [0m
+[0;32mI (1013026) PWM_FADE: Fading out....[0m
+[0;32mI (1017126) PWM_FADE: Fading in.... [0m
+[0;32mI (1021226) PWM_FADE: Fading out....[0m
+[0;32mI (1025326) PWM_FADE: Fading in.... [0m
+[0;32mI (1029426) PWM_FADE: Fading out....[0m
+[0;32mI (1033526) PWM_FADE: Fading in.... [0m
+[0;32mI (1037626) PWM_FADE: Fading out....[0m
+[0;32mI (1041726) PWM_FADE: Fading in.... [0m
+[0;32mI (1045826) PWM_FADE: Fading out....[0m
+[0;32mI (1049926) PWM_FADE: Fading in.... [0m
+[0;32mI (1054026) PWM_FADE: Fading out....[0m
+[0;32mI (1058126) PWM_FADE: Fading in.... [0m
