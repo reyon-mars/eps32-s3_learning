@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "system_info_restart",
-    "project_version":    "898da11",
+    "project_version":    "ef8560c-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/system_info_restart",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/system_info_restart/build",
