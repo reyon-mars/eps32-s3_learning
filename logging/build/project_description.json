@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "logging",
-    "project_version":    "1e5db64-dirty",
+    "project_version":    "44873f5-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/logging",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/logging/build",

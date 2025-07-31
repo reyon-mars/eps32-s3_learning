@@ -1,0 +1,145 @@
+[0;32mI (264) spi_flash: detectedESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004883b
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1750
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (26) boot: ESP-IDF v5.1.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 31 2025 09:56:17[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (71) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (86) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09e80h ( 40576) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=00019ea8 vaddr=3fc91400 size=0287ch ( 10364) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001c72c vaddr=40374000 size=038ech ( 14572) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1789ch ( 96412) map[0m
+[0;32mI (142) esp_image: segment 4: paddr=000378c4 vaddr=403778ec size=09ae8h ( 39656) load[0m
+[0;32mI (156) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (157) boot: Disabling RNG early entropy source...[0m
+[0;32mI (168) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: Pro cpu up.[0m
+[0;32mI (168) cpu_start: Starting app cpu, entry point is 0x4037526c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (186) cpu_start: Pro cpu start user code[0m
+[0;32mI (187) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (187) cpu_start: Application information:[0m
+[0;32mI (190) cpu_start: Project name:     delay[0m
+[0;32mI (194) cpu_start: App version:      44873f5-dirty[0m
+[0;32mI (200) cpu_start: Compile time:     Jul 31 2025 09:55:57[0m
+[0;32mI (206) cpu_start: ELF file SHA256:  af5a15416cd6fe74...[0m
+[0;32mI (212) cpu_start: ESP-IDF:          v5.1.2[0m
+[0;32mI (217) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (221) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (226) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (231) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (238) heap_init: At 3FC944D8 len 00055238 (340 KiB): DRAM[0m
+[0;32mI (244) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (251) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (265) spi_flash: detected chip: boya[0m
+[0;32mI (268) spi_flash: flash io: dio[0m
+[0;33mW (272) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (285) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (292) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (299) app_start: Starting scheduler on CPU0[0m
+[0;32mI (304) app_start: Starting scheduler on CPU1[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (314) main_task: Calling app_main()[0m
+[0;32mI (1314) DELAY: The current iteration is 0[0m
+[0;32mI (1314) DICE: The random number is -1712035576[0m
+[0;32mI (2314) DELAY: The current iteration is 1[0m
+[0;32mI (2314) DICE: The random number is -376478050[0m
+[0;32mI (3314) DELAY: The current iteration is 2[0m
+[0;32mI (3314) DICE: The random number is 991829008[0m
+[0;32mI (4314) DELAY: The current iteration is 3[0m
+[0;32mI (4314) DICE: The random number is -658268792[0m
+[0;32mI (5314) DELAY: The current iteration is 4[0m
+[0;32mI (5314) DICE: The random number is -774806694[0m
+[0;32mI (6314) DELAY: The current iteration is 5[0m
+[0;32mI (6314) DICE: The random number is -964301754[0m
+[0;32mI (7314) DELAY: The current iteration is 6[0m
+[0;32mI (7314) DICE: The random number is -644938496[0m
+[0;32mI (8314) DELAY: The current iteration is 7[0m
+[0;32mI (8314) DICE: The random number is 1356571553[0m
+[0;32mI (9314) DELAY: The current iteration is 8[0m
+[0;32mI (9314) DICE: The random number is 1995000329[0m
+[0;32mI (10314) DELAY: The current iteration is 9[0m
+[0;32mI (10314) DICE: The random number is -1838441512[0m
+[0;32mI (11314) DELAY: The current iteration is 10[0m
+[0;32mI (11314) DICE: The random number is -1016308707[0m
+[0;32mI (12314) DELAY: The current iteration is 11[0m
+[0;32mI (12314) DICE: The random number is -1109332397[0m
+[0;32mI (13314) DELAY: The current iteration is 12[0m
+[0;32mI (13314) DICE: The random number is 1456131448[0m
+[0;32mI (14314) DELAY: The current iteration is 13[0m
+[0;32mI (14314) DICE: The random number is -276903766[0m
+[0;32mI (15314) DELAY: The current iteration is 14[0m
+[0;32mI (15314) DICE: The random number is -1412522535[0m
+[0;32mI (16314) DELAY: The current iteration is 15[0m
+[0;32mI (16314) DICE: The random number is -1953483534[0m
+[0;32mI (17314) DELAY: The current iteration is 16[0m
+[0;32mI (17314) DICE: The random number is 1145158926[0m
+[0;32mI (18314) DELAY: The current iteration is 17[0m
+[0;32mI (18314) DICE: The random number is -2009758188[0m
+[0;32mI (19314) DELAY: The current iteration is 18[0m
+[0;32mI (19314) DICE: The random number is 327287729[0m
+[0;32mI (20314) DELAY: The current iteration is 19[0m
+[0;32mI (20314) DICE: The random number is -775629251[0m
+[0;32mI (21314) DELAY: The current iteration is 20[0m
+[0;32mI (21314) DICE: The random number is 16442210[0m
+[0;32mI (22314) DELAY: The current iteration is 21[0m
+[0;32mI (22314) DICE: The random number is 1110648497[0m
+[0;32mI (23314) DELAY: The current iteration is 22[0m
+[0;32mI (23314) DICE: The random number is 2025000830[0m
+[0;32mI (24314) DELAY: The current iteration is 23[0m
+[0;32mI (24314) DICE: The random number is 2071532614[0m
+[0;32mI (25314) DELAY: The current iteration is 24[0m
+[0;32mI (25314) DICE: The random number is 833647437[0m
+[0;32mI (26314) DELAY: The current iteration is 25[0m
+[0;32mI (26314) DICE: The random number is -1400805411[0m
+[0;32mI (27314) DELAY: The current iteration is 26[0m
+[0;32mI (27314) DICE: The random number is 2114036188[0m
+[0;32mI (28314) DELAY: The current iteration is 27[0m
+[0;32mI (28314) DICE: The random number is -1403411113[0m
+[0;32mI (29314) DELAY: The current iteration is 28[0m
+[0;32mI (29314) DICE: The random number is 17348230[0m
+[0;32mI (30314) DELAY: The current iteration is 29[0m
+[0;32mI (30314) DICE: The random number is -394257753[0m
+[0;32mI (31314) DELAY: The current iteration is 30[0m
+[0;32mI (31314) DICE: The random number is -458952439[0m
+[0;32mI (32314) DELAY: The current iteration is 31[0m
+[0;32mI (32314) DICE: The random number is 1570725782[0m
+[0;32mI (33314) DELAY: The current iteration is 32[0m
+[0;32mI (33314) DICE: The random number is -1688930508[0m
+[0;32mI (34314) DELAY: The current iteration is 33[0m
+[0;32mI (34314) DICE: The random number is -1652753388[0m
+[0;32mI (35314) DELAY: The current iteration is 34[0m
+[0;32mI (35314) DICE: The random number is 1367639754[0m
+[0;32mI (36314) DELAY: The current iteration is 35[0m
+[0;32mI (36314) DICE: The random number is 2145938261[0m
+[0;32mI (37314) DELAY: The current iteration is 36[0m
+[0;32mI (37314) DICE: The random number is -2007931013[0m
+[0;32mI (38314) DELAY: The current iteration is 37[0m
+[0;32mI (38314) DICE: The random number is 1130340188[0m
+[0;32mI (39314) DELAY: The current iteration is 38[0m
+[0;32mI (39314) DICE: The random number is 1274319212[0m
+[0;32mI (40314) DELAY: The current iteration is 39[0m
+[0;32mI (40314) DICE: The random number is -1110708470[0m
+[0;32mI (41314) DELAY: The current iteration is 40[0m
+[0;32mI (41314) DICE: The random number is -1616118636[0m
+[0;32mI (42314) DELAY: The current iteration is 41[0m
+[0;32mI (42314) DICE: The random number is -790824391[0m
