@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "uart_echo",
-    "project_version":    "8272166",
+    "project_version":    "ca3ea4b-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/uart_echo",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/uart_echo/build",

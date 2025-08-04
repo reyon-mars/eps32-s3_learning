@@ -1,0 +1,882 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x1750
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xc00
+load:0x403cc700,len:0x2e04
+entry 0x403c9908
+[0;32mI (27) boot: ESP-IDF v5.1.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug  4 2025 11:27:37[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09f58h ( 40792) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=00019f80 vaddr=3fc91400 size=0287ch ( 10364) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001c804 vaddr=40374000 size=03814h ( 14356) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=17aach ( 96940) map[0m
+[0;32mI (142) esp_image: segment 4: paddr=00037ad4 vaddr=40377814 size=09b70h ( 39792) load[0m
+[0;32mI (157) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (157) boot: Disabling RNG early entropy source...[0m
+[0;32mI (168) cpu_start: Multicore app[0m
+[0;32mI (168) cpu_start: Pro cpu up.[0m
+[0;32mI (169) cpu_start: Starting app cpu, entry point is 0x40375264[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (187) cpu_start: Pro cpu start user code[0m
+[0;32mI (187) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (187) cpu_start: Application information:[0m
+[0;32mI (190) cpu_start: Project name:     esp_reset[0m
+[0;32mI (195) cpu_start: App version:      ca3ea4b[0m
+[0;32mI (200) cpu_start: Compile time:     Aug  4 2025 11:27:31[0m
+[0;32mI (206) cpu_start: ELF file SHA256:  27ad0af54759ef30...[0m
+[0;32mI (212) cpu_start: ESP-IDF:          v5.1.2[0m
+[0;32mI (217) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (221) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (226) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (231) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (238) heap_init: At 3FC944D8 len 00055238 (340 KiB): DRAM[0m
+[0;32mI (244) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DRAM[0m
+[0;32mI (251) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (265) spi_flash: detected chip: boya[0m
+[0;32mI (268) spi_flash: flash io: dio[0m
+[0;33mW (272) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (285) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (292) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (299) app_start: Starting scheduler on CPU0[0m
+[0;32mI (304) app_start: Starting scheduler on CPU1[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (314) main_task: Calling app_main()[0m
+[0;32mI (314) RESET_MONITOR: Reset Command via Console Started[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (324) RESET_MONITOR: Failed to read input. Retrying...[0m
+[0;32mI (334) main_task: Returned from app_main()[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (1934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (2934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (3934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (4934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (5934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (6934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (7934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (8934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (9934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (10934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (11934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (12934) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13034) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13134) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13234) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13534) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (13734) RESET_MONITOR: Received input: ''[0m
+Unrecognized command: ''
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13734) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13844) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (13944) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14044) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14144) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14244) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14344) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14444) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14544) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14644) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14744) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14844) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (14944) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15044) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15144) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15244) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15344) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15444) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15544) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15644) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15744) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15844) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (15944) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16044) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (16144) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16144) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (16254) RESET_MONITOR: Received input: 'e'[0m
+Unrecognized command: 'e'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16254) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (16364) RESET_MONITOR: Received input: 'a'[0m
+Unrecognized command: 'a'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16364) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (16474) RESET_MONITOR: Received input: 's'[0m
+Unrecognized command: 's'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16474) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16584) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (16684) RESET_MONITOR: Received input: 'ta'[0m
+Unrecognized command: 'ta'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16684) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (16794) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16794) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (16904) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (17004) RESET_MONITOR: Received input: 'd'[0m
+Unrecognized command: 'd'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17004) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17114) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17214) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17314) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (17414) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17414) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (17524) RESET_MONITOR: Received input: 'e'[0m
+Unrecognized command: 'e'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17524) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (17634) RESET_MONITOR: Received input: 'as'[0m
+Unrecognized command: 'as'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17634) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17744) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (17844) RESET_MONITOR: Received input: 'te'[0m
+Unrecognized command: 'te'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17844) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (17954) RESET_MONITOR: Received input: 'a'[0m
+Unrecognized command: 'a'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (17954) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (17964) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (18074) RESET_MONITOR: Received input: 'e'[0m
+Unrecognized command: 'e'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18074) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (18184) RESET_MONITOR: Received input: 'a'[0m
+Unrecognized command: 'a'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18184) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18294) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (18394) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18394) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18504) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18604) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18704) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18804) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (18904) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (18904) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (19014) RESET_MONITOR: Received input: 'e'[0m
+Unrecognized command: 'e'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19014) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19124) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (19224) RESET_MONITOR: Received input: 's'[0m
+Unrecognized command: 's'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19224) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19334) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (19434) RESET_MONITOR: Received input: 'a'[0m
+Unrecognized command: 'a'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19434) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19544) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19644) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (19744) RESET_MONITOR: Received input: 't'[0m
+Unrecognized command: 't'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19744) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (19854) RESET_MONITOR: Received input: 'a'[0m
+Unrecognized command: 'a'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19854) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (19964) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (19964) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20074) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (20174) RESET_MONITOR: Received input: 't'[0m
+Unrecognized command: 't'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20174) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20284) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20384) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (20484) RESET_MONITOR: Received input: ''[0m
+Unrecognized command: ''
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20484) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20584) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20684) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20784) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20884) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (20984) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21084) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (21184) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21184) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (21294) RESET_MONITOR: Received input: 'e'[0m
+Unrecognized command: 'e'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21294) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (21404) RESET_MONITOR: Received input: 's'[0m
+Unrecognized command: 's'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21404) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21514) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (21614) RESET_MONITOR: Received input: 'a'[0m
+Unrecognized command: 'a'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21614) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (21724) RESET_MONITOR: Received input: 'ta'[0m
+Unrecognized command: 'ta'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21724) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (21834) RESET_MONITOR: Received input: 'r'[0m
+Unrecognized command: 'r'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21834) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (21944) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (22044) RESET_MONITOR: Received input: 't'[0m
+Unrecognized command: 't'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22044) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22154) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22254) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22354) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22454) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22554) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22654) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;32mI (22754) RESET_MONITOR: Received input: '}'[0m
+Unrecognized command: '}'
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22754) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22864) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (22964) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (23064) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (23164) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (23264) RESET_MONITOR: Failed to read input. Retrying...[0m
+
+Type 'restart' to reboot the ESP32-S3:
+> [0;33mW (23364) RESET_MONITOR: Failed to read input. Retrying...[0m
