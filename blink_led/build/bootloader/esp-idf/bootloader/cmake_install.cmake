@@ -40,6 +40,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/reyon/Firmware_programming/esp32_projects/blink_led/blink_led/build/bootloader/esp-idf/bootloader/install_local_manifest.txt"
+  file(WRITE "/Users/reyon/Firmware_programming/esp32_projects/blink_led/build/bootloader/esp-idf/bootloader/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
