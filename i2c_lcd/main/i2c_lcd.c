@@ -38,21 +38,21 @@ void lcd_reset( void ){
     vTaskDelay( pdMS_TO_TICKS(50) );
 }
 
-static void i2c_lcd_display_variable_string( const char* str ){
-    if( str == NULL ){
-        return ;
-    }
+static void i2c_lcd_display_variable_length_string( const char* str ){
+    if( str == NULL ){ return ; }
+
     size_t str_len = strlen( str );
-    if( len == 0 ){
-        return ;
-    }
+    
+    if( len == 0 ){ return ; }
+
     uint8_t *data = (uint8_t*)malloc( len + 1 );
+    
     if( data == NULL ){
         return ;
     }
     data[0] = LCD_DATA_MODE;
     memcpy( &data[1], str, str_len );
-
+    
     esp_err_t ret = i2c_master_write_to_device(
         I2C_MASTER_NUM,
         I2C_LCD_ADDR,
@@ -125,5 +125,5 @@ void app_main(void)
     lcd_reset();
     i2c_master_init();
     i2c_lcd_init();
-    i2c_lcd_display_string("Hello, World!");
+    i2c_lcd_display_variable_length_string( "Hello, World!" );
 }
