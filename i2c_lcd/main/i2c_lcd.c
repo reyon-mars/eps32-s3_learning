@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "esp_log.h"
 #include <string.h>
 #include <stdint.h>
 #include "driver/i2c.h"
@@ -27,6 +28,7 @@ void lcd_reset_pin_init( void ){
         .intr_type = GPIO_INTR_DISABLE
     };
     gpio_config( &reset_pin_conf );
+    gpio_set_level( LCD_RST_PIN, 0 );
 }
 
 void lcd_reset( void ){
@@ -34,6 +36,35 @@ void lcd_reset( void ){
     vTaskDelay( pdMS_TO_TICKS(10) );
     gpio_set_level( LCD_RST_PIN, 1 );
     vTaskDelay( pdMS_TO_TICKS(50) );
+}
+
+static void i2c_lcd_display_variable_string( const char* str ){
+    if( str == NULL ){
+        return ;
+    }
+    size_t str_len = strlen( str );
+    if( len == 0 ){
+        return ;
+    }
+    uint8_t *data = (uint8_t*)malloc( len + 1 );
+    if( data == NULL ){
+        return ;
+    }
+    data[0] = LCD_DATA_MODE;
+    memcpy( &data[1], str, str_len );
+
+    esp_err_t ret = i2c_master_write_to_device(
+        I2C_MASTER_NUM,
+        I2C_LCD_ADDR,
+        data,
+        str_len + 1,
+        I2C_TIMEOUT_MS / portTICK_PERIOD_MS
+    );
+
+    if( ret != ESP_OK ){
+        ESP_LOGE( TAG, "I2C write failed: %s\n", esp_err_to_name( ret ) );
+    }
+    free(data);
 }
 
 static void i2c_master_init(void)

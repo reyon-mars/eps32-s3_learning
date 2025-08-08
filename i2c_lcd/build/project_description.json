@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "i2c_lcd",
-    "project_version":    "8796042c",
+    "project_version":    "84fb01bc-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/i2c_lcd",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/i2c_lcd/build",
