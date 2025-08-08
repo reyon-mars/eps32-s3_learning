@@ -5,7 +5,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-
+#define LCD_RST_PIN                18
 #define I2C_MASTER_SCL_IO          20
 #define I2C_MASTER_SDA_IO          21
 #define I2C_MASTER_NUM             I2C_NUM_0
@@ -17,6 +17,24 @@
 #define LCD_COMMAND_MODE           0x00  
 #define LCD_DATA_MODE              0x40  
 
+
+void lcd_reset_pin_init( void ){
+    gpio_config_t reset_pin_conf = {
+        .pin_bit_mask = ( 1ULL << LCD_RST_PIN ),
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE
+    };
+    gpio_config( &reset_pin_conf );
+}
+
+void lcd_reset( void ){
+    gpio_set_level( LCD_RST_PIN, 0 );
+    vTaskDelay( pdMS_TO_TICKS(10) );
+    gpio_set_level( LCD_RST_PIN, 1 );
+    vTaskDelay( pdMS_TO_TICKS(50) );
+}
 
 static void i2c_master_init(void)
 {
@@ -44,6 +62,8 @@ static void i2c_lcd_send_data(uint8_t data_byte)
     i2c_master_write_to_device(I2C_MASTER_NUM, I2C_LCD_ADDR, data, sizeof(data), I2C_TIMEOUT_MS / portTICK_PERIOD_MS);
 }
 
+
+
 static void i2c_lcd_display_string(const char *str)
 {
     while (*str) {
@@ -53,23 +73,25 @@ static void i2c_lcd_display_string(const char *str)
 
 static void i2c_lcd_init(void)
 {
-
     vTaskDelay(50 / portTICK_PERIOD_MS);
-
-    i2c_lcd_send_command(0x38); 
-    vTaskDelay(5 / portTICK_PERIOD_MS);
-
+    i2c_lcd_send_command(0x38);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+    i2c_lcd_send_command(0x39);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+    i2c_lcd_send_command(0x14);
+    i2c_lcd_send_command(0x78);
+    i2c_lcd_send_command(0x5E);
+    i2c_lcd_send_command(0x6D);
     i2c_lcd_send_command(0x0C);
-    vTaskDelay(5 / portTICK_PERIOD_MS);
-
-    i2c_lcd_send_command(0x01); 
-    vTaskDelay(2 / portTICK_PERIOD_MS);
-
+    i2c_lcd_send_command(0x01);
     i2c_lcd_send_command(0x06);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
 }
 
 void app_main(void)
 {
+    lcd_reset_pin_init();
+    lcd_reset();
     i2c_master_init();
     i2c_lcd_init();
     i2c_lcd_display_string("Hello, World!");
