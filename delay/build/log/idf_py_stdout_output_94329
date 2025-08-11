@@ -1,0 +1,19 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x0 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a7c
+waiting for download
+[0;32mI (1316) DELAY: The current iteration is 0[0m
+[0;32mI (1316) DICE: The current dice face is 5[0m
+[0;32mI (2316) DELAY: The current iteration is 1[0m
+[0;32mI (2316) DICE: The current dice face is 6[0m
+[0;32mI (3316) DELAY: The current iteration is 2[0m
+[0;32mI (3316) DICE: The current dice face is 4[0m
+[0;32mI (4316) DELAY: The current iteration is 3[0m
+[0;32mI (4316) DICE: The current dice face is 5[0m
+[0;32mI (5316) DELAY: The current iteration is 4[0m
+[0;32mI (5316) DICE: The current dice face is 1[0m
+[0;32mI (6316) DELAY: The current iteration is 5[0m
+[0;32mI (6316) DICE: The current dice face is 5[0m
+[0;32mI (7316) DELAY: The current iteration is 6[0m
+[0;32mI (7316) DICE: The current dice face is 1[0m
