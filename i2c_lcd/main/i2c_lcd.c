@@ -15,9 +15,10 @@
 #define I2C_MASTER_NUM             I2C_NUM_0
 #define I2C_MASTER_FREQ_HZ         100000
 #define I2C_LCD_ADDR               0x3C  
-
+#define SET_CURSOR_CMD             0x80
+#define CLEAR_DISPLAY              0X01
 #define I2C_TIMEOUT_MS             1000
-
+#define LINE_TWO                   0x80 | 0x40
 #define LCD_COMMAND_MODE           0x00  
 #define LCD_DATA_MODE              0x40  
 
@@ -66,15 +67,13 @@ void lcd_reset( void ){
     vTaskDelay( pdMS_TO_TICKS(50) );
 }
 
-static void i2c_lcd_display_variable_length_string( const char* str ){
+static void i2c_lcd_display_string( const char* str ){
     if( str == NULL ){ return ; }
 
     size_t str_len = strlen( str );
-    
     if( str_len == 0 ){ return ; }
 
     uint8_t *data = (uint8_t*)malloc( str_len + 1 );
-    
     if( data == NULL ){
         return ;
     }
@@ -123,11 +122,9 @@ static void i2c_lcd_send_data(uint8_t data_byte)
 
 
 
-static void i2c_lcd_display_string(const char *str)
+static void i2c_lcd_display_char(const char character)
 {
-    while (*str) {
-        i2c_lcd_send_data((uint8_t)*str++);
-    }
+        i2c_lcd_send_data((uint8_t)character);
 }
 
 static void i2c_lcd_init(void)
@@ -147,24 +144,69 @@ static void i2c_lcd_init(void)
     vTaskDelay(10 / portTICK_PERIOD_MS);
 }
 
+void i2c_lcd_display_integer( int number ){
+    
+    if( number == 0 ){
+        i2c_lcd_display_char( '0' );
+        return ;
+    }
+
+    char buffer[20];
+    bool negative = ( number < 0 );
+    unsigned int u_number = 0;
+    if( negative ){
+        u_number = ( unsigned int )(-( long long ) number );
+        i2c_lcd_display_char( '-' );
+    }
+
+    int curr_idx = 0;
+    while( u_number ){
+        buffer[ curr_idx++ ] = '0' + u_number % 10;
+        u_number /= 10;    
+    }
+    buffer[ curr_idx ] = '\0';
+    
+    uint8_t left = 0, right = curr_idx - 1;
+    while( left < right ){
+        buffer[left] ^= buffer[right];
+        buffer[right] ^= buffer[left];
+        buffer[left] ^= buffer[right];
+        left++, right--;
+    }
+
+    i2c_lcd_display_string( buffer );
+}
+
+static void i2c_lcd_set_cursor( uint8_t col, uint8_t row ){
+    if( row > 2 || col > 20 || row == 0 || col == 0 ){
+        return ;
+    }
+    const uint8_t row_offset[] = { 0x00, 0x40 };
+    uint8_t addr = row_offset[row-1] + ( col / 20 );
+    addr &= 0x7F;
+    i2c_lcd_send_command( SET_CURSOR_CMD | addr );
+}
+
 void app_main(void)
 {
+    int count = 0;
     i2c_master_init();
     lcd_reset_pin_init();
     lcd_reset();
     backlight_init();
     i2c_lcd_init();
+    i2c_lcd_set_cursor( 1, 1 );
 
     while( 1 ){
         vTaskDelay( pdMS_TO_TICKS( 2500 ));
         lcd_backlight_on();
-        i2c_lcd_init();
-        i2c_lcd_display_string( "-" );
-        i2c_lcd_display_variable_length_string( "Hello, World!" );
-        i2c_lcd_display_string( "-" );
+        i2c_lcd_display_char( '-' );
+        i2c_lcd_display_string( "Hello, World!");
+        i2c_lcd_display_char( '-' );
+        i2c_lcd_send_command( LINE_TWO );
+        i2c_lcd_display_string( "Count: " );
+        i2c_lcd_display_integer( count++ );
         vTaskDelay( pdMS_TO_TICKS( 2500 ));
-        lcd_reset();
-        lcd_backlight_off();
-    }
-    
+        i2c_lcd_send_command( CLEAR_DISPLAY );
+    }    
 }
