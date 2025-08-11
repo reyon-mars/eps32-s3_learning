@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "logging",
-    "project_version":    "44873f5-dirty",
+    "project_version":    "054c88e4-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/logging",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/logging/build",
@@ -11,7 +11,7 @@
     "app_elf":            "logging.elf",
     "app_bin":            "logging.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.1.2",
+    "git_revision":       "v5.1.2-dirty",
     "target":             "esp32s3",
     "rev":                "",
     "min_rev":            "0",

@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "button_interrupt_led",
-    "project_version":    "de2586c",
+    "project_version":    "07691b62-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/button_interrupt_led",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/button_interrupt_led/build",
@@ -11,7 +11,7 @@
     "app_elf":            "button_interrupt_led.elf",
     "app_bin":            "button_interrupt_led.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.1.2",
+    "git_revision":       "v5.1.2-dirty",
     "target":             "esp32s3",
     "rev":                "",
     "min_rev":            "0",
