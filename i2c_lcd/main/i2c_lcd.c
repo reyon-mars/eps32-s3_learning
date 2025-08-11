@@ -6,9 +6,12 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#define TAG                        "I2C_LCD"
 #define LCD_RST_PIN                18
 #define I2C_MASTER_SCL_IO          20
 #define I2C_MASTER_SDA_IO          21
+#define LCD_BACKLIGHT_PIN          GPIO_NUM_10
+#define LCD_ENABLE_PIN             GPIO_NUM_11
 #define I2C_MASTER_NUM             I2C_NUM_0
 #define I2C_MASTER_FREQ_HZ         100000
 #define I2C_LCD_ADDR               0x3C  
@@ -18,6 +21,31 @@
 #define LCD_COMMAND_MODE           0x00  
 #define LCD_DATA_MODE              0x40  
 
+void gpio_init( gpio_num_t pin_no ){
+    gpio_config_t gpio_conf = {
+        .pin_bit_mask = ( 1ULL << pin_no ),
+        .mode = GPIO_MODE_OUTPUT, 
+        .pull_down_en = GPIO_PULLDOWN_DISABLE, 
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE
+    };
+    gpio_config( &gpio_conf );
+}
+
+void backlight_init( void ){
+    gpio_init( LCD_BACKLIGHT_PIN );
+    gpio_init( LCD_ENABLE_PIN );
+    gpio_set_level( LCD_BACKLIGHT_PIN, 1 );
+    gpio_set_level( LCD_ENABLE_PIN, 1 );
+}
+
+void lcd_backlight_on( void ){
+    gpio_set_level( LCD_BACKLIGHT_PIN, 1 );
+}
+
+void lcd_backlight_off( void ){
+    gpio_set_level( LCD_BACKLIGHT_PIN, 0 );
+}
 
 void lcd_reset_pin_init( void ){
     gpio_config_t reset_pin_conf = {
@@ -28,7 +56,7 @@ void lcd_reset_pin_init( void ){
         .intr_type = GPIO_INTR_DISABLE
     };
     gpio_config( &reset_pin_conf );
-    gpio_set_level( LCD_RST_PIN, 0 );
+    gpio_set_level( LCD_RST_PIN, 1 );
 }
 
 void lcd_reset( void ){
@@ -43,9 +71,9 @@ static void i2c_lcd_display_variable_length_string( const char* str ){
 
     size_t str_len = strlen( str );
     
-    if( len == 0 ){ return ; }
+    if( str_len == 0 ){ return ; }
 
-    uint8_t *data = (uint8_t*)malloc( len + 1 );
+    uint8_t *data = (uint8_t*)malloc( str_len + 1 );
     
     if( data == NULL ){
         return ;
@@ -121,9 +149,20 @@ static void i2c_lcd_init(void)
 
 void app_main(void)
 {
-    lcd_reset_pin_init();
-    lcd_reset();
-    i2c_master_init();
-    i2c_lcd_init();
-    i2c_lcd_display_variable_length_string( "Hello, World!" );
+    while( 1 ){
+        vTaskDelay( pdMS_TO_TICKS( 2500 ));
+        lcd_reset_pin_init();
+        backlight_init();
+        lcd_backlight_on();
+        lcd_reset();
+        i2c_master_init();
+        i2c_lcd_init();
+        i2c_lcd_display_string( "-" );
+        i2c_lcd_display_variable_length_string( "Hello, World!" );
+        i2c_lcd_display_string( "-" );
+        vTaskDelay( pdMS_TO_TICKS( 2500 ));
+        lcd_reset();
+        lcd_backlight_off();
+    }
+    
 }
