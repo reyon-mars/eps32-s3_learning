@@ -38,8 +38,8 @@ class NHDLcd
         gpio_num_t LCD_BACKLIGHT_PIN;
         gpio_num_t LCD_ENABLE_PIN;
         
-        static constexpr uint8_t LCD_ADDRESS    = 0x3C
-        static constexpr uint8_t SET_CURSOR_CMD = 0x80;
+        static constexpr uint8_t LCD_ADDRESS    = 0x3C;
+        static constexpr uint8_t SET_CURSOR     = 0x80;
         static constexpr uint8_t CLEAR_DISPLAY  = 0x01;
         static constexpr uint8_t MOVE_LINE_TWO   = 0x80 | 0x40;
         static constexpr uint8_t LCD_COMMAND_MODE = 0x00;
