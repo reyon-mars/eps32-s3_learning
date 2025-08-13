@@ -10,8 +10,8 @@ GPIOPin::GPIOPin( gpio_num_t pin, Mode mode, bool pullup, bool pulldown ) : pinN
         .pull_down_en = (pulldown ? GPIO_PULLDOWN_ENABLE : GPIO_PULLDOWN_DISABLE),
         .intr_type = GPIO_INTR_DISABLE
     };
-
     gpio_config( &conf );
+    gpio_set_level( pinNo, 1 );
 }
 
 void GPIOPin::setLevel( int level ) const {

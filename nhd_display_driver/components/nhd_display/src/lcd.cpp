@@ -1,7 +1,6 @@
 #include "lcd.hpp"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include <memory>
 
 NHDLcd::NHDLcd( const I2CMaster& i2c, const gpio_num_t rstPin, const gpio_num_t bcklghtPin, const gpio_num_t enPin ) :
     i2cMaster( i2c ),
@@ -10,8 +9,6 @@ NHDLcd::NHDLcd( const I2CMaster& i2c, const gpio_num_t rstPin, const gpio_num_t 
     enablePin( enPin, GPIOPin::Mode::out, false, false )
 {
     reset();
-    backlightPin.setLevel( 1 );
-    enablePin.setLevel( 1 );
     init();
 }
 
@@ -25,6 +22,10 @@ void NHDLcd::reset( void ){
 void NHDLcd::sendCommand( uint8_t cmd ) const {
     std::array<uint8_t, 2> data { LCD_COMMAND_MODE, cmd };
     checkWrite( i2cMaster.write( LCD_ADDRESS, data.data(), data.size() ));
+}
+
+void NHDLcd::sendVarCommand( uint8_t* cmd, const size_t cmdLen ) const{
+    checkWrite( i2cMaster.write( LCD_ADDRESS, cmd, cmdLen ));
 }
 
 void NHDLcd::sendData( uint8_t data_byte ) const {
@@ -42,7 +43,7 @@ void NHDLcd::display( const std::string_view& str ) const
     buf[0] = LCD_DATA_MODE;
     const uint8_t* src = reinterpret_cast<const uint8_t*>(str.data());
     uint8_t* dest = &buf[1];
-    size_t count = str.size();
+    const size_t count = str.size();
     for (size_t i = 0; i < count; ++i) {
         dest[i] = src[i];
     }
@@ -51,7 +52,7 @@ void NHDLcd::display( const std::string_view& str ) const
 }
 
 void NHDLcd::display( const char character ) const{
-    sendData( static_cast<uint8_t>( character ));
+    sendData( static_cast<uint8_t>( character ) );
 }
 
 void NHDLcd::display( int number ) const{
@@ -73,7 +74,6 @@ void NHDLcd::display( int number ) const{
     }
     std::reverse( buf.begin(), buf.end() );
     display( buf );
-
 }
 
 void NHDLcd::setCursor( const uint8_t row, const uint8_t col ) const {
@@ -104,13 +104,16 @@ void NHDLcd::init( void ) const {
     vTaskDelay(pdMS_TO_TICKS(10));
     sendCommand(0x39);
     vTaskDelay(pdMS_TO_TICKS(10));
-    sendCommand(0x14);
-    sendCommand(0x78);
-    sendCommand(0x5E);
-    sendCommand(0x6D);
-    sendCommand(0x0C);
-    sendCommand(0x01);
-    sendCommand(0x06);
+    std::array< uint8_t, 7 > cmdList = {
+                                            0x14,
+                                            0x78,
+                                            0x5E,
+                                            0x6D,
+                                            0x0C,
+                                            0x01,
+                                            0x06
+                                        };
+    sendVarCommand( cmdList.data(), cmdList.size() );
     vTaskDelay(pdMS_TO_TICKS(10));
 }
 
