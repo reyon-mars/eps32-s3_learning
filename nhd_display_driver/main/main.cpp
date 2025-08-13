@@ -10,8 +10,8 @@ constexpr gpio_num_t RESET_PIN             = GPIO_NUM_18;
 constexpr gpio_num_t BACKLIGHT_PIN         = GPIO_NUM_10;
 constexpr gpio_num_t ENABLE_PIN            = GPIO_NUM_11;
 constexpr i2c_port_t I2C_MASTER_NUM        = I2C_NUM_0;
-constexpr uint32_t   I2C_MASTER_FREQ_HZ      = 100000;
-constexpr uint8_t    LINE_TWO                 = 0x80 | 0x40;
+constexpr uint32_t   I2C_MASTER_FREQ_HZ    = 100000;
+constexpr uint8_t    LINE_TWO              = 0x80 | 0x40;
 
 extern "C" void app_main(void)
 {

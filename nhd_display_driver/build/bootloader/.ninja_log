@@ -112,3 +112,7 @@
 957	1070	1755068393619642307	/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/bootloader/.bin_timestamp	804345ebe3ef3c24
 1070	1112	1755068393620135811	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	38cc3925adae0653
 1070	1112	1755068393620135811	/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	38cc3925adae0653
+5	42	1755068710155059076	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	38cc3925adae0653
+5	42	1755068710155059076	/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	38cc3925adae0653
+8	44	1755076149792429120	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	38cc3925adae0653
+8	44	1755076149792429120	/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	38cc3925adae0653
