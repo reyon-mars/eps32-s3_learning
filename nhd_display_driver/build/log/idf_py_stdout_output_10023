@@ -1,0 +1,126 @@
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/bootloader/esp-idf/esptool_py && /Users/reyon/.espressif/python_env/idf5.1_py3.12_env/bin/python /Users/reyon/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/bootloader/bootloader.bin
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Building CXX object esp-idf/nhd_display/CMakeFiles/__idf_nhd_display.dir/src/i2c_master.cpp.obj
+FAILED: [code=1] esp-idf/nhd_display/CMakeFiles/__idf_nhd_display.dir/src/i2c_master.cpp.obj 
+/Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-g++ -DESP_PLATFORM -DIDF_VER=\"v5.1.2-dirty\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/config -I/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/include -I/Users/reyon/esp/esp-idf/components/newlib/platform_include -I/Users/reyon/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/reyon/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/reyon/esp/esp-idf/components/freertos/esp_additions/include/freertos -I/Users/reyon/esp/esp-idf/components/freertos/esp_additions/include -I/Users/reyon/esp/esp-idf/components/freertos/esp_additions/arch/xtensa/include -I/Users/reyon/esp/esp-idf/components/esp_hw_support/include -I/Users/reyon/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/reyon/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/Users/reyon/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/Users/reyon/esp/esp-idf/components/esp_hw_support/port/esp32s3/private_include -I/Users/reyon/esp/esp-idf/components/heap/include -I/Users/reyon/esp/esp-idf/components/log/include -I/Users/reyon/esp/esp-idf/components/soc/include -I/Users/reyon/esp/esp-idf/components/soc/esp32s3 -I/Users/reyon/esp/esp-idf/components/soc/esp32s3/include -I/Users/reyon/esp/esp-idf/components/hal/esp32s3/include -I/Users/reyon/esp/esp-idf/components/hal/include -I/Users/reyon/esp/esp-idf/components/hal/platform_port/include -I/Users/reyon/esp/esp-idf/components/esp_rom/include -I/Users/reyon/esp/esp-idf/components/esp_rom/include/esp32s3 -I/Users/reyon/esp/esp-idf/components/esp_rom/esp32s3 -I/Users/reyon/esp/esp-idf/components/esp_common/include -I/Users/reyon/esp/esp-idf/components/esp_system/include -I/Users/reyon/esp/esp-idf/components/esp_system/port/soc -I/Users/reyon/esp/esp-idf/components/esp_system/port/include/private -I/Users/reyon/esp/esp-idf/components/xtensa/include -I/Users/reyon/esp/esp-idf/components/xtensa/esp32s3/include -I/Users/reyon/esp/esp-idf/components/lwip/include -I/Users/reyon/esp/esp-idf/components/lwip/include/apps -I/Users/reyon/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/reyon/esp/esp-idf/components/lwip/lwip/src/include -I/Users/reyon/esp/esp-idf/components/lwip/port/include -I/Users/reyon/esp/esp-idf/components/lwip/port/freertos/include -I/Users/reyon/esp/esp-idf/components/lwip/port/esp32xx/include -I/Users/reyon/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/reyon/esp/esp-idf/components/driver/include -I/Users/reyon/esp/esp-idf/components/driver/deprecated -I/Users/reyon/esp/esp-idf/components/driver/analog_comparator/include -I/Users/reyon/esp/esp-idf/components/driver/dac/include -I/Users/reyon/esp/esp-idf/components/driver/gpio/include -I/Users/reyon/esp/esp-idf/components/driver/gptimer/include -I/Users/reyon/esp/esp-idf/components/driver/i2c/include -I/Users/reyon/esp/esp-idf/components/driver/i2s/include -I/Users/reyon/esp/esp-idf/components/driver/ledc/include -I/Users/reyon/esp/esp-idf/components/driver/mcpwm/include -I/Users/reyon/esp/esp-idf/components/driver/parlio/include -I/Users/reyon/esp/esp-idf/components/driver/pcnt/include -I/Users/reyon/esp/esp-idf/components/driver/rmt/include -I/Users/reyon/esp/esp-idf/components/driver/sdio_slave/include -I/Users/reyon/esp/esp-idf/components/driver/sdmmc/include -I/Users/reyon/esp/esp-idf/components/driver/sigma_delta/include -I/Users/reyon/esp/esp-idf/components/driver/spi/include -I/Users/reyon/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/reyon/esp/esp-idf/components/driver/touch_sensor/include -I/Users/reyon/esp/esp-idf/components/driver/twai/include -I/Users/reyon/esp/esp-idf/components/driver/uart/include -I/Users/reyon/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/reyon/esp/esp-idf/components/driver/touch_sensor/esp32s3/include -I/Users/reyon/esp/esp-idf/components/esp_pm/include -I/Users/reyon/esp/esp-idf/components/esp_ringbuf/include -mlongcalls  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fmacro-prefix-map=/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver=. -fmacro-prefix-map=/Users/reyon/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -DconfigENABLE_FREERTOS_DEBUG_OCDAWARE=1 -std=gnu++2b -fno-exceptions -fno-rtti -MD -MT esp-idf/nhd_display/CMakeFiles/__idf_nhd_display.dir/src/i2c_master.cpp.obj -MF esp-idf/nhd_display/CMakeFiles/__idf_nhd_display.dir/src/i2c_master.cpp.obj.d -o esp-idf/nhd_display/CMakeFiles/__idf_nhd_display.dir/src/i2c_master.cpp.obj -c /Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/src/i2c_master.cpp
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/src/i2c_master.cpp: In constructor 'I2CMaster::I2CMaster(i2c_port_t, gpio_num_t, gpio_num_t, uint32_t)':
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/src/i2c_master.cpp:12:9: error: either all initializer clauses should be designated or none of them should be
+   12 |         .master.clk_speed = freq
+      |         ^
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/src/i2c_master.cpp:12:9: error: expected primary-expression before '.' token
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/src/i2c_master.cpp:16:62: error: 'ESP_Ok' was not declared in this scope; did you mean 'ESP_OK'?
+   16 |         i2c_driver_install( portNum, conf.mode, 0, 0, 0 ) != ESP_Ok ){
+      |                                                              ^~~~~~
+      |                                                              ESP_OK
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/src/i2c_master.cpp:17:24: error: 'runtime_error' is not a member of 'std'
+   17 |             throw std::runtime_error( "Failed to initialize I2C master. " );
+      |                        ^~~~~~~~~~~~~
+[4/12] Completed 'bootloader'
+[5/12] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+FAILED: [code=1] esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj 
+/Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-g++ -DESP_PLATFORM -DIDF_VER=\"v5.1.2-dirty\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/build/config -I/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main -I/Users/reyon/esp/esp-idf/components/newlib/platform_include -I/Users/reyon/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/reyon/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/reyon/esp/esp-idf/components/freertos/esp_additions/include/freertos -I/Users/reyon/esp/esp-idf/components/freertos/esp_additions/include -I/Users/reyon/esp/esp-idf/components/freertos/esp_additions/arch/xtensa/include -I/Users/reyon/esp/esp-idf/components/esp_hw_support/include -I/Users/reyon/esp/esp-idf/components/esp_hw_support/include/soc -I/Users/reyon/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/Users/reyon/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/Users/reyon/esp/esp-idf/components/esp_hw_support/port/esp32s3/private_include -I/Users/reyon/esp/esp-idf/components/heap/include -I/Users/reyon/esp/esp-idf/components/log/include -I/Users/reyon/esp/esp-idf/components/soc/include -I/Users/reyon/esp/esp-idf/components/soc/esp32s3 -I/Users/reyon/esp/esp-idf/components/soc/esp32s3/include -I/Users/reyon/esp/esp-idf/components/hal/esp32s3/include -I/Users/reyon/esp/esp-idf/components/hal/include -I/Users/reyon/esp/esp-idf/components/hal/platform_port/include -I/Users/reyon/esp/esp-idf/components/esp_rom/include -I/Users/reyon/esp/esp-idf/components/esp_rom/include/esp32s3 -I/Users/reyon/esp/esp-idf/components/esp_rom/esp32s3 -I/Users/reyon/esp/esp-idf/components/esp_common/include -I/Users/reyon/esp/esp-idf/components/esp_system/include -I/Users/reyon/esp/esp-idf/components/esp_system/port/soc -I/Users/reyon/esp/esp-idf/components/esp_system/port/include/private -I/Users/reyon/esp/esp-idf/components/xtensa/include -I/Users/reyon/esp/esp-idf/components/xtensa/esp32s3/include -I/Users/reyon/esp/esp-idf/components/lwip/include -I/Users/reyon/esp/esp-idf/components/lwip/include/apps -I/Users/reyon/esp/esp-idf/components/lwip/include/apps/sntp -I/Users/reyon/esp/esp-idf/components/lwip/lwip/src/include -I/Users/reyon/esp/esp-idf/components/lwip/port/include -I/Users/reyon/esp/esp-idf/components/lwip/port/freertos/include -I/Users/reyon/esp/esp-idf/components/lwip/port/esp32xx/include -I/Users/reyon/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/include -I/Users/reyon/esp/esp-idf/components/driver/include -I/Users/reyon/esp/esp-idf/components/driver/deprecated -I/Users/reyon/esp/esp-idf/components/driver/analog_comparator/include -I/Users/reyon/esp/esp-idf/components/driver/dac/include -I/Users/reyon/esp/esp-idf/components/driver/gpio/include -I/Users/reyon/esp/esp-idf/components/driver/gptimer/include -I/Users/reyon/esp/esp-idf/components/driver/i2c/include -I/Users/reyon/esp/esp-idf/components/driver/i2s/include -I/Users/reyon/esp/esp-idf/components/driver/ledc/include -I/Users/reyon/esp/esp-idf/components/driver/mcpwm/include -I/Users/reyon/esp/esp-idf/components/driver/parlio/include -I/Users/reyon/esp/esp-idf/components/driver/pcnt/include -I/Users/reyon/esp/esp-idf/components/driver/rmt/include -I/Users/reyon/esp/esp-idf/components/driver/sdio_slave/include -I/Users/reyon/esp/esp-idf/components/driver/sdmmc/include -I/Users/reyon/esp/esp-idf/components/driver/sigma_delta/include -I/Users/reyon/esp/esp-idf/components/driver/spi/include -I/Users/reyon/esp/esp-idf/components/driver/temperature_sensor/include -I/Users/reyon/esp/esp-idf/components/driver/touch_sensor/include -I/Users/reyon/esp/esp-idf/components/driver/twai/include -I/Users/reyon/esp/esp-idf/components/driver/uart/include -I/Users/reyon/esp/esp-idf/components/driver/usb_serial_jtag/include -I/Users/reyon/esp/esp-idf/components/driver/touch_sensor/esp32s3/include -I/Users/reyon/esp/esp-idf/components/esp_pm/include -I/Users/reyon/esp/esp-idf/components/esp_ringbuf/include -mlongcalls  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fmacro-prefix-map=/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver=. -fmacro-prefix-map=/Users/reyon/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -DconfigENABLE_FREERTOS_DEBUG_OCDAWARE=1 -std=gnu++2b -fno-exceptions -fno-rtti -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj -c /Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp: In function 'void app_main()':
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:31:17: error: 'class NHDLcd' has no member named 'displayChar'; did you mean 'display'?
+   31 |             lcd.displayChar('-');
+      |                 ^~~~~~~~~~~
+      |                 display
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:32:17: error: 'class NHDLcd' has no member named 'displayString'
+   32 |             lcd.displayString("Hello, World!");
+      |                 ^~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:33:17: error: 'class NHDLcd' has no member named 'displayChar'; did you mean 'display'?
+   33 |             lcd.displayChar('-');
+      |                 ^~~~~~~~~~~
+      |                 display
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:35:17: error: 'class NHDLcd' has no member named 'displayString'
+   35 |             lcd.displayString("Count: ");
+      |                 ^~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:36:17: error: 'class NHDLcd' has no member named 'displayInteger'
+   36 |             lcd.displayInteger(count++);
+      |                 ^~~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:41:34: error: exception handling disabled, use '-fexceptions' to enable
+   41 |     catch (const std::exception& e)
+      |                                  ^
+In file included from /Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/include/lcd.hpp:9,
+                 from /Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:3:
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:47: error: 'e' was not declared in this scope; did you mean 'std::numbers::e'?
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |                                               ^
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:392:148: note: in definition of macro 'ESP_LOG_LEVEL'
+  392 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag __VA_OPT__(,) __VA_ARGS__); } \
+      |                                                                                                                                                    ^~~~~~~~~~~
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:334:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  334 | #define ESP_LOGE( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_ERROR,   tag, format __VA_OPT__(,) __VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:9: note: in expansion of macro 'ESP_LOGE'
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |         ^~~~~~~~
+In file included from /Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/bits/max_size_type.h:37,
+                 from /Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/bits/ranges_base.h:38,
+                 from /Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/string_view:50,
+                 from /Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/components/nhd_display/include/lcd.hpp:4:
+/Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/numbers:122:27: note: 'std::numbers::e' declared here
+  122 |   inline constexpr double e = e_v<double>;
+      |                           ^
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:47: error: 'e' was not declared in this scope; did you mean 'std::numbers::e'?
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |                                               ^
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:393:148: note: in definition of macro 'ESP_LOG_LEVEL'
+  393 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag __VA_OPT__(,) __VA_ARGS__); } \
+      |                                                                                                                                                    ^~~~~~~~~~~
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:334:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  334 | #define ESP_LOGE( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_ERROR,   tag, format __VA_OPT__(,) __VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:9: note: in expansion of macro 'ESP_LOGE'
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |         ^~~~~~~~
+/Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/numbers:122:27: note: 'std::numbers::e' declared here
+  122 |   inline constexpr double e = e_v<double>;
+      |                           ^
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:47: error: 'e' was not declared in this scope; did you mean 'std::numbers::e'?
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |                                               ^
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:394:148: note: in definition of macro 'ESP_LOG_LEVEL'
+  394 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag __VA_OPT__(,) __VA_ARGS__); } \
+      |                                                                                                                                                    ^~~~~~~~~~~
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:334:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  334 | #define ESP_LOGE( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_ERROR,   tag, format __VA_OPT__(,) __VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:9: note: in expansion of macro 'ESP_LOGE'
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |         ^~~~~~~~
+/Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/numbers:122:27: note: 'std::numbers::e' declared here
+  122 |   inline constexpr double e = e_v<double>;
+      |                           ^
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:47: error: 'e' was not declared in this scope; did you mean 'std::numbers::e'?
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |                                               ^
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:395:148: note: in definition of macro 'ESP_LOG_LEVEL'
+  395 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag __VA_OPT__(,) __VA_ARGS__); } \
+      |                                                                                                                                                    ^~~~~~~~~~~
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:334:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  334 | #define ESP_LOGE( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_ERROR,   tag, format __VA_OPT__(,) __VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:9: note: in expansion of macro 'ESP_LOGE'
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |         ^~~~~~~~
+/Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/numbers:122:27: note: 'std::numbers::e' declared here
+  122 |   inline constexpr double e = e_v<double>;
+      |                           ^
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:47: error: 'e' was not declared in this scope; did you mean 'std::numbers::e'?
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |                                               ^
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:396:148: note: in definition of macro 'ESP_LOG_LEVEL'
+  396 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag __VA_OPT__(,) __VA_ARGS__); } \
+      |                                                                                                                                                    ^~~~~~~~~~~
+/Users/reyon/esp/esp-idf/components/log/include/esp_log.h:334:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  334 | #define ESP_LOGE( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_ERROR,   tag, format __VA_OPT__(,) __VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/Users/reyon/Firmware_programming/esp32_projects/nhd_display_driver/main/main.cpp:43:9: note: in expansion of macro 'ESP_LOGE'
+   43 |         ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
+      |         ^~~~~~~~
+/Users/reyon/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/12.2.0/numbers:122:27: note: 'std::numbers::e' declared here
+  122 |   inline constexpr double e = e_v<double>;
+      |                           ^
+ninja: build stopped: subcommand failed.

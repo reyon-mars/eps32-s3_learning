@@ -45,4 +45,4 @@ class NHDLcd
         static constexpr uint8_t LCD_COMMAND_MODE = 0x00;
         static constexpr uint8_t LCD_DATA_MODE  = 0x40;
 
-}
+};

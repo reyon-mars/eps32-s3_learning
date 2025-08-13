@@ -24,15 +24,15 @@ void NHDLcd::reset( void ){
 
 void NHDLcd::sendCommand( uint8_t cmd ) const {
     std::array<uint8_t, 2> data { LCD_COMMAND_MODE, cmd };
-    checkWrite( i2cMaster.write( LCD_ADDRESS, data, data.size() ));
+    checkWrite( i2cMaster.write( LCD_ADDRESS, data.data(), data.size() ));
 }
 
 void NHDLcd::sendData( uint8_t data_byte ) const {
     std::array<uint8_t, 2> data { LCD_DATA_MODE, data_byte };
-    checkWrite( i2cMaster.write( LCD_ADDRESS, data, data.size() ));
+    checkWrite( i2cMaster.write( LCD_ADDRESS, data.data(), data.size() ));
 }
 
-void NHDLcd::display( std::string_view str ) const
+void NHDLcd::display( const std::string_view& str ) const
 {
     if (str.empty()){
         return;
@@ -40,7 +40,13 @@ void NHDLcd::display( std::string_view str ) const
 
     std::vector<uint8_t> buf(str.size() + 1);
     buf[0] = LCD_DATA_MODE;
-    std::memcpy(&buf[1], str.data(), str.size());
+    const uint8_t* src = reinterpret_cast<const uint8_t*>(str.data());
+    uint8_t* dest = &buf[1];
+    size_t count = str.size();
+    for (size_t i = 0; i < count; ++i) {
+        dest[i] = src[i];
+    }
+
     checkWrite(i2cMaster.write( LCD_ADDRESS, buf.data(), buf.size()));
 }
 

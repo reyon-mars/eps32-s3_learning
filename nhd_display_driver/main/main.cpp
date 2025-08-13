@@ -16,8 +16,7 @@ constexpr uint8_t LINE_TWO             = 0x80 | 0x40;
 
 extern "C" void app_main(void)
 {
-    try
-    {
+   
         I2CMaster i2c( I2C_MASTER_NUM, I2C_MASTER_SDA_IO, I2C_MASTER_SCL_IO, I2C_MASTER_FREQ_HZ );
         NHDLcd lcd( i2c, RESET_PIN, BACKLIGHT_PIN, ENABLE_PIN );
 
@@ -28,18 +27,14 @@ extern "C" void app_main(void)
         {
             vTaskDelay(pdMS_TO_TICKS(2500));
             lcd.backlightOn();
-            lcd.displayChar('-');
-            lcd.displayString("Hello, World!");
-            lcd.displayChar('-');
+            lcd.display('-');
+            lcd.display("Hello, World!");
+            lcd.display('-');
             lcd.sendCommand(LINE_TWO);
-            lcd.displayString("Count: ");
-            lcd.displayInteger(count++);
+            lcd.display("Count: ");
+            lcd.display(count++);
             vTaskDelay(pdMS_TO_TICKS(2500));
             lcd.clear();
         }
-    }
-    catch (const std::exception& e)
-    {
-        ESP_LOGE("APP_MAIN", "Exception: %s", e.what());
-    }
+  
 }
