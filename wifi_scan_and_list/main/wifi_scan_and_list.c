@@ -206,31 +206,6 @@ static void i2c_lcd_set_cursor(uint8_t col, uint8_t row)
     i2c_lcd_send_command(SET_CURSOR_CMD | addr);
 }
 
-void app_main(void)
-{
-    int count = 0;
-    i2c_master_init();
-    lcd_reset_pin_init();
-    lcd_reset();
-    backlight_init();
-    i2c_lcd_init();
-    i2c_lcd_set_cursor(1, 1);
-
-    while (1)
-    {
-        vTaskDelay(pdMS_TO_TICKS(2500));
-        lcd_backlight_on();
-        i2c_lcd_display_char('-');
-        i2c_lcd_display_string("Hello, World!");
-        i2c_lcd_display_char('-');
-        i2c_lcd_send_command(LINE_TWO);
-        i2c_lcd_display_string("Count: ");
-        i2c_lcd_display_integer(count++);
-        vTaskDelay(pdMS_TO_TICKS(2500));
-        i2c_lcd_send_command(CLEAR_DISPLAY);
-    }
-}
-
 static void init_nvs()
 {
     esp_err_t ret = nvs_flash_init();
@@ -268,22 +243,34 @@ static void wifi_scan()
 
     for (int i = 0; i < ap_count; i++)
     {
-        ESP_LOGI("WIFI_SCAN", "[%2d] SSID: %s | RSSI: %d dBm | Auth: %d | Hidden: %s ",
-                 i + 1,
-                 (char *)ap_records[i].ssid,
-                 ap_records[i].rssi,
-                 ap_records[i].authmode,
-                 ap_records[i].ssid[0] ? "NO" : "YES");
+        i2c_lcd_display_integer(i);
+        i2c_lcd_display_char(' ');
+        i2c_lcd_display_string("SSID: ");
+        i2c_lcd_display_string((char *)ap_records[i].ssid);
+        i2c_lcd_send_command(LINE_TWO);
+        i2c_lcd_display_string("| RSSI: ");
+        i2c_lcd_display_integer(ap_records[i].rssi);
+        i2c_lcd_display_string("dBm | Auth: ");
+        i2c_lcd_display_integer(ap_records[i].authmode);
+        i2c_lcd_display_string("| Hidden: ");
+        i2c_lcd_display_string(ap_records[i].ssid[0] ? "NO" : "YES");
+        vTaskDelay(pdMS_TO_TICKS(2000));
     }
     free(ap_records);
 }
 
 void app_main(void)
 {
+
+    i2c_master_init();
+    lcd_reset_pin_init();
+    backlight_init();
+    i2c_lcd_init();
+    lcd_reset();
+    i2c_lcd_set_cursor(1, 1);
     init_nvs();
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     esp_netif_create_default_wifi_sta();
-
     wifi_scan();
 }
