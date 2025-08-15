@@ -4,24 +4,253 @@
 #include "nvs_flash.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include <string.h>
+#include <stdint.h>
+#include "driver/i2c.h"
 
-static void init_nvs(){
-    esp_err_t ret = nvs_flash_init();
-    if( ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND ){
-        ESP_ERROR_CHECK( nvs_flash_erase() );
-        ret = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK( ret );
+#define TAG "I2C_LCD"
+#define LCD_RST_PIN 18
+#define I2C_MASTER_SCL_IO 20
+#define I2C_MASTER_SDA_IO 21
+#define LCD_BACKLIGHT_PIN GPIO_NUM_10
+#define LCD_ENABLE_PIN GPIO_NUM_11
+#define I2C_MASTER_NUM I2C_NUM_0
+#define I2C_MASTER_FREQ_HZ 100000
+#define I2C_LCD_ADDR 0x3C
+#define SET_CURSOR_CMD 0x80
+#define CLEAR_DISPLAY 0X01
+#define I2C_TIMEOUT_MS 1000
+#define LINE_TWO 0x80 | 0x40
+#define LCD_COMMAND_MODE 0x00
+#define LCD_DATA_MODE 0x40
+
+void gpio_init(gpio_num_t pin_no)
+{
+    gpio_config_t gpio_conf = {
+        .pin_bit_mask = (1ULL << pin_no),
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE};
+    gpio_config(&gpio_conf);
 }
 
-static void wifi_scan(){
+void backlight_init(void)
+{
+    gpio_init(LCD_BACKLIGHT_PIN);
+    gpio_init(LCD_ENABLE_PIN);
+    gpio_set_level(LCD_BACKLIGHT_PIN, 1);
+    gpio_set_level(LCD_ENABLE_PIN, 1);
+}
+
+void lcd_backlight_on(void)
+{
+    gpio_set_level(LCD_BACKLIGHT_PIN, 1);
+}
+
+void lcd_backlight_off(void)
+{
+    gpio_set_level(LCD_BACKLIGHT_PIN, 0);
+}
+
+void lcd_reset_pin_init(void)
+{
+    gpio_config_t reset_pin_conf = {
+        .pin_bit_mask = (1ULL << LCD_RST_PIN),
+        .mode = GPIO_MODE_OUTPUT,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .pull_up_en = GPIO_PULLUP_DISABLE,
+        .intr_type = GPIO_INTR_DISABLE};
+    gpio_config(&reset_pin_conf);
+    gpio_set_level(LCD_RST_PIN, 1);
+}
+
+void lcd_reset(void)
+{
+    gpio_set_level(LCD_RST_PIN, 0);
+    vTaskDelay(pdMS_TO_TICKS(10));
+    gpio_set_level(LCD_RST_PIN, 1);
+    vTaskDelay(pdMS_TO_TICKS(50));
+}
+
+static void i2c_lcd_display_string(const char *str)
+{
+    if (str == NULL)
+    {
+        return;
+    }
+
+    size_t str_len = strlen(str);
+    if (str_len == 0)
+    {
+        return;
+    }
+
+    uint8_t *data = (uint8_t *)malloc(str_len + 1);
+    if (data == NULL)
+    {
+        return;
+    }
+    data[0] = LCD_DATA_MODE;
+    memcpy(&data[1], str, str_len);
+
+    esp_err_t ret = i2c_master_write_to_device(
+        I2C_MASTER_NUM,
+        I2C_LCD_ADDR,
+        data,
+        str_len + 1,
+        I2C_TIMEOUT_MS / portTICK_PERIOD_MS);
+
+    if (ret != ESP_OK)
+    {
+        ESP_LOGE(TAG, "I2C write failed: %s\n", esp_err_to_name(ret));
+    }
+    free(data);
+}
+
+static void i2c_master_init(void)
+{
+    i2c_config_t conf = {
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = I2C_MASTER_SDA_IO,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_io_num = I2C_MASTER_SCL_IO,
+        .scl_pullup_en = GPIO_PULLUP_ENABLE,
+        .master.clk_speed = I2C_MASTER_FREQ_HZ,
+    };
+    i2c_param_config(I2C_MASTER_NUM, &conf);
+    i2c_driver_install(I2C_MASTER_NUM, conf.mode, 0, 0, 0);
+}
+
+static void i2c_lcd_send_command(uint8_t cmd)
+{
+    uint8_t data[2] = {LCD_COMMAND_MODE, cmd};
+    i2c_master_write_to_device(I2C_MASTER_NUM, I2C_LCD_ADDR, data, sizeof(data), I2C_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+
+static void i2c_lcd_send_data(uint8_t data_byte)
+{
+    uint8_t data[2] = {LCD_DATA_MODE, data_byte};
+    i2c_master_write_to_device(I2C_MASTER_NUM, I2C_LCD_ADDR, data, sizeof(data), I2C_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+
+static void i2c_lcd_display_char(const char character)
+{
+    i2c_lcd_send_data((uint8_t)character);
+}
+
+static void i2c_lcd_init(void)
+{
+    vTaskDelay(50 / portTICK_PERIOD_MS);
+    i2c_lcd_send_command(0x38);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+    i2c_lcd_send_command(0x39);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+    i2c_lcd_send_command(0x14);
+    i2c_lcd_send_command(0x78);
+    i2c_lcd_send_command(0x5E);
+    i2c_lcd_send_command(0x6D);
+    i2c_lcd_send_command(0x0C);
+    i2c_lcd_send_command(0x01);
+    i2c_lcd_send_command(0x06);
+    vTaskDelay(10 / portTICK_PERIOD_MS);
+}
+
+void i2c_lcd_display_integer(int number)
+{
+
+    if (number == 0)
+    {
+        i2c_lcd_display_char('0');
+        return;
+    }
+
+    char buffer[20];
+    bool negative = (number < 0);
+    unsigned int u_number = 0;
+    if (negative)
+    {
+        u_number = (unsigned int)(-(long long)number);
+        i2c_lcd_display_char('-');
+    }
+
+    int curr_idx = 0;
+    while (u_number)
+    {
+        buffer[curr_idx++] = '0' + u_number % 10;
+        u_number /= 10;
+    }
+    buffer[curr_idx] = '\0';
+
+    uint8_t left = 0, right = curr_idx - 1;
+    while (left < right)
+    {
+        buffer[left] ^= buffer[right];
+        buffer[right] ^= buffer[left];
+        buffer[left] ^= buffer[right];
+        left++, right--;
+    }
+
+    i2c_lcd_display_string(buffer);
+}
+
+static void i2c_lcd_set_cursor(uint8_t col, uint8_t row)
+{
+    if (row > 2 || col > 20 || row == 0 || col == 0)
+    {
+        return;
+    }
+    const uint8_t row_offset[] = {0x00, 0x40};
+    uint8_t addr = row_offset[row - 1] + (col % 20);
+    addr &= 0x7F;
+    i2c_lcd_send_command(SET_CURSOR_CMD | addr);
+}
+
+void app_main(void)
+{
+    int count = 0;
+    i2c_master_init();
+    lcd_reset_pin_init();
+    lcd_reset();
+    backlight_init();
+    i2c_lcd_init();
+    i2c_lcd_set_cursor(1, 1);
+
+    while (1)
+    {
+        vTaskDelay(pdMS_TO_TICKS(2500));
+        lcd_backlight_on();
+        i2c_lcd_display_char('-');
+        i2c_lcd_display_string("Hello, World!");
+        i2c_lcd_display_char('-');
+        i2c_lcd_send_command(LINE_TWO);
+        i2c_lcd_display_string("Count: ");
+        i2c_lcd_display_integer(count++);
+        vTaskDelay(pdMS_TO_TICKS(2500));
+        i2c_lcd_send_command(CLEAR_DISPLAY);
+    }
+}
+
+static void init_nvs()
+{
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+    {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
+}
+
+static void wifi_scan()
+{
     wifi_init_config_t conf = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK( esp_wifi_init( &conf ) );
+    ESP_ERROR_CHECK(esp_wifi_init(&conf));
 
-    ESP_ERROR_CHECK( esp_wifi_set_mode( WIFI_MODE_STA ) );
-    ESP_ERROR_CHECK( esp_wifi_start() );
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_ERROR_CHECK(esp_wifi_start());
 
-    ESP_LOGI( "WIFI_SCAN", "Starting scan....." );
+    ESP_LOGI("WIFI_SCAN", "Starting scan.....");
     wifi_scan_config_t scan_conf = {};
     scan_conf.ssid = NULL;
     scan_conf.bssid = NULL;
@@ -29,34 +258,32 @@ static void wifi_scan(){
     scan_conf.show_hidden = true;
     scan_conf.scan_type = WIFI_SCAN_TYPE_ACTIVE;
 
-    ESP_ERROR_CHECK( esp_wifi_scan_start( &scan_conf, true ));
+    ESP_ERROR_CHECK(esp_wifi_scan_start(&scan_conf, true));
     uint16_t ap_count = 0;
-    ESP_ERROR_CHECK( esp_wifi_scan_get_ap_num( &ap_count ) );
-    ESP_LOGI( "WIFI_SCAN", "Found %d access points.", ap_count );
+    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&ap_count));
+    ESP_LOGI("WIFI_SCAN", "Found %d access points.", ap_count);
 
-    wifi_ap_record_t *ap_records = ( wifi_ap_record_t* )( malloc( sizeof(wifi_ap_record_t) * ap_count ));
-    ESP_ERROR_CHECK( esp_wifi_scan_get_ap_records( &ap_count, ap_records ));
-    
-    for( int i = 0; i < ap_count; i++ ){
-        ESP_LOGI( "WIFI_SCAN", "[%2d] SSID: %s | RSSI: %d dBm | Auth: %d | Hidden: %s ", 
-        i+1,
-        (char*) ap_records[i].ssid, 
-        ap_records[i].rssi,
-        ap_records[i].authmode,
-        ap_records[i].ssid[0] ? "NO" : "YES" );
+    wifi_ap_record_t *ap_records = (wifi_ap_record_t *)(malloc(sizeof(wifi_ap_record_t) * ap_count));
+    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&ap_count, ap_records));
+
+    for (int i = 0; i < ap_count; i++)
+    {
+        ESP_LOGI("WIFI_SCAN", "[%2d] SSID: %s | RSSI: %d dBm | Auth: %d | Hidden: %s ",
+                 i + 1,
+                 (char *)ap_records[i].ssid,
+                 ap_records[i].rssi,
+                 ap_records[i].authmode,
+                 ap_records[i].ssid[0] ? "NO" : "YES");
     }
     free(ap_records);
 }
 
-
-
 void app_main(void)
 {
     init_nvs();
-    ESP_ERROR_CHECK( esp_netif_init() );
-    ESP_ERROR_CHECK( esp_event_loop_create_default() );
-    esp_netif_create_default_wifi_sta( );
+    ESP_ERROR_CHECK(esp_netif_init());
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    esp_netif_create_default_wifi_sta();
 
     wifi_scan();
-
 }
