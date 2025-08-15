@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "wifi_scan_and_list",
-    "project_version":    "e66ac211-dirty",
+    "project_version":    "20b36a8a-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/wifi_scan_and_list",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/wifi_scan_and_list/build",
