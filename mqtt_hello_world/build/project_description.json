@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "mqtt_hello_world",
-    "project_version":    "2dc1cd87-dirty",
+    "project_version":    "e66ac211-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/mqtt_hello_world",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/mqtt_hello_world/build",

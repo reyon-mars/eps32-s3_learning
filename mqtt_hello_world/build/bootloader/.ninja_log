@@ -135,3 +135,5 @@
 924	1026	1755172894064285324	/Users/reyon/Firmware_programming/esp32_projects/mqtt_hello_world/build/bootloader/.bin_timestamp	9fa818c233c6924d
 1026	1060	1755172894064654572	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	71626f3e3bb2be94
 1026	1060	1755172894064654572	/Users/reyon/Firmware_programming/esp32_projects/mqtt_hello_world/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	71626f3e3bb2be94
+3	40	1755173174256349522	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	71626f3e3bb2be94
+3	40	1755173174256349522	/Users/reyon/Firmware_programming/esp32_projects/mqtt_hello_world/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	71626f3e3bb2be94
