@@ -48,3 +48,8 @@ uint32_t lora_get_version() {
 
     return (rx[0] << 16) | (rx[1] << 8) | rx[2];
 }
+
+void app_main( void ){
+    lora_init_spi();
+    lora_get_version();
+}
