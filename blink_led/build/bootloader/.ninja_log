@@ -157,3 +157,5 @@
 572	684	1754895818495759729	/Users/reyon/Firmware_programming/esp32_projects/blink_led/build/bootloader/.bin_timestamp	261a6bd2418ea925
 684	719	1754895818496180033	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	95e23aaa96ad1892
 684	719	1754895818496180033	/Users/reyon/Firmware_programming/esp32_projects/blink_led/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	95e23aaa96ad1892
+6	42	1755859712494744268	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	95e23aaa96ad1892
+6	42	1755859712494744268	/Users/reyon/Firmware_programming/esp32_projects/blink_led/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	95e23aaa96ad1892
