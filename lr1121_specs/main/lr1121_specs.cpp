@@ -52,7 +52,7 @@ extern "C" void app_main(void)
     return;
   }
 
-  ESP_LOGI(TAG, "LR1121 Version -> HW:0x%02X  UseCase:0x%02X  FW:%u.%u",
+  ESP_LOGI(TAG, "LR1121 Version -> HardWare:0x%02X  UseCase:0x%02X  FirmWare:%u.%u",
            ver.hw_version, ver.use_case, ver.fw_major, ver.fw_minor);
 
   switch (ver.use_case)

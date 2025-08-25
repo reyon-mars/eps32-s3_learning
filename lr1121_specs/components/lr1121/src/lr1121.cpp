@@ -46,7 +46,7 @@ Lr1121Err Lr1121::init() {
   devcfg.mode = kSpiMode;
   devcfg.spics_io_num = pins_.nss;
   devcfg.queue_size = 4;
-  devcfg.flags = SPI_DEVICE_HALFDUPLEX;
+  devcfg.flags = 0;
   devcfg.cs_ena_pretrans = 0;
   devcfg.cs_ena_posttrans = 0;
 
