@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "lr1121_specs",
-    "project_version":    "9c5637f8-dirty",
+    "project_version":    "537bda9d-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/lr1121_specs",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/lr1121_specs/build",
@@ -770,7 +770,7 @@
             "dir": "/Users/reyon/Firmware_programming/esp32_projects/lr1121_specs/components/lr1121",
             "type": "LIBRARY",
             "lib": "__idf_lr1121",
-            "reqs": [ "driver", "freertos" ],
+            "reqs": [ "driver", "freertos", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
@@ -805,7 +805,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/reyon/Firmware_programming/esp32_projects/lr1121_specs/build/esp-idf/main/libmain.a",
-            "sources": [ "/Users/reyon/Firmware_programming/esp32_projects/lr1121_specs/main/lr1121_specs.c" ],
+            "sources": [ "/Users/reyon/Firmware_programming/esp32_projects/lr1121_specs/main/lr1121_specs.cpp" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

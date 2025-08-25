@@ -343,9 +343,6 @@ PYTHON:UNINITIALIZED=/Users/reyon/.espressif/python_env/idf5.1_py3.12_env/bin/py
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
-//No help, variable specified on the command line.
-SDKCONFIG:UNINITIALIZED=/Users/reyon/Firmware_programming/esp32_projects/lr1121_specs/sdkconfig
-
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
 
