@@ -1,17 +1,14 @@
-cat > .gitignore << EOF
-# Build directories
+
 /build/
 /sdkconfig
 /sdkconfig.old
 
-# ESP-IDF CMake build files
 CMakeFiles/
 CMakeCache.txt
 Makefile
 cmake_install.cmake
 compile_commands.json
 
-# Binary and object files
 *.elf
 *.bin
 *.hex
@@ -19,21 +16,17 @@ compile_commands.json
 *.a
 *.d
 
-# IDE / Editor specific files
 .vscode/
 *.code-workspace
 .idea/
 *.iml
 
-# Mac / Linux system files
 .DS_Store
 Thumbs.db
 
-# Python virtual environment (if used)
 venv/
 __pycache__/
 
-# Miscellaneous temporary files
 *.log
 *.tmp
 *.swp
