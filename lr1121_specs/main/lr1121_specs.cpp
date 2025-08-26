@@ -6,14 +6,14 @@
 #include "esp_log.h"
 #include "lr1121.hpp"
 
-static constexpr gpio_num_t PIN_MOSI = GPIO_NUM_11;
-static constexpr gpio_num_t PIN_MISO = GPIO_NUM_13;
-static constexpr gpio_num_t PIN_SCLK = GPIO_NUM_12;
+static constexpr gpio_num_t PIN_MOSI = GPIO_NUM_5;
+static constexpr gpio_num_t PIN_MISO = GPIO_NUM_6;
+static constexpr gpio_num_t PIN_SCLK = GPIO_NUM_4;
 
 static constexpr Lr1121Pins LR_PINS{
-    .nss = GPIO_NUM_10,
-    .busy = GPIO_NUM_9,
-    .rst = GPIO_NUM_8};
+    .nss = GPIO_NUM_7,
+    .busy = GPIO_NUM_15,
+    .rst = GPIO_NUM_16};
 
 static const char *TAG = "APP";
 
