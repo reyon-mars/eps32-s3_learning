@@ -11,7 +11,7 @@
 #include "driver/uart.h"
 #include "serial_channel.hpp"
 
-class RFbeamVld1
+class rf_beam_vld1
 {
 public:
     using PayloadSize_t = uint32_t;
