@@ -1,0 +1,402 @@
+2025 17:32:02[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (39) bootj5
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage   �ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep  3 2025 17:32:02[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a950h ( 43344) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001a978 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001cad8 vaddr=40080000 size=03540h ( 13632) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=16b7ch ( 93052) map[0m
+[0;32mI (168) esp_image: segment 4: paddr=00036ba4 vaddr=40083540 size=09998h ( 39320) load[0m
+[0;32mI (191) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (191) boot: Disabling RNG early entropy source...[0m
+[0;32mI (203) cpu_start: Multicore app[0m
+[0;32mI (203) cpu_start: Pro cpu up.[0m
+[0;32mI (203) cpu_start: Starting app cpu, entry point is 0x400811e0[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (221) cpu_start: Pro cpu start user code[0m
+[0;32mI (221) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) cpu_start: Application information:[0m
+[0;32mI (226) cpu_start: Project name:     v_ld1_dev[0m
+[0;32mI (231) cpu_start: App version:      db9d2650-dirty[0m
+[0;32mI (236) cpu_start: Compile time:     Sep  3 2025 17:30:41[0m
+[0;32mI (243) cpu_start: ELF file SHA256:  eb810c1a3046a1e8...[0m
+[0;32mI (249) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (254) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (259) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (263) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (268) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (276) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (281) heap_init: At 3FFB29D0 len 0002D630 (181 KiB): DRAM[0m
+[0;32mI (288) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (294) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (300) heap_init: At 4008CED8 len 00013128 (76 KiB): IRAM[0m
+[0;32mI (308) spi_flash: detected chip: winbond[0m
+[0;32mI (311) spi_flash: flash io: dio[0m
+[0;33mW (315) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (329) app_start: Starting scheduler on CPU0[0m
+[0;32mI (333) app_start: Starting scheduler on CPU1[0m
+[0;32mI (333) main_task: Started on CPU0[0m
+[0;32mI (343) main_task: Calling app_main()[0m
+[0;32mI (343) VLD1_UART: Starting V-LD1 UART Firmware[0m
+[0;32mI (653) VLD1_UART: RESP OK[0m
+[0;32mI (653) VLD1_UART: Firmware: V-LD1_APP-RFB-0107[0m
+[0;32mI (1473) VLD1_UART: RESP OK[0m
+[0;32mI (1473) VLD1_UART: Distance [m]: 1.263 m[0m
+[0;32mI (1473) VLD1_UART: Magnitude [db] : 55 db[0m
+[0;32mI (2573) VLD1_UART: RESP OK[0m
+[0;32mI (2573) VLD1_UART: Distance [m]: 1.263 m[0m
+[0;32mI (2573) VLD1_UART: Magnitude [db] : 56 db[0m
+[0;32mI (3673) VLD1_UART: RESP OK[0m
+[0;32mI (3673) VLD1_UART: Distance [m]: 1.263 m[0m
+[0;32mI (3673) VLD1_UART: Magnitude [db] : 55 db[0m
+[0;32mI (4773) VLD1_UART: RESP OK[0m
+[0;32mI (4773) VLD1_UART: Distance [m]: 1.263 m[0m
+[0;32mI (4773) VLD1_UART: Magnitude [db] : 55 db[0m
+[0;32mI (5873) VLD1_UART: RESP OK[0m
+[0;32mI (5873) VLD1_UART: Distance [m]: 1.264 m[0m
+[0;32mI (5873) VLD1_UART: Magnitude [db] : 55 db[0m
+[0;32mI (6973) VLD1_UART: RESP OK[0m
+[0;32mI (6973) VLD1_UART: Distance [m]: 1.264 m[0m
+[0;32mI (6973) VLD1_UART: Magnitude [db] : 55 db[0m
+[0;32mI (8073) VLD1_UART: RESP OK[0m
+[0;32mI (8073) VLD1_UART: Distance [m]: 1.176 m[0m
+[0;32mI (8073) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (9173) VLD1_UART: RESP OK[0m
+[0;32mI (9173) VLD1_UART: Distance [m]: 1.302 m[0m
+[0;32mI (9173) VLD1_UART: Magnitude [db] : 63 db[0m
+[0;32mI (10273) VLD1_UART: RESP OK[0m
+[0;32mI (10273) VLD1_UART: Distance [m]: 1.403 m[0m
+[0;32mI (10273) VLD1_UART: Magnitude [db] : 71 db[0m
+[0;32mI (11373) VLD1_UART: RESP OK[0m
+[0;32mI (11373) VLD1_UART: Distance [m]: 1.484 m[0m
+[0;32mI (11373) VLD1_UART: Magnitude [db] : 73 db[0m
+[0;32mI (12473) VLD1_UART: RESP OK[0m
+[0;32mI (12473) VLD1_UART: Distance [m]: 1.548 m[0m
+[0;32mI (12473) VLD1_UART: Magnitude [db] : 72 db[0m
+[0;32mI (13573) VLD1_UART: RESP OK[0m
+[0;32mI (13573) VLD1_UART: Distance [m]: 1.600 m[0m
+[0;32mI (13573) VLD1_UART: Magnitude [db] : 72 db[0m
+[0;32mI (14673) VLD1_UART: RESP OK[0m
+[0;32mI (14673) VLD1_UART: Distance [m]: 1.641 m[0m
+[0;32mI (14673) VLD1_UART: Magnitude [db] : 64 db[0m
+[0;32mI (15773) VLD1_UART: RESP OK[0m
+[0;32mI (15773) VLD1_UART: Distance [m]: 1.659 m[0m
+[0;32mI (15773) VLD1_UART: Magnitude [db] : 76 db[0m
+[0;32mI (16873) VLD1_UART: RESP OK[0m
+[0;32mI (16873) VLD1_UART: Distance [m]: 1.674 m[0m
+[0;32mI (16873) VLD1_UART: Magnitude [db] : 71 db[0m
+[0;32mI (17973) VLD1_UART: RESP OK[0m
+[0;32mI (17973) VLD1_UART: Distance [m]: 1.386 m[0m
+[0;32mI (17973) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (19073) VLD1_UART: RESP OK[0m
+[0;32mI (19073) VLD1_UART: Distance [m]: 2.362 m[0m
+[0;32mI (19073) VLD1_UART: Magnitude [db] : 52 db[0m
+[0;32mI (20173) VLD1_UART: RESP OK[0m
+[0;32mI (20173) VLD1_UART: Distance [m]: 3.113 m[0m
+[0;32mI (20173) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (21273) VLD1_UART: RESP OK[0m
+[0;32mI (21273) VLD1_UART: Distance [m]: 3.715 m[0m
+[0;32mI (21273) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (22373) VLD1_UART: RESP OK[0m
+[0;32mI (22373) VLD1_UART: Distance [m]: 4.225 m[0m
+[0;32mI (22373) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (23473) VLD1_UART: RESP OK[0m
+[0;32mI (23473) VLD1_UART: Distance [m]: 3.410 m[0m
+[0;32mI (23473) VLD1_UART: Magnitude [db] : 47 db[0m
+[0;32mI (24573) VLD1_UART: RESP OK[0m
+[0;32mI (24573) VLD1_UART: Distance [m]: 2.775 m[0m
+[0;32mI (24573) VLD1_UART: Magnitude [db] : 48 db[0m
+[0;32mI (25673) VLD1_UART: RESP OK[0m
+[0;32mI (25673) VLD1_UART: Distance [m]: 3.430 m[0m
+[0;32mI (25673) VLD1_UART: Magnitude [db] : 57 db[0m
+[0;32mI (26773) VLD1_UART: RESP OK[0m
+[0;32mI (26773) VLD1_UART: Distance [m]: 3.901 m[0m
+[0;32mI (26773) VLD1_UART: Magnitude [db] : 60 db[0m
+[0;32mI (27873) VLD1_UART: RESP OK[0m
+[0;32mI (27873) VLD1_UART: Distance [m]: 4.252 m[0m
+[0;32mI (27873) VLD1_UART: Magnitude [db] : 65 db[0m
+[0;32mI (28973) VLD1_UART: RESP OK[0m
+[0;32mI (28973) VLD1_UART: Distance [m]: 3.818 m[0m
+[0;32mI (28973) VLD1_UART: Magnitude [db] : 58 db[0m
+[0;32mI (30073) VLD1_UART: RESP OK[0m
+[0;32mI (30073) VLD1_UART: Distance [m]: 4.231 m[0m
+[0;32mI (30073) VLD1_UART: Magnitude [db] : 59 db[0m
+[0;32mI (31173) VLD1_UART: RESP OK[0m
+[0;32mI (31173) VLD1_UART: Distance [m]: 3.798 m[0m
+[0;32mI (31173) VLD1_UART: Magnitude [db] : 57 db[0m
+[0;32mI (32273) VLD1_UART: RESP OK[0m
+[0;32mI (32273) VLD1_UART: Distance [m]: 3.474 m[0m
+[0;32mI (32273) VLD1_UART: Magnitude [db] : 51 db[0m
+[0;32mI (33373) VLD1_UART: RESP OK[0m
+[0;32mI (33373) VLD1_UART: Distance [m]: 3.069 m[0m
+[0;32mI (33373) VLD1_UART: Magnitude [db] : 62 db[0m
+[0;32mI (34473) VLD1_UART: RESP OK[0m
+[0;32mI (34473) VLD1_UART: Distance [m]: 2.942 m[0m
+[0;32mI (34473) VLD1_UART: Magnitude [db] : 65 db[0m
+[0;32mI (35573) VLD1_UART: RESP OK[0m
+[0;32mI (35573) VLD1_UART: Distance [m]: 2.680 m[0m
+[0;32mI (35573) VLD1_UART: Magnitude [db] : 70 db[0m
+[0;32mI (36673) VLD1_UART: RESP OK[0m
+[0;32mI (36673) VLD1_UART: Distance [m]: 2.472 m[0m
+[0;32mI (36673) VLD1_UART: Magnitude [db] : 68 db[0m
+[0;32mI (37773) VLD1_UART: RESP OK[0m
+[0;32mI (37773) VLD1_UART: Distance [m]: 2.483 m[0m
+[0;32mI (37773) VLD1_UART: Magnitude [db] : 70 db[0m
+[0;32mI (38873) VLD1_UART: RESP OK[0m
+[0;32mI (38873) VLD1_UART: Distance [m]: 2.492 m[0m
+[0;32mI (38873) VLD1_UART: Magnitude [db] : 71 db[0m
+[0;32mI (39973) VLD1_UART: RESP OK[0m
+[0;32mI (39973) VLD1_UART: Distance [m]: 2.500 m[0m
+[0;32mI (39973) VLD1_UART: Magnitude [db] : 72 db[0m
+[0;32mI (41073) VLD1_UART: RESP OK[0m
+[0;32mI (41073) VLD1_UART: Distance [m]: 2.505 m[0m
+[0;32mI (41073) VLD1_UART: Magnitude [db] : 72 db[0m
+[0;32mI (42173) VLD1_UART: RESP OK[0m
+[0;32mI (42173) VLD1_UART: Distance [m]: 2.510 m[0m
+[0;32mI (42173) VLD1_UART: Magnitude [db] : 72 db[0m
+[0;32mI (43273) VLD1_UART: RESP OK[0m
+[0;32mI (43273) VLD1_UART: Distance [m]: 2.514 m[0m
+[0;32mI (43273) VLD1_UART: Magnitude [db] : 72 db[0m
+[0;32mI (44373) VLD1_UART: RESP OK[0m
+[0;32mI (44373) VLD1_UART: Distance [m]: 2.565 m[0m
+[0;32mI (44373) VLD1_UART: Magnitude [db] : 58 db[0m
+[0;32mI (45473) VLD1_UART: RESP OK[0m
+[0;32mI (45473) VLD1_UART: Distance [m]: 2.477 m[0m
+[0;32mI (45473) VLD1_UART: Magnitude [db] : 45 db[0m
+[0;32mI (46573) VLD1_UART: RESP OK[0m
+[0;32mI (46573) VLD1_UART: Distance [m]: 2.036 m[0m
+[0;32mI (46573) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (47673) VLD1_UART: RESP OK[0m
+[0;32mI (47673) VLD1_UART: Distance [m]: 1.683 m[0m
+[0;32mI (47673) VLD1_UART: Magnitude [db] : 51 db[0m
+[0;32mI (48773) VLD1_UART: RESP OK[0m
+[0;32mI (48773) VLD1_UART: Distance [m]: 1.662 m[0m
+[0;32mI (48773) VLD1_UART: Magnitude [db] : 51 db[0m
+[0;32mI (49873) VLD1_UART: RESP OK[0m
+[0;32mI (49873) VLD1_UART: Distance [m]: 1.637 m[0m
+[0;32mI (49873) VLD1_UART: Magnitude [db] : 52 db[0m
+[0;32mI (50973) VLD1_UART: RESP OK[0m
+[0;32mI (50973) VLD1_UART: Distance [m]: 1.616 m[0m
+[0;32mI (50973) VLD1_UART: Magnitude [db] : 52 db[0m
+[0;32mI (52073) VLD1_UART: RESP OK[0m
+[0;32mI (52073) VLD1_UART: Distance [m]: 1.591 m[0m
+[0;32mI (52073) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (53173) VLD1_UART: RESP OK[0m
+[0;32mI (53173) VLD1_UART: Distance [m]: 1.570 m[0m
+[0;32mI (53173) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (54273) VLD1_UART: RESP OK[0m
+[0;32mI (54273) VLD1_UART: Distance [m]: 1.552 m[0m
+[0;32mI (54273) VLD1_UART: Magnitude [db] : 65 db[0m
+[0;32mI (55373) VLD1_UART: RESP OK[0m
+[0;32mI (55373) VLD1_UART: Distance [m]: 1.539 m[0m
+[0;32mI (55373) VLD1_UART: Magnitude [db] : 66 db[0m
+[0;32mI (56473) VLD1_UART: RESP OK[0m
+[0;32mI (56473) VLD1_UART: Distance [m]: 1.528 m[0m
+[0;32mI (56473) VLD1_UART: Magnitude [db] : 67 db[0m
+[0;32mI (57573) VLD1_UART: RESP OK[0m
+[0;32mI (57573) VLD1_UART: Distance [m]: 1.520 m[0m
+[0;32mI (57573) VLD1_UART: Magnitude [db] : 67 db[0m
+[0;32mI (58673) VLD1_UART: RESP OK[0m
+[0;32mI (58673) VLD1_UART: Distance [m]: 1.513 m[0m
+[0;32mI (58673) VLD1_UART: Magnitude [db] : 67 db[0m
+[0;32mI (59773) VLD1_UART: RESP OK[0m
+[0;32mI (59773) VLD1_UART: Distance [m]: 1.508 m[0m
+[0;32mI (59773) VLD1_UART: Magnitude [db] : 67 db[0m
+[0;32mI (60873) VLD1_UART: RESP OK[0m
+[0;32mI (60873) VLD1_UART: Distance [m]: 1.503 m[0m
+[0;32mI (60873) VLD1_UART: Magnitude [db] : 68 db[0m
+[0;32mI (61973) VLD1_UART: RESP OK[0m
+[0;32mI (61973) VLD1_UART: Distance [m]: 1.500 m[0m
+[0;32mI (61973) VLD1_UART: Magnitude [db] : 68 db[0m
+[0;32mI (63073) VLD1_UART: RESP OK[0m
+[0;32mI (63073) VLD1_UART: Distance [m]: 1.498 m[0m
+[0;32mI (63073) VLD1_UART: Magnitude [db] : 69 db[0m
+[0;32mI (64173) VLD1_UART: RESP OK[0m
+[0;32mI (64173) VLD1_UART: Distance [m]: 1.496 m[0m
+[0;32mI (64173) VLD1_UART: Magnitude [db] : 69 db[0m
+[0;32mI (65273) VLD1_UART: RESP OK[0m
+[0;32mI (65273) VLD1_UART: Distance [m]: 1.500 m[0m
+[0;32mI (65273) VLD1_UART: Magnitude [db] : 60 db[0m
+[0;32mI (66373) VLD1_UART: RESP OK[0m
+[0;32mI (66373) VLD1_UART: Distance [m]: 1.500 m[0m
+[0;32mI (66373) VLD1_UART: Magnitude [db] : 59 db[0m
+[0;32mI (67473) VLD1_UART: RESP OK[0m
+[0;32mI (67473) VLD1_UART: Distance [m]: 1.501 m[0m
+[0;32mI (67473) VLD1_UART: Magnitude [db] : 62 db[0m
+[0;32mI (68573) VLD1_UART: RESP OK[0m
+[0;32mI (68573) VLD1_UART: Distance [m]: 1.502 m[0m
+[0;32mI (68573) VLD1_UART: Magnitude [db] : 63 db[0m
+[0;32mI (69673) VLD1_UART: RESP OK[0m
+[0;32mI (69673) VLD1_UART: Distance [m]: 1.503 m[0m
+[0;32mI (69673) VLD1_UART: Magnitude [db] : 63 db[0m
+[0;32mI (70773) VLD1_UART: RESP OK[0m
+[0;32mI (70773) VLD1_UART: Distance [m]: 1.503 m[0m
+[0;32mI (70773) VLD1_UART: Magnitude [db] : 64 db[0m
+[0;32mI (71873) VLD1_UART: RESP OK[0m
+[0;32mI (71873) VLD1_UART: Distance [m]: 1.504 m[0m
+[0;32mI (71873) VLD1_UART: Magnitude [db] : 81 db[0m
+[0;32mI (72973) VLD1_UART: RESP OK[0m
+[0;32mI (72973) VLD1_UART: Distance [m]: 1.541 m[0m
+[0;32mI (72973) VLD1_UART: Magnitude [db] : 43 db[0m
+[0;32mI (74073) VLD1_UART: RESP OK[0m
+[0;32mI (74073) VLD1_UART: Distance [m]: 2.234 m[0m
+[0;32mI (74073) VLD1_UART: Magnitude [db] : 49 db[0m
+[0;32mI (75173) VLD1_UART: RESP OK[0m
+[0;32mI (75173) VLD1_UART: Distance [m]: 2.788 m[0m
+[0;32mI (75173) VLD1_UART: Magnitude [db] : 48 db[0m
+[0;32mI (76273) VLD1_UART: RESP OK[0m
+[0;32mI (76273) VLD1_UART: Distance [m]: 3.236 m[0m
+[0;32mI (76273) VLD1_UART: Magnitude [db] : 47 db[0m
+[0;32mI (77373) VLD1_UART: RESP OK[0m
+[0;32mI (77373) VLD1_UART: Distance [m]: 3.731 m[0m
+[0;32mI (77373) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (78473) VLD1_UART: RESP OK[0m
+[0;32mI (78473) VLD1_UART: Distance [m]: 4.126 m[0m
+[0;32mI (78473) VLD1_UART: Magnitude [db] : 45 db[0m
+[0;32mI (79573) VLD1_UART: RESP OK[0m
+[0;32mI (79573) VLD1_UART: Distance [m]: 4.443 m[0m
+[0;32mI (79573) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (80673) VLD1_UART: RESP OK[0m
+[0;32mI (80673) VLD1_UART: Distance [m]: 4.697 m[0m
+[0;32mI (80673) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (81773) VLD1_UART: RESP OK[0m
+[0;32mI (81773) VLD1_UART: Distance [m]: 4.895 m[0m
+[0;32mI (81773) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (82873) VLD1_UART: RESP OK[0m
+[0;32mI (82873) VLD1_UART: Distance [m]: 5.057 m[0m
+[0;32mI (82873) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (83973) VLD1_UART: RESP OK[0m
+[0;32mI (83973) VLD1_UART: Distance [m]: 5.284 m[0m
+[0;32mI (83973) VLD1_UART: Magnitude [db] : 57 db[0m
+[0;32mI (85073) VLD1_UART: RESP OK[0m
+[0;32mI (85073) VLD1_UART: Distance [m]: 5.465 m[0m
+[0;32mI (85073) VLD1_UART: Magnitude [db] : 57 db[0m
+[0;32mI (86173) VLD1_UART: RESP OK[0m
+[0;32mI (86173) VLD1_UART: Distance [m]: 5.608 m[0m
+[0;32mI (86173) VLD1_UART: Magnitude [db] : 58 db[0m
+[0;32mI (87273) VLD1_UART: RESP OK[0m
+[0;32mI (87273) VLD1_UART: Distance [m]: 4.812 m[0m
+[0;32mI (87273) VLD1_UART: Magnitude [db] : 56 db[0m
+[0;32mI (88373) VLD1_UART: RESP OK[0m
+[0;32mI (88373) VLD1_UART: Distance [m]: 3.889 m[0m
+[0;32mI (88373) VLD1_UART: Magnitude [db] : 62 db[0m
+[0;32mI (89473) VLD1_UART: RESP OK[0m
+[0;32mI (89473) VLD1_UART: Distance [m]: 3.211 m[0m
+[0;32mI (89473) VLD1_UART: Magnitude [db] : 49 db[0m
+[0;32mI (90573) VLD1_UART: RESP OK[0m
+[0;32mI (90573) VLD1_UART: Distance [m]: 2.955 m[0m
+[0;32mI (90573) VLD1_UART: Magnitude [db] : 50 db[0m
+[0;32mI (91673) VLD1_UART: RESP OK[0m
+[0;32mI (91673) VLD1_UART: Distance [m]: 2.458 m[0m
+[0;32mI (91673) VLD1_UART: Magnitude [db] : 50 db[0m
+[0;32mI (92763) VLD1_UART: RESP OK[0m
+[0;32mI (93863) VLD1_UART: RESP OK[0m
+[0;32mI (94963) VLD1_UART: RESP OK[0m
+[0;32mI (96063) VLD1_UART: RESP OK[0m
+[0;32mI (97173) VLD1_UART: RESP OK[0m
+[0;32mI (97173) VLD1_UART: Distance [m]: 2.060 m[0m
+[0;32mI (97173) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (98273) VLD1_UART: RESP OK[0m
+[0;32mI (98273) VLD1_UART: Distance [m]: 1.726 m[0m
+[0;32mI (98273) VLD1_UART: Magnitude [db] : 47 db[0m
+[0;32mI (99373) VLD1_UART: RESP OK[0m
+[0;32mI (99373) VLD1_UART: Distance [m]: 1.459 m[0m
+[0;32mI (99373) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (100473) VLD1_UART: RESP OK[0m
+[0;32mI (100473) VLD1_UART: Distance [m]: 1.653 m[0m
+[0;32mI (100473) VLD1_UART: Magnitude [db] : 44 db[0m
+[0;32mI (101563) VLD1_UART: RESP OK[0m
+[0;32mI (102663) VLD1_UART: RESP OK[0m
+[0;32mI (103773) VLD1_UART: RESP OK[0m
+[0;32mI (103773) VLD1_UART: Distance [m]: 1.803 m[0m
+[0;32mI (103773) VLD1_UART: Magnitude [db] : 48 db[0m
+[0;32mI (104863) VLD1_UART: RESP OK[0m
+[0;32mI (105973) VLD1_UART: RESP OK[0m
+[0;32mI (105973) VLD1_UART: Distance [m]: 1.924 m[0m
+[0;32mI (105973) VLD1_UART: Magnitude [db] : 48 db[0m
+[0;32mI (107073) VLD1_UART: RESP OK[0m
+[0;32mI (107073) VLD1_UART: Distance [m]: 1.899 m[0m
+[0;32mI (107073) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (108173) VLD1_UART: RESP OK[0m
+[0;32mI (108173) VLD1_UART: Distance [m]: 1.878 m[0m
+[0;32mI (108173) VLD1_UART: Magnitude [db] : 54 db[0m
+[0;32mI (109273) VLD1_UART: RESP OK[0m
+[0;32mI (109273) VLD1_UART: Distance [m]: 1.861 m[0m
+[0;32mI (109273) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (110373) VLD1_UART: RESP OK[0m
+[0;32mI (110373) VLD1_UART: Distance [m]: 1.567 m[0m
+[0;32mI (110373) VLD1_UART: Magnitude [db] : 46 db[0m
+[0;32mI (111473) VLD1_UART: RESP OK[0m
+[0;32mI (111473) VLD1_UART: Distance [m]: 1.734 m[0m
+[0;32mI (111473) VLD1_UART: Magnitude [db] : 49 db[0m
+[0;32mI (112573) VLD1_UART: RESP OK[0m
+[0;32mI (112573) VLD1_UART: Distance [m]: 1.741 m[0m
+[0;32mI (112573) VLD1_UART: Magnitude [db] : 54 db[0m
+[0;32mI (113673) VLD1_UART: RESP OK[0m
+[0;32mI (113673) VLD1_UART: Distance [m]: 1.874 m[0m
+[0;32mI (113673) VLD1_UART: Magnitude [db] : 49 db[0m
+[0;32mI (114773) VLD1_UART: RESP OK[0m
+[0;32mI (114773) VLD1_UART: Distance [m]: 1.584 m[0m
+[0;32mI (114773) VLD1_UART: Magnitude [db] : 50 db[0m
+[0;32mI (115873) VLD1_UART: RESP OK[0m
+[0;32mI (115873) VLD1_UART: Distance [m]: 1.303 m[0m
+[0;32mI (115873) VLD1_UART: Magnitude [db] : 62 db[0m
+[0;32mI (116973) VLD1_UART: RESP OK[0m
+[0;32mI (116973) VLD1_UART: Distance [m]: 1.062 m[0m
+[0;32mI (116973) VLD1_UART: Magnitude [db] : 66 db[0m
+[0;32mI (118073) VLD1_UART: RESP OK[0m
+[0;32mI (118073) VLD1_UART: Distance [m]: 1.331 m[0m
+[0;32mI (118073) VLD1_UART: Magnitude [db] : 50 db[0m
+[0;32mI (119173) VLD1_UART: RESP OK[0m
+[0;32mI (119173) VLD1_UART: Distance [m]: 1.546 m[0m
+[0;32mI (119173) VLD1_UART: Magnitude [db] : 45 db[0m
+[0;32mI (120273) VLD1_UART: RESP OK[0m
+[0;32mI (120273) VLD1_UART: Distance [m]: 1.724 m[0m
+[0;32mI (120273) VLD1_UART: Magnitude [db] : 48 db[0m
+[0;32mI (121373) VLD1_UART: RESP OK[0m
+[0;32mI (121373) VLD1_UART: Distance [m]: 4.778 m[0m
+[0;32mI (121373) VLD1_UART: Magnitude [db] : 32 db[0m
+[0;32mI (122473) VLD1_UART: RESP OK[0m
+[0;32mI (122473) VLD1_UART: Distance [m]: 6.369 m[0m
+[0;32mI (122473) VLD1_UART: Magnitude [db] : 34 db[0m
+[0;32mI (123573) VLD1_UART: RESP OK[0m
+[0;32mI (123573) VLD1_UART: Distance [m]: 5.451 m[0m
+[0;32mI (123573) VLD1_UART: Magnitude [db] : 47 db[0m
+[0;32mI (124673) VLD1_UART: RESP OK[0m
+[0;32mI (124673) VLD1_UART: Distance [m]: 4.438 m[0m
+[0;32mI (124673) VLD1_UART: Magnitude [db] : 53 db[0m
+[0;32mI (125773) VLD1_UART: RESP OK[0m
+[0;32mI (125773) VLD1_UART: Distance [m]: 3.906 m[0m
+[0;32mI (125773) VLD1_UART: Magnitude [db] : 68 db[0m
+[0;32mI (126873) VLD1_UART: RESP OK[0m
+[0;32mI (126873) VLD1_UART: Distance [m]: 3.479 m[0m
+[0;32mI (126873) VLD1_UART: Magnitude [db] : 68 db[0m
