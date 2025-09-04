@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "v_ld1_dev",
-    "project_version":    "88f2cdbb-dirty",
+    "project_version":    "fa5f3f88-dirty",
     "project_path":       "/Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev",
     "idf_path":           "/Users/reyon/esp/esp-idf",
     "build_dir":          "/Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build",

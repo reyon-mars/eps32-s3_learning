@@ -56,7 +56,7 @@ void init_uart_rs485() {
     ESP_ERROR_CHECK(uart_driver_install(UART_RS485, BUF_SIZE * 2, 0, 0, NULL, 0));
 
     gpio_set_direction(RS485_RE_DE_PIN, GPIO_MODE_OUTPUT);
-    gpio_set_level(RS485_RE_DE_PIN, 0); // RX by default
+    gpio_set_level(RS485_RE_DE_PIN, 0);
 }
 
 void send_rs485(const uint8_t* data, size_t len) {
@@ -102,13 +102,44 @@ int parse_vld1_message(uint8_t *buffer, int len, char *out_header, uint8_t *out_
     return 8+*out_len;
 }
 
-void forward_pdat_rs485(float distance, uint16_t magnitude) {
-    uint8_t modbus_data[6];
-    memcpy(modbus_data,&distance,sizeof(float));
-    modbus_data[4] = magnitude & 0xFF;
-    modbus_data[5] = (magnitude>>8) & 0xFF;
-    send_rs485(modbus_data,6);
+uint16_t modbus_crc16(const uint8_t* buf, size_t len) {
+    uint16_t crc = 0xFFFF;
+    for(size_t pos=0; pos<len; pos++) {
+        crc ^= (uint16_t)buf[pos];
+        for(int i=0;i<8;i++) {
+            if(crc & 0x0001) crc = (crc >> 1) ^ 0xA001;
+            else crc = crc >> 1;
+        }
+    }
+    return crc;
 }
+
+void forward_pdat_modbus(float distance, uint16_t magnitude) {
+    uint8_t frame[13];
+    frame[0] = 0x01; 
+    frame[1] = 0x10; 
+    frame[2] = 0x00; 
+    frame[3] = 0x00; 
+    frame[4] = 0x00; 
+    frame[5] = 0x03;
+    frame[6] = 0x06;  
+
+    memcpy(&frame[7], &distance, sizeof(float)); 
+    frame[11] = magnitude & 0xFF;               
+    frame[12] = (magnitude >> 8) & 0xFF;         
+
+    uint16_t crc = modbus_crc16(frame, 13);      
+    uint8_t full_frame[15];
+    memcpy(full_frame, frame, 13);
+    full_frame[13] = crc & 0xFF;                 
+    full_frame[14] = (crc >> 8) & 0xFF;          
+
+    gpio_set_level(RS485_RE_DE_PIN, 1);
+    uart_write_bytes(UART_RS485, (const char*)full_frame, 15);
+    uart_wait_tx_done(UART_RS485, pdMS_TO_TICKS(100));
+    gpio_set_level(RS485_RE_DE_PIN, 0);
+}
+
 
 void uart_read_task(void *arg) {
     uint8_t buffer[BUF_SIZE];
@@ -138,7 +169,7 @@ void uart_read_task(void *arg) {
                             uint16_t magnitude = payload[4] | (payload[5]<<8);
                             ESP_LOGI(TAG,"Distance [m]: %.3f m", distance);
                             ESP_LOGI(TAG,"Magnitude [dB]: %u", magnitude);
-                            forward_pdat_rs485(distance, magnitude);
+                            forward_pdat_modbus(distance, magnitude);
                         }
                     }
                     memmove(buffer, buffer+parsed_len, buf_len-parsed_len);
