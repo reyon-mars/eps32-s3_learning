@@ -352,7 +352,6 @@ bool vld1_get_parameters(RadarParameters &params)
     return true;
 }
 
-
 inline void vld1_check_resp(uint32_t timeout_ms = 500)
 {
     uint8_t buffer[BUF_SIZE] = {0};
@@ -449,41 +448,40 @@ extern "C" void app_main()
     vTaskDelay(pdMS_TO_TICKS(200));
     gpio_set_level(MAIN_LED_PIN, 0);
 
-    
     vld1_init_sequence();
     vld1_check_resp();
-    
+
     vld1_set_distance_range(vld1_distance_range_t::range_50);
     vld1_check_resp();
-    
+
     vld1_set_thres_offset(40);
     vld1_check_resp();
-    
+
     vld1_set_min_range_filter(1);
     vld1_check_resp();
-    
+
     vld1_set_max_range_filter(505);
     vld1_check_resp();
-    
+
     vld1_set_target_filter(target_filter_t::strongest);
     vld1_check_resp();
-    
+
     vld1_set_precision_mode(precision_mode_t::high);
     vld1_check_resp();
-    
+
     vld1_set_chirp_integration_count(1);
     vld1_check_resp();
-    
+
     vld1_set_tx_power(31);
     vld1_check_resp();
-    
+
     vld1_set_short_range_distance_filter(short_range_distance_t::disable);
     vld1_check_resp();
-    
+
     vld1_get_parameters(curr_param);
-    
+
     xTaskCreate(uart_read_task, "uart_read_task", 4096, NULL, 10, NULL);
-    
+
     while (1)
     {
         vld1_read_distance_sequence();
