@@ -4,6 +4,7 @@
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include <string.h>
+#include <inttypes.h>
 
 #define SIZE(x) sizeof(x)
 #define UART_VLD1 UART_NUM_1
@@ -22,6 +23,24 @@
 
 static const char *TAG = "VLD1_UART";
 
+#pragma pack(push, 1)
+typedef struct RadarParameters
+{
+    char firmware_version[19] = "V-LD1_APP-RFB-YYX";
+    char unique_id[12] = "L1234n12345";
+    uint8_t distance_range = 0;
+    uint8_t threshold_offset = 40;
+    uint16_t min_range_filter = 5;
+    uint16_t max_range_filter = 460;
+    uint8_t distance_avg_count = 5;
+    uint8_t target_filter = 1;
+    uint8_t distance_precision = 1;
+    uint8_t tx_power = 31;
+    uint8_t chirp_integration_count = 1;
+    uint8_t short_range_distance_filter = 0;
+} radar_param_t;
+#pragma pack(pop)
+
 enum class vld1_distance_range_t : uint8_t
 {
     range_20 = 0,
@@ -39,7 +58,7 @@ enum class precision_mode_t : uint8_t
     high = 1
 };
 
-enum class short_range_distance_t : uint8_t 
+enum class short_range_distance_t : uint8_t
 {
     disable = 0,
     enable = 1
@@ -262,14 +281,67 @@ inline void vld1_init_sequence()
     blink_led(MAIN_LED_PIN, 2, 200);
 }
 
+int read_uart(uint8_t *buffer, size_t max_len, int timeout_ms)
+{
+    return uart_read_bytes(UART_VLD1, buffer, max_len, pdMS_TO_TICKS(timeout_ms));
+}
+
+bool vld1_get_parameters(RadarParameters &params)
+{
+
+    send_vld1_packet("GRPS", nullptr, 0);
+
+    uint8_t header[8] = {0};
+    int len = read_uart(header, sizeof(header), 1000);
+    if (len != 8 || header[0] != 'R' || header[1] != 'E' || header[2] != 'S' || header[3] != 'P')
+    {
+        ESP_LOGW(TAG, "Invalid or missing RESP header");
+        return false;
+    }
+
+    uint32_t payload_len = header[4] | (header[5] << 8) | (header[6] << 16) | (header[7] << 24);
+    if (payload_len != sizeof(RadarParameters))
+    {
+        ESP_LOGW(TAG, "Payload length mismatch: %" PRIu32 " expected %" PRIu32,
+                 payload_len, (uint32_t)sizeof(RadarParameters));
+        return false;
+    }
+
+    uint8_t buffer[sizeof(RadarParameters)] = {0};
+    len = read_uart(buffer, payload_len, 1000);
+    if ((uint32_t)len != payload_len)
+    {
+        ESP_LOGW(TAG, "Failed to read full payload: %d bytes received", len); // len is int, so %d is fine
+        return false;
+    }
+
+    RadarParameters *p = reinterpret_cast<RadarParameters *>(buffer);
+    params = *p;
+
+    ESP_LOGI(TAG, "Firmware Version: %s", params.firmware_version);
+    ESP_LOGI(TAG, "Unique ID: %s", params.unique_id);
+    ESP_LOGI(TAG, "Distance Range: %" PRIu8, params.distance_range);
+    ESP_LOGI(TAG, "Threshold Offset [dB]: %" PRIu8, params.threshold_offset);
+    ESP_LOGI(TAG, "Min Range Filter: %" PRIu16, params.min_range_filter);
+    ESP_LOGI(TAG, "Max Range Filter: %" PRIu16, params.max_range_filter);
+    ESP_LOGI(TAG, "Distance Avg Count: %" PRIu8, params.distance_avg_count);
+    ESP_LOGI(TAG, "Target Filter: %" PRIu8, params.target_filter);
+    ESP_LOGI(TAG, "Distance Precision: %" PRIu8, params.distance_precision);
+    ESP_LOGI(TAG, "TX Power: %" PRIu8, params.tx_power);
+    ESP_LOGI(TAG, "Chirp Integration Count: %" PRIu8, params.chirp_integration_count);
+    ESP_LOGI(TAG, "Short Range Distance Filter: %" PRIu8, params.short_range_distance_filter);
+
+    return true;
+}
+
 inline void vld1_check_resp(uint32_t timeout_ms = 500)
 {
     uint8_t buffer[BUF_SIZE] = {0};
     int len = uart_read_bytes(UART_VLD1, buffer, BUF_SIZE, pdMS_TO_TICKS(timeout_ms));
 
-    if(len >= 8 && buffer[0]=='R' && buffer[1]=='E' && buffer[2]=='S' && buffer[3]=='P')
+    if (len >= 8 && buffer[0] == 'R' && buffer[1] == 'E' && buffer[2] == 'S' && buffer[3] == 'P')
     {
-        if(len >= 9 && buffer[8] == 0x00)
+        if (len >= 9 && buffer[8] == 0x00)
         {
             ESP_LOGI(TAG, "RESP OK received");
         }
@@ -283,7 +355,6 @@ inline void vld1_check_resp(uint32_t timeout_ms = 500)
         ESP_LOGW(TAG, "RESP not received or invalid");
     }
 }
-
 
 inline void vld1_read_distance_sequence()
 {
@@ -329,25 +400,27 @@ inline void vld1_exit_sequence()
     send_vld1_packet("GBYE", nullptr, 0);
 }
 
-inline void vld1_set_chirp_integration_count( uint8_t val )
+inline void vld1_set_chirp_integration_count(uint8_t val)
 {
-    send_vld1_packet( "INTN", &val, SIZE(val) );
+    send_vld1_packet("INTN", &val, SIZE(val));
 }
 
-inline void vld1_set_tx_power( uint8_t power ){
-    send_vld1_packet( "TXPW", &power, SIZE(power));
+inline void vld1_set_tx_power(uint8_t power)
+{
+    send_vld1_packet("TXPW", &power, SIZE(power));
 }
 
-inline void vld1_set_short_range_distance_filter( short_range_distance_t state )
+inline void vld1_set_short_range_distance_filter(short_range_distance_t state)
 {
     uint8_t payload = static_cast<uint8_t>(state);
-    send_vld1_packet( "SRDF", &payload, SIZE(state) );
+    send_vld1_packet("SRDF", &payload, SIZE(state));
 }
-
 
 extern "C" void app_main()
 {
     ESP_LOGI(TAG, "Starting V-LD1 + Modbus RTU Firmware");
+
+    radar_param_t curr_param;
 
     init_uart_vld1();
     init_uart_rs485();
@@ -362,32 +435,34 @@ extern "C" void app_main()
     vld1_init_sequence();
     vld1_check_resp();
 
-    vld1_set_distance_range( vld1_distance_range_t::range_50 );
+    vld1_set_distance_range(vld1_distance_range_t::range_50);
     vld1_check_resp();
 
-    vld1_set_thres_offset( 40 );
+    vld1_set_thres_offset(40);
     vld1_check_resp();
 
-    vld1_set_min_range_filter( 1 );
+    vld1_set_min_range_filter(1);
     vld1_check_resp();
 
-    vld1_set_max_range_filter( 505 );
+    vld1_set_max_range_filter(505);
     vld1_check_resp();
 
-    vld1_set_target_filter( target_filter_t::strongest );
+    vld1_set_target_filter(target_filter_t::strongest);
     vld1_check_resp();
 
-    vld1_set_precision_mode( precision_mode_t::high );
+    vld1_set_precision_mode(precision_mode_t::high);
     vld1_check_resp();
 
-    vld1_set_chirp_integration_count( 1 );
+    vld1_set_chirp_integration_count(1);
     vld1_check_resp();
 
-    vld1_set_tx_power( 31 );
+    vld1_set_tx_power(31);
     vld1_check_resp();
 
-    vld1_set_short_range_distance_filter( short_range_distance_t::disable );
+    vld1_set_short_range_distance_filter(short_range_distance_t::disable);
     vld1_check_resp();
+    
+    vld1_get_parameters(curr_param);
 
     while (1)
     {
