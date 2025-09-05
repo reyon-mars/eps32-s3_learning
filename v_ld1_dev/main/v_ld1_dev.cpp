@@ -288,22 +288,40 @@ int read_uart(uint8_t *buffer, size_t max_len, int timeout_ms)
 
 bool vld1_get_parameters(RadarParameters &params)
 {
-
     send_vld1_packet("GRPS", nullptr, 0);
 
     uint8_t header[8] = {0};
     int len = read_uart(header, sizeof(header), 1000);
     if (len != 8 || header[0] != 'R' || header[1] != 'E' || header[2] != 'S' || header[3] != 'P')
     {
-        ESP_LOGW(TAG, "Invalid or missing RESP header");
+        ESP_LOGW(TAG, "Invalid or missing RESP header for GRPS");
+        return false;
+    }
+
+    uint32_t resp_payload_len = header[4] | (header[5] << 8) | (header[6] << 16) | (header[7] << 24);
+    if (resp_payload_len > 0)
+    {
+        uint8_t resp_payload[16] = {0};
+        len = read_uart(resp_payload, resp_payload_len, 1000);
+        if ((uint32_t)len != resp_payload_len)
+        {
+            ESP_LOGW(TAG, "Failed to read RESP payload for GRPS: %" PRIu32 " bytes received", (uint32_t)len);
+            return false;
+        }
+    }
+    ESP_LOGI(TAG, "RESP OK received for GRPS");
+
+    len = read_uart(header, sizeof(header), 1000);
+    if (len != 8 || header[0] != 'R' || header[1] != 'P' || header[2] != 'S' || header[3] != 'T')
+    {
+        ESP_LOGW(TAG, "Invalid or missing RPST header");
         return false;
     }
 
     uint32_t payload_len = header[4] | (header[5] << 8) | (header[6] << 16) | (header[7] << 24);
     if (payload_len != sizeof(RadarParameters))
     {
-        ESP_LOGW(TAG, "Payload length mismatch: %" PRIu32 " expected %" PRIu32,
-                 payload_len, (uint32_t)sizeof(RadarParameters));
+        ESP_LOGW(TAG, "Payload length mismatch: %" PRIu32 " expected %zu", payload_len, sizeof(RadarParameters));
         return false;
     }
 
@@ -311,7 +329,7 @@ bool vld1_get_parameters(RadarParameters &params)
     len = read_uart(buffer, payload_len, 1000);
     if ((uint32_t)len != payload_len)
     {
-        ESP_LOGW(TAG, "Failed to read full payload: %d bytes received", len); // len is int, so %d is fine
+        ESP_LOGW(TAG, "Failed to read full RadarParameters payload: %" PRIu32 " bytes received", (uint32_t)len);
         return false;
     }
 
@@ -333,6 +351,7 @@ bool vld1_get_parameters(RadarParameters &params)
 
     return true;
 }
+
 
 inline void vld1_check_resp(uint32_t timeout_ms = 500)
 {
@@ -430,40 +449,41 @@ extern "C" void app_main()
     vTaskDelay(pdMS_TO_TICKS(200));
     gpio_set_level(MAIN_LED_PIN, 0);
 
-    xTaskCreate(uart_read_task, "uart_read_task", 4096, NULL, 10, NULL);
-
+    
     vld1_init_sequence();
     vld1_check_resp();
-
+    
     vld1_set_distance_range(vld1_distance_range_t::range_50);
     vld1_check_resp();
-
+    
     vld1_set_thres_offset(40);
     vld1_check_resp();
-
+    
     vld1_set_min_range_filter(1);
     vld1_check_resp();
-
+    
     vld1_set_max_range_filter(505);
     vld1_check_resp();
-
+    
     vld1_set_target_filter(target_filter_t::strongest);
     vld1_check_resp();
-
+    
     vld1_set_precision_mode(precision_mode_t::high);
     vld1_check_resp();
-
+    
     vld1_set_chirp_integration_count(1);
     vld1_check_resp();
-
+    
     vld1_set_tx_power(31);
     vld1_check_resp();
-
+    
     vld1_set_short_range_distance_filter(short_range_distance_t::disable);
     vld1_check_resp();
-
+    
     vld1_get_parameters(curr_param);
-
+    
+    xTaskCreate(uart_read_task, "uart_read_task", 4096, NULL, 10, NULL);
+    
     while (1)
     {
         vld1_read_distance_sequence();
