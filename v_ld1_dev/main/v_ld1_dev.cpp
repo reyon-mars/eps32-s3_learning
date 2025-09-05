@@ -160,21 +160,17 @@ void forward_pdat_modbus(uint16_t distance_mm, uint16_t magnitude)
 
     frame[idx++] = 0x01;
     frame[idx++] = 0x04;
-    frame[idx++] = 0x00;
-    frame[idx++] = 0x00;
-    frame[idx++] = 0x00;
-    frame[idx++] = 0x02;
-    frame[idx++] = 0x04;
+    frame[idx++] = 0x04; 
 
-    frame[idx++] = static_cast<uint8_t>( distance_mm >> 8 );
-    frame[idx++] = static_cast<uint8_t>( distance_mm & 0xFF );
+    frame[idx++] = static_cast<uint8_t>(distance_mm >> 8);
+    frame[idx++] = static_cast<uint8_t>(distance_mm & 0xFF);
 
-    frame[idx++] = static_cast<uint8_t>( magnitude >> 8 );
-    frame[idx++] = static_cast<uint8_t>( magnitude & 0xFF );
+    frame[idx++] = static_cast<uint8_t>(magnitude >> 8);
+    frame[idx++] = static_cast<uint8_t>(magnitude & 0xFF);
 
     uint16_t crc = modbus_crc16(frame, idx);
-    frame[idx++] = crc & 0xFF;
-    frame[idx++] = (crc >> 8) & 0xFF;
+    frame[idx++] = crc & 0xFF;        
+    frame[idx++] = (crc >> 8) & 0xFF; 
 
     gpio_set_level(RS485_RE_DE_PIN, 1);
     uart_write_bytes(UART_RS485, (const char *)frame, idx);
@@ -220,10 +216,10 @@ void uart_read_task(void *arg)
                         {
                             float distance;
                             memcpy(&distance, payload, sizeof(float));
-                            uint16_t magnitude = payload[4] | (payload[5] << 8);
+                            uint16_t magnitude = ( payload[4] | (payload[5] << 8) ) / 100;
 
                             ESP_LOGI(TAG, "Distance [m]: %.3f m", distance);
-                            ESP_LOGI(TAG, "Magnitude [dB]: %u", magnitude);
+                            ESP_LOGI(TAG, "Magnitude [dB]: %u.00 db", magnitude);
 
                             uint16_t distance_mm = static_cast<uint16_t>(distance * 1000);
                             uint16_t distance_mm_be = distance_mm >> 8 | distance_mm << 8;

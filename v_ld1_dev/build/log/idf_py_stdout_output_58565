@@ -1,0 +1,1543 @@
+e time Sep  3 2025 17:32:02[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;�"%=m[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label       ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7084
+ho 0 tail 12 room 4
+load:0x40078000,len:15584
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep  3 2025 17:32:02[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0aa98h ( 43672) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001aac0 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001cc20 vaddr=40080000 size=033f8h ( 13304) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=16d04h ( 93444) map[0m
+[0;32mI (169) esp_image: segment 4: paddr=00036d2c vaddr=400833f8 size=09ae0h ( 39648) load[0m
+[0;32mI (192) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (192) boot: Disabling RNG early entropy source...[0m
+[0;32mI (203) cpu_start: Multicore app[0m
+[0;32mI (204) cpu_start: Pro cpu up.[0m
+[0;32mI (204) cpu_start: Starting app cpu, entry point is 0x400811e0[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (222) cpu_start: Pro cpu start user code[0m
+[0;32mI (222) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (222) cpu_start: Application information:[0m
+[0;32mI (226) cpu_start: Project name:     v_ld1_dev[0m
+[0;32mI (232) cpu_start: App version:      2052bfa9-dirty[0m
+[0;32mI (237) cpu_start: Compile time:     Sep  5 2025 12:39:14[0m
+[0;32mI (243) cpu_start: ELF file SHA256:  5d1a5e223da364e1...[0m
+[0;32mI (249) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (255) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (259) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (264) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (269) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (276) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (282) heap_init: At 3FFB29D0 len 0002D630 (181 KiB): DRAM[0m
+[0;32mI (288) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (295) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (301) heap_init: At 4008CED8 len 00013128 (76 KiB): IRAM[0m
+[0;32mI (309) spi_flash: detected chip: winbond[0m
+[0;32mI (312) spi_flash: flash io: dio[0m
+[0;33mW (316) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (330) app_start: Starting scheduler on CPU0[0m
+[0;32mI (334) app_start: Starting scheduler on CPU1[0m
+[0;32mI (334) main_task: Started on CPU0[0m
+[0;32mI (344) main_task: Calling app_main()[0m
+[0;32mI (344) VLD1_UART: Starting V-LD1 + Modbus RTU Firmware[0m
+[0;32mI (654) VLD1_UART: RESP OK[0m
+[0;32mI (654) VLD1_UART: Firmware: V-LD1_APP-RFB-0107[0m
+[0;32mI (1474) VLD1_UART: RESP OK[0m
+[0;32mI (1474) VLD1_UART: Distance [m]: 1.867 m[0m
+[0;32mI (1474) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (1474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=19207 mm, Magnitude=26645[0m
+[0;32mI (2574) VLD1_UART: RESP OK[0m
+[0;32mI (2574) VLD1_UART: Distance [m]: 1.866 m[0m
+[0;32mI (2574) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (2574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=18951 mm, Magnitude=11285[0m
+[0;32mI (3674) VLD1_UART: RESP OK[0m
+[0;32mI (3674) VLD1_UART: Distance [m]: 1.577 m[0m
+[0;32mI (3674) VLD1_UART: Magnitude [dB]: 6640[0m
+[0;32mI (3674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=10502 mm, Magnitude=61465[0m
+[0;32mI (4774) VLD1_UART: RESP OK[0m
+[0;32mI (4774) VLD1_UART: Distance [m]: 1.343 m[0m
+[0;32mI (4774) VLD1_UART: Magnitude [dB]: 6120[0m
+[0;32mI (4774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=16133 mm, Magnitude=59415[0m
+[0;32mI (5874) VLD1_UART: RESP OK[0m
+[0;32mI (5874) VLD1_UART: Distance [m]: 1.155 m[0m
+[0;32mI (5874) VLD1_UART: Magnitude [dB]: 5980[0m
+[0;32mI (5874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=33284 mm, Magnitude=23575[0m
+[0;32mI (6974) VLD1_UART: RESP OK[0m
+[0;32mI (6974) VLD1_UART: Distance [m]: 1.008 m[0m
+[0;32mI (6974) VLD1_UART: Magnitude [dB]: 6150[0m
+[0;32mI (6974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61187 mm, Magnitude=1560[0m
+[0;32mI (8074) VLD1_UART: RESP OK[0m
+[0;32mI (8074) VLD1_UART: Distance [m]: 0.891 m[0m
+[0;32mI (8074) VLD1_UART: Magnitude [dB]: 6360[0m
+[0;32mI (8074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=31235 mm, Magnitude=55320[0m
+[0;32mI (9174) VLD1_UART: RESP OK[0m
+[0;32mI (9174) VLD1_UART: Distance [m]: 1.092 m[0m
+[0;32mI (9174) VLD1_UART: Magnitude [dB]: 5590[0m
+[0;32mI (9174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=17412 mm, Magnitude=54805[0m
+[0;32mI (10274) VLD1_UART: RESP OK[0m
+[0;32mI (10274) VLD1_UART: Distance [m]: 1.248 m[0m
+[0;32mI (10274) VLD1_UART: Magnitude [dB]: 5680[0m
+[0;32mI (10274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57348 mm, Magnitude=12310[0m
+[0;32mI (11374) VLD1_UART: RESP OK[0m
+[0;32mI (11374) VLD1_UART: Distance [m]: 1.375 m[0m
+[0;32mI (11374) VLD1_UART: Magnitude [dB]: 5830[0m
+[0;32mI (11374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=24325 mm, Magnitude=50710[0m
+[0;32mI (12474) VLD1_UART: RESP OK[0m
+[0;32mI (12474) VLD1_UART: Distance [m]: 1.478 m[0m
+[0;32mI (12474) VLD1_UART: Magnitude [dB]: 5720[0m
+[0;32mI (12474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50437 mm, Magnitude=22550[0m
+[0;32mI (13574) VLD1_UART: RESP OK[0m
+[0;32mI (13574) VLD1_UART: Distance [m]: 1.561 m[0m
+[0;32mI (13574) VLD1_UART: Magnitude [dB]: 5600[0m
+[0;32mI (13574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=6406 mm, Magnitude=57365[0m
+[0;32mI (14674) VLD1_UART: RESP OK[0m
+[0;32mI (14674) VLD1_UART: Distance [m]: 1.628 m[0m
+[0;32mI (14674) VLD1_UART: Magnitude [dB]: 5630[0m
+[0;32mI (14674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=23302 mm, Magnitude=65045[0m
+[0;32mI (15774) VLD1_UART: RESP OK[0m
+[0;32mI (15774) VLD1_UART: Distance [m]: 1.681 m[0m
+[0;32mI (15774) VLD1_UART: Magnitude [dB]: 5760[0m
+[0;32mI (15774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=36870 mm, Magnitude=32790[0m
+[0;32mI (16874) VLD1_UART: RESP OK[0m
+[0;32mI (16874) VLD1_UART: Distance [m]: 1.724 m[0m
+[0;32mI (16874) VLD1_UART: Magnitude [dB]: 5730[0m
+[0;32mI (16874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47878 mm, Magnitude=25110[0m
+[0;32mI (17974) VLD1_UART: RESP OK[0m
+[0;32mI (17974) VLD1_UART: Distance [m]: 1.757 m[0m
+[0;32mI (17974) VLD1_UART: Magnitude [dB]: 5770[0m
+[0;32mI (17974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56582 mm, Magnitude=35350[0m
+[0;32mI (19074) VLD1_UART: RESP OK[0m
+[0;32mI (19074) VLD1_UART: Distance [m]: 1.785 m[0m
+[0;32mI (19074) VLD1_UART: Magnitude [dB]: 5750[0m
+[0;32mI (19074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63494 mm, Magnitude=30230[0m
+[0;32mI (20174) VLD1_UART: RESP OK[0m
+[0;32mI (20174) VLD1_UART: Distance [m]: 1.806 m[0m
+[0;32mI (20174) VLD1_UART: Magnitude [dB]: 5710[0m
+[0;32mI (20174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=3591 mm, Magnitude=19990[0m
+[0;32mI (21274) VLD1_UART: RESP OK[0m
+[0;32mI (21274) VLD1_UART: Distance [m]: 1.823 m[0m
+[0;32mI (21274) VLD1_UART: Magnitude [dB]: 5700[0m
+[0;32mI (21274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=7943 mm, Magnitude=17430[0m
+[0;32mI (22374) VLD1_UART: RESP OK[0m
+[0;32mI (22374) VLD1_UART: Distance [m]: 1.836 m[0m
+[0;32mI (22374) VLD1_UART: Magnitude [dB]: 5850[0m
+[0;32mI (22374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=11271 mm, Magnitude=55830[0m
+[0;32mI (23474) VLD1_UART: RESP OK[0m
+[0;32mI (23474) VLD1_UART: Distance [m]: 1.850 m[0m
+[0;32mI (23474) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (23474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=14855 mm, Magnitude=7190[0m
+[0;32mI (24574) VLD1_UART: RESP OK[0m
+[0;32mI (24574) VLD1_UART: Distance [m]: 1.862 m[0m
+[0;32mI (24574) VLD1_UART: Magnitude [dB]: 5710[0m
+[0;32mI (24574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=17927 mm, Magnitude=19990[0m
+[0;32mI (25674) VLD1_UART: RESP OK[0m
+[0;32mI (25674) VLD1_UART: Distance [m]: 1.871 m[0m
+[0;32mI (25674) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (25674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=20231 mm, Magnitude=7190[0m
+[0;32mI (26774) VLD1_UART: RESP OK[0m
+[0;32mI (26774) VLD1_UART: Distance [m]: 1.875 m[0m
+[0;32mI (26774) VLD1_UART: Magnitude [dB]: 5710[0m
+[0;32mI (26774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=20999 mm, Magnitude=19990[0m
+[0;32mI (27874) VLD1_UART: RESP OK[0m
+[0;32mI (27874) VLD1_UART: Distance [m]: 1.878 m[0m
+[0;32mI (27874) VLD1_UART: Magnitude [dB]: 5830[0m
+[0;32mI (27874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=22023 mm, Magnitude=50710[0m
+[0;32mI (28974) VLD1_UART: RESP OK[0m
+[0;32mI (28974) VLD1_UART: Distance [m]: 1.880 m[0m
+[0;32mI (28974) VLD1_UART: Magnitude [dB]: 5750[0m
+[0;32mI (28974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=22279 mm, Magnitude=30230[0m
+[0;32mI (30074) VLD1_UART: RESP OK[0m
+[0;32mI (30074) VLD1_UART: Distance [m]: 1.881 m[0m
+[0;32mI (30074) VLD1_UART: Magnitude [dB]: 5760[0m
+[0;32mI (30074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=22791 mm, Magnitude=32790[0m
+[0;32mI (31174) VLD1_UART: RESP OK[0m
+[0;32mI (31174) VLD1_UART: Distance [m]: 1.887 m[0m
+[0;32mI (31174) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (31174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=24327 mm, Magnitude=7190[0m
+[0;32mI (32274) VLD1_UART: RESP OK[0m
+[0;32mI (32274) VLD1_UART: Distance [m]: 1.891 m[0m
+[0;32mI (32274) VLD1_UART: Magnitude [dB]: 5720[0m
+[0;32mI (32274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=25095 mm, Magnitude=22550[0m
+[0;32mI (33374) VLD1_UART: RESP OK[0m
+[0;32mI (33374) VLD1_UART: Distance [m]: 1.894 m[0m
+[0;32mI (33374) VLD1_UART: Magnitude [dB]: 5720[0m
+[0;32mI (33374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=26119 mm, Magnitude=22550[0m
+[0;32mI (34474) VLD1_UART: RESP OK[0m
+[0;32mI (34474) VLD1_UART: Distance [m]: 1.908 m[0m
+[0;32mI (34474) VLD1_UART: Magnitude [dB]: 5670[0m
+[0;32mI (34474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=29703 mm, Magnitude=9750[0m
+[0;32mI (35574) VLD1_UART: RESP OK[0m
+[0;32mI (35574) VLD1_UART: Distance [m]: 1.920 m[0m
+[0;32mI (35574) VLD1_UART: Magnitude [dB]: 5760[0m
+[0;32mI (35574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=32519 mm, Magnitude=32790[0m
+[0;32mI (36674) VLD1_UART: RESP OK[0m
+[0;32mI (36674) VLD1_UART: Distance [m]: 1.928 m[0m
+[0;32mI (36674) VLD1_UART: Magnitude [dB]: 5650[0m
+[0;32mI (36674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=34823 mm, Magnitude=4630[0m
+[0;32mI (37774) VLD1_UART: RESP OK[0m
+[0;32mI (37774) VLD1_UART: Distance [m]: 1.924 m[0m
+[0;32mI (37774) VLD1_UART: Magnitude [dB]: 5690[0m
+[0;32mI (37774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=33799 mm, Magnitude=14870[0m
+[0;32mI (38874) VLD1_UART: RESP OK[0m
+[0;32mI (38874) VLD1_UART: Distance [m]: 1.918 m[0m
+[0;32mI (38874) VLD1_UART: Magnitude [dB]: 5760[0m
+[0;32mI (38874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=32263 mm, Magnitude=32790[0m
+[0;32mI (39974) VLD1_UART: RESP OK[0m
+[0;32mI (39974) VLD1_UART: Distance [m]: 1.925 m[0m
+[0;32mI (39974) VLD1_UART: Magnitude [dB]: 5610[0m
+[0;32mI (39974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=34055 mm, Magnitude=59925[0m
+[0;32mI (41074) VLD1_UART: RESP OK[0m
+[0;32mI (41074) VLD1_UART: Distance [m]: 1.919 m[0m
+[0;32mI (41074) VLD1_UART: Magnitude [dB]: 5680[0m
+[0;32mI (41074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=32263 mm, Magnitude=12310[0m
+[0;32mI (42174) VLD1_UART: RESP OK[0m
+[0;32mI (42174) VLD1_UART: Distance [m]: 1.927 m[0m
+[0;32mI (42174) VLD1_UART: Magnitude [dB]: 5690[0m
+[0;32mI (42174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=34567 mm, Magnitude=14870[0m
+[0;32mI (43274) VLD1_UART: RESP OK[0m
+[0;32mI (43274) VLD1_UART: Distance [m]: 1.935 m[0m
+[0;32mI (43274) VLD1_UART: Magnitude [dB]: 5620[0m
+[0;32mI (43274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=36359 mm, Magnitude=62485[0m
+[0;32mI (44374) VLD1_UART: RESP OK[0m
+[0;32mI (44374) VLD1_UART: Distance [m]: 1.940 m[0m
+[0;32mI (44374) VLD1_UART: Magnitude [dB]: 5640[0m
+[0;32mI (44374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=37895 mm, Magnitude=2070[0m
+[0;32mI (45474) VLD1_UART: RESP OK[0m
+[0;32mI (45474) VLD1_UART: Distance [m]: 1.954 m[0m
+[0;32mI (45474) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (45474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=41479 mm, Magnitude=11285[0m
+[0;32mI (46574) VLD1_UART: RESP OK[0m
+[0;32mI (46574) VLD1_UART: Distance [m]: 1.966 m[0m
+[0;32mI (46574) VLD1_UART: Magnitude [dB]: 5210[0m
+[0;32mI (46574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44295 mm, Magnitude=23060[0m
+[0;32mI (47674) VLD1_UART: RESP OK[0m
+[0;32mI (47674) VLD1_UART: Distance [m]: 1.650 m[0m
+[0;32mI (47674) VLD1_UART: Magnitude [dB]: 5560[0m
+[0;32mI (47674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=29190 mm, Magnitude=47125[0m
+[0;32mI (48774) VLD1_UART: RESP OK[0m
+[0;32mI (48774) VLD1_UART: Distance [m]: 1.723 m[0m
+[0;32mI (48774) VLD1_UART: Magnitude [dB]: 5690[0m
+[0;32mI (48774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47622 mm, Magnitude=14870[0m
+[0;32mI (49874) VLD1_UART: RESP OK[0m
+[0;32mI (49874) VLD1_UART: Distance [m]: 1.780 m[0m
+[0;32mI (49874) VLD1_UART: Magnitude [dB]: 5670[0m
+[0;32mI (49874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62214 mm, Magnitude=9750[0m
+[0;32mI (50974) VLD1_UART: RESP OK[0m
+[0;32mI (50974) VLD1_UART: Distance [m]: 1.826 m[0m
+[0;32mI (50974) VLD1_UART: Magnitude [dB]: 5640[0m
+[0;32mI (50974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=8455 mm, Magnitude=2070[0m
+[0;32mI (52074) VLD1_UART: RESP OK[0m
+[0;32mI (52074) VLD1_UART: Distance [m]: 1.862 m[0m
+[0;32mI (52074) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (52074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=17927 mm, Magnitude=44565[0m
+[0;32mI (53174) VLD1_UART: RESP OK[0m
+[0;32mI (53174) VLD1_UART: Distance [m]: 1.892 m[0m
+[0;32mI (53174) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (53174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=25351 mm, Magnitude=24085[0m
+[0;32mI (54274) VLD1_UART: RESP OK[0m
+[0;32mI (54274) VLD1_UART: Distance [m]: 1.906 m[0m
+[0;32mI (54274) VLD1_UART: Magnitude [dB]: 5650[0m
+[0;32mI (54274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=28935 mm, Magnitude=4630[0m
+[0;32mI (55374) VLD1_UART: RESP OK[0m
+[0;32mI (55374) VLD1_UART: Distance [m]: 1.926 m[0m
+[0;32mI (55374) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (55374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=34311 mm, Magnitude=7190[0m
+[0;32mI (56474) VLD1_UART: RESP OK[0m
+[0;32mI (56474) VLD1_UART: Distance [m]: 1.942 m[0m
+[0;32mI (56474) VLD1_UART: Magnitude [dB]: 5540[0m
+[0;32mI (56474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=38407 mm, Magnitude=42005[0m
+[0;32mI (57574) VLD1_UART: RESP OK[0m
+[0;32mI (57574) VLD1_UART: Distance [m]: 1.956 m[0m
+[0;32mI (57574) VLD1_UART: Magnitude [dB]: 5570[0m
+[0;32mI (57574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=41735 mm, Magnitude=49685[0m
+[0;32mI (58674) VLD1_UART: RESP OK[0m
+[0;32mI (58674) VLD1_UART: Distance [m]: 1.966 m[0m
+[0;32mI (58674) VLD1_UART: Magnitude [dB]: 5580[0m
+[0;32mI (58674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44295 mm, Magnitude=52245[0m
+[0;32mI (59774) VLD1_UART: RESP OK[0m
+[0;32mI (59774) VLD1_UART: Distance [m]: 1.974 m[0m
+[0;32mI (59774) VLD1_UART: Magnitude [dB]: 5560[0m
+[0;32mI (59774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46343 mm, Magnitude=47125[0m
+[0;32mI (60874) VLD1_UART: RESP OK[0m
+[0;32mI (60874) VLD1_UART: Distance [m]: 1.981 m[0m
+[0;32mI (60874) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (60874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48135 mm, Magnitude=34325[0m
+[0;32mI (61974) VLD1_UART: RESP OK[0m
+[0;32mI (61974) VLD1_UART: Distance [m]: 1.986 m[0m
+[0;32mI (61974) VLD1_UART: Magnitude [dB]: 5570[0m
+[0;32mI (61974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49415 mm, Magnitude=49685[0m
+[0;32mI (63074) VLD1_UART: RESP OK[0m
+[0;32mI (63074) VLD1_UART: Distance [m]: 1.990 m[0m
+[0;32mI (63074) VLD1_UART: Magnitude [dB]: 5570[0m
+[0;32mI (63074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50439 mm, Magnitude=49685[0m
+[0;32mI (64174) VLD1_UART: RESP OK[0m
+[0;32mI (64174) VLD1_UART: Distance [m]: 1.993 m[0m
+[0;32mI (64174) VLD1_UART: Magnitude [dB]: 5580[0m
+[0;32mI (64174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51463 mm, Magnitude=52245[0m
+[0;32mI (65274) VLD1_UART: RESP OK[0m
+[0;32mI (65274) VLD1_UART: Distance [m]: 1.988 m[0m
+[0;32mI (65274) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (65274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49927 mm, Magnitude=7190[0m
+[0;32mI (66374) VLD1_UART: RESP OK[0m
+[0;32mI (66374) VLD1_UART: Distance [m]: 1.992 m[0m
+[0;32mI (66374) VLD1_UART: Magnitude [dB]: 5640[0m
+[0;32mI (66374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50951 mm, Magnitude=2070[0m
+[0;32mI (67474) VLD1_UART: RESP OK[0m
+[0;32mI (67474) VLD1_UART: Distance [m]: 1.995 m[0m
+[0;32mI (67474) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (67474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51719 mm, Magnitude=7190[0m
+[0;32mI (68574) VLD1_UART: RESP OK[0m
+[0;32mI (68574) VLD1_UART: Distance [m]: 1.973 m[0m
+[0;32mI (68574) VLD1_UART: Magnitude [dB]: 5600[0m
+[0;32mI (68574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46343 mm, Magnitude=57365[0m
+[0;32mI (69674) VLD1_UART: RESP OK[0m
+[0;32mI (69674) VLD1_UART: Distance [m]: 1.980 m[0m
+[0;32mI (69674) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (69674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48135 mm, Magnitude=7190[0m
+[0;32mI (70774) VLD1_UART: RESP OK[0m
+[0;32mI (70774) VLD1_UART: Distance [m]: 1.978 m[0m
+[0;32mI (70774) VLD1_UART: Magnitude [dB]: 5630[0m
+[0;32mI (70774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47367 mm, Magnitude=65045[0m
+[0;32mI (71874) VLD1_UART: RESP OK[0m
+[0;32mI (71874) VLD1_UART: Distance [m]: 1.983 m[0m
+[0;32mI (71874) VLD1_UART: Magnitude [dB]: 5590[0m
+[0;32mI (71874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48903 mm, Magnitude=54805[0m
+[0;32mI (72974) VLD1_UART: RESP OK[0m
+[0;32mI (72974) VLD1_UART: Distance [m]: 1.990 m[0m
+[0;32mI (72974) VLD1_UART: Magnitude [dB]: 5310[0m
+[0;32mI (72974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50439 mm, Magnitude=48660[0m
+[0;32mI (74074) VLD1_UART: RESP OK[0m
+[0;32mI (74074) VLD1_UART: Distance [m]: 1.995 m[0m
+[0;32mI (74074) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (74074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51719 mm, Magnitude=6165[0m
+[0;32mI (75174) VLD1_UART: RESP OK[0m
+[0;32mI (75174) VLD1_UART: Distance [m]: 1.999 m[0m
+[0;32mI (75174) VLD1_UART: Magnitude [dB]: 5680[0m
+[0;32mI (75174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52743 mm, Magnitude=12310[0m
+[0;32mI (76274) VLD1_UART: RESP OK[0m
+[0;32mI (76274) VLD1_UART: Distance [m]: 2.001 m[0m
+[0;32mI (76274) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (76274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=53511 mm, Magnitude=7190[0m
+[0;32mI (77374) VLD1_UART: RESP OK[0m
+[0;32mI (77374) VLD1_UART: Distance [m]: 1.978 m[0m
+[0;32mI (77374) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (77374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47367 mm, Magnitude=44565[0m
+[0;32mI (78474) VLD1_UART: RESP OK[0m
+[0;32mI (78474) VLD1_UART: Distance [m]: 1.975 m[0m
+[0;32mI (78474) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (78474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46599 mm, Magnitude=36885[0m
+[0;32mI (79574) VLD1_UART: RESP OK[0m
+[0;32mI (79574) VLD1_UART: Distance [m]: 1.972 m[0m
+[0;32mI (79574) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (79574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45831 mm, Magnitude=34325[0m
+[0;32mI (80674) VLD1_UART: RESP OK[0m
+[0;32mI (80674) VLD1_UART: Distance [m]: 1.970 m[0m
+[0;32mI (80674) VLD1_UART: Magnitude [dB]: 5580[0m
+[0;32mI (80674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45575 mm, Magnitude=52245[0m
+[0;32mI (81774) VLD1_UART: RESP OK[0m
+[0;32mI (81774) VLD1_UART: Distance [m]: 1.969 m[0m
+[0;32mI (81774) VLD1_UART: Magnitude [dB]: 5540[0m
+[0;32mI (81774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45319 mm, Magnitude=42005[0m
+[0;32mI (82874) VLD1_UART: RESP OK[0m
+[0;32mI (82874) VLD1_UART: Distance [m]: 1.967 m[0m
+[0;32mI (82874) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (82874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44807 mm, Magnitude=44565[0m
+[0;32mI (83974) VLD1_UART: RESP OK[0m
+[0;32mI (83974) VLD1_UART: Distance [m]: 1.966 m[0m
+[0;32mI (83974) VLD1_UART: Magnitude [dB]: 5560[0m
+[0;32mI (83974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44551 mm, Magnitude=47125[0m
+[0;32mI (85074) VLD1_UART: RESP OK[0m
+[0;32mI (85074) VLD1_UART: Distance [m]: 1.966 m[0m
+[0;32mI (85074) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (85074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44295 mm, Magnitude=44565[0m
+[0;32mI (86174) VLD1_UART: RESP OK[0m
+[0;32mI (86174) VLD1_UART: Distance [m]: 1.965 m[0m
+[0;32mI (86174) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (86174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44295 mm, Magnitude=44565[0m
+[0;32mI (87274) VLD1_UART: RESP OK[0m
+[0;32mI (87274) VLD1_UART: Distance [m]: 1.965 m[0m
+[0;32mI (87274) VLD1_UART: Magnitude [dB]: 5560[0m
+[0;32mI (87274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44039 mm, Magnitude=47125[0m
+[0;32mI (88374) VLD1_UART: RESP OK[0m
+[0;32mI (88374) VLD1_UART: Distance [m]: 1.965 m[0m
+[0;32mI (88374) VLD1_UART: Magnitude [dB]: 5580[0m
+[0;32mI (88374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44039 mm, Magnitude=52245[0m
+[0;32mI (89474) VLD1_UART: RESP OK[0m
+[0;32mI (89474) VLD1_UART: Distance [m]: 1.964 m[0m
+[0;32mI (89474) VLD1_UART: Magnitude [dB]: 5570[0m
+[0;32mI (89474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44039 mm, Magnitude=49685[0m
+[0;32mI (90574) VLD1_UART: RESP OK[0m
+[0;32mI (90574) VLD1_UART: Distance [m]: 1.949 m[0m
+[0;32mI (90574) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (90574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=40199 mm, Magnitude=7190[0m
+[0;32mI (91674) VLD1_UART: RESP OK[0m
+[0;32mI (91674) VLD1_UART: Distance [m]: 1.937 m[0m
+[0;32mI (91674) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (91674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=36871 mm, Magnitude=26645[0m
+[0;32mI (92774) VLD1_UART: RESP OK[0m
+[0;32mI (92774) VLD1_UART: Distance [m]: 1.927 m[0m
+[0;32mI (92774) VLD1_UART: Magnitude [dB]: 5530[0m
+[0;32mI (92774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=34567 mm, Magnitude=39445[0m
+[0;32mI (93874) VLD1_UART: RESP OK[0m
+[0;32mI (93874) VLD1_UART: Distance [m]: 1.944 m[0m
+[0;32mI (93874) VLD1_UART: Magnitude [dB]: 5620[0m
+[0;32mI (93874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=38919 mm, Magnitude=62485[0m
+[0;32mI (94974) VLD1_UART: RESP OK[0m
+[0;32mI (94974) VLD1_UART: Distance [m]: 1.959 m[0m
+[0;32mI (94974) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (94974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=42503 mm, Magnitude=26645[0m
+[0;32mI (96074) VLD1_UART: RESP OK[0m
+[0;32mI (96074) VLD1_UART: Distance [m]: 1.970 m[0m
+[0;32mI (96074) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (96074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45319 mm, Magnitude=16405[0m
+[0;32mI (97174) VLD1_UART: RESP OK[0m
+[0;32mI (97174) VLD1_UART: Distance [m]: 1.978 m[0m
+[0;32mI (97174) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (97174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47623 mm, Magnitude=13845[0m
+[0;32mI (98274) VLD1_UART: RESP OK[0m
+[0;32mI (98274) VLD1_UART: Distance [m]: 1.986 m[0m
+[0;32mI (98274) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (98274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49415 mm, Magnitude=8725[0m
+[0;32mI (99374) VLD1_UART: RESP OK[0m
+[0;32mI (99374) VLD1_UART: Distance [m]: 1.991 m[0m
+[0;32mI (99374) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (99374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50951 mm, Magnitude=6165[0m
+[0;32mI (100474) VLD1_UART: RESP OK[0m
+[0;32mI (100474) VLD1_UART: Distance [m]: 1.995 m[0m
+[0;32mI (100474) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (100474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51975 mm, Magnitude=11285[0m
+[0;32mI (101574) VLD1_UART: RESP OK[0m
+[0;32mI (101574) VLD1_UART: Distance [m]: 2.001 m[0m
+[0;32mI (101574) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (101574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=53255 mm, Magnitude=8725[0m
+[0;32mI (102674) VLD1_UART: RESP OK[0m
+[0;32mI (102674) VLD1_UART: Distance [m]: 1.993 m[0m
+[0;32mI (102674) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (102674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51207 mm, Magnitude=24085[0m
+[0;32mI (103774) VLD1_UART: RESP OK[0m
+[0;32mI (103774) VLD1_UART: Distance [m]: 1.986 m[0m
+[0;32mI (103774) VLD1_UART: Magnitude [dB]: 5330[0m
+[0;32mI (103774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49671 mm, Magnitude=53780[0m
+[0;32mI (104874) VLD1_UART: RESP OK[0m
+[0;32mI (104874) VLD1_UART: Distance [m]: 1.979 m[0m
+[0;32mI (104874) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (104874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47879 mm, Magnitude=16405[0m
+[0;32mI (105974) VLD1_UART: RESP OK[0m
+[0;32mI (105974) VLD1_UART: Distance [m]: 1.973 m[0m
+[0;32mI (105974) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (105974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46087 mm, Magnitude=18965[0m
+[0;32mI (107074) VLD1_UART: RESP OK[0m
+[0;32mI (107074) VLD1_UART: Distance [m]: 1.971 m[0m
+[0;32mI (107074) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (107074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45575 mm, Magnitude=21525[0m
+[0;32mI (108174) VLD1_UART: RESP OK[0m
+[0;32mI (108174) VLD1_UART: Distance [m]: 1.969 m[0m
+[0;32mI (108174) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (108174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45063 mm, Magnitude=34325[0m
+[0;32mI (109274) VLD1_UART: RESP OK[0m
+[0;32mI (109274) VLD1_UART: Distance [m]: 1.966 m[0m
+[0;32mI (109274) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (109274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44295 mm, Magnitude=31765[0m
+[0;32mI (110374) VLD1_UART: RESP OK[0m
+[0;32mI (110374) VLD1_UART: Distance [m]: 1.965 m[0m
+[0;32mI (110374) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (110374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44039 mm, Magnitude=16405[0m
+[0;32mI (111474) VLD1_UART: RESP OK[0m
+[0;32mI (111474) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (111474) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (111474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43783 mm, Magnitude=34325[0m
+[0;32mI (112574) VLD1_UART: RESP OK[0m
+[0;32mI (112574) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (112574) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (112574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43527 mm, Magnitude=29205[0m
+[0;32mI (113674) VLD1_UART: RESP OK[0m
+[0;32mI (113674) VLD1_UART: Distance [m]: 1.962 m[0m
+[0;32mI (113674) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (113674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43527 mm, Magnitude=8725[0m
+[0;32mI (114774) VLD1_UART: RESP OK[0m
+[0;32mI (114774) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (114774) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (114774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43527 mm, Magnitude=21525[0m
+[0;32mI (115874) VLD1_UART: RESP OK[0m
+[0;32mI (115874) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (115874) VLD1_UART: Magnitude [dB]: 5370[0m
+[0;32mI (115874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43783 mm, Magnitude=64020[0m
+[0;32mI (116974) VLD1_UART: RESP OK[0m
+[0;32mI (116974) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (116974) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (116974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43783 mm, Magnitude=13845[0m
+[0;32mI (118074) VLD1_UART: RESP OK[0m
+[0;32mI (118074) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (118074) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (118074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43783 mm, Magnitude=6165[0m
+[0;32mI (119174) VLD1_UART: RESP OK[0m
+[0;32mI (119174) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (119174) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (119174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43783 mm, Magnitude=26645[0m
+[0;32mI (120274) VLD1_UART: RESP OK[0m
+[0;32mI (120274) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (120274) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (120274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43527 mm, Magnitude=18965[0m
+[0;32mI (121374) VLD1_UART: RESP OK[0m
+[0;32mI (121374) VLD1_UART: Distance [m]: 1.962 m[0m
+[0;32mI (121374) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (121374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43527 mm, Magnitude=18965[0m
+[0;32mI (122474) VLD1_UART: RESP OK[0m
+[0;32mI (122474) VLD1_UART: Distance [m]: 1.963 m[0m
+[0;32mI (122474) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (122474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43527 mm, Magnitude=8725[0m
+[0;32mI (123574) VLD1_UART: RESP OK[0m
+[0;32mI (123574) VLD1_UART: Distance [m]: 2.027 m[0m
+[0;32mI (123574) VLD1_UART: Magnitude [dB]: 5370[0m
+[0;32mI (123574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60167 mm, Magnitude=64020[0m
+[0;32mI (124674) VLD1_UART: RESP OK[0m
+[0;32mI (124674) VLD1_UART: Distance [m]: 2.079 m[0m
+[0;32mI (124674) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (124674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=7944 mm, Magnitude=61460[0m
+[0;32mI (125774) VLD1_UART: RESP OK[0m
+[0;32mI (125774) VLD1_UART: Distance [m]: 2.056 m[0m
+[0;32mI (125774) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (125774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=2056 mm, Magnitude=34325[0m
+[0;32mI (126874) VLD1_UART: RESP OK[0m
+[0;32mI (126874) VLD1_UART: Distance [m]: 2.037 m[0m
+[0;32mI (126874) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (126874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62727 mm, Magnitude=16405[0m
+[0;32mI (127974) VLD1_UART: RESP OK[0m
+[0;32mI (127974) VLD1_UART: Distance [m]: 2.033 m[0m
+[0;32mI (127974) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (127974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61703 mm, Magnitude=21525[0m
+[0;32mI (129074) VLD1_UART: RESP OK[0m
+[0;32mI (129074) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (129074) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (129074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57863 mm, Magnitude=34325[0m
+[0;32mI (130174) VLD1_UART: RESP OK[0m
+[0;32mI (130174) VLD1_UART: Distance [m]: 2.007 m[0m
+[0;32mI (130174) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (130174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55047 mm, Magnitude=26645[0m
+[0;32mI (131274) VLD1_UART: RESP OK[0m
+[0;32mI (131274) VLD1_UART: Distance [m]: 1.998 m[0m
+[0;32mI (131274) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (131274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52743 mm, Magnitude=26645[0m
+[0;32mI (132374) VLD1_UART: RESP OK[0m
+[0;32mI (132374) VLD1_UART: Distance [m]: 1.991 m[0m
+[0;32mI (132374) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (132374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50695 mm, Magnitude=29205[0m
+[0;32mI (133474) VLD1_UART: RESP OK[0m
+[0;32mI (133474) VLD1_UART: Distance [m]: 1.984 m[0m
+[0;32mI (133474) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (133474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49159 mm, Magnitude=21525[0m
+[0;32mI (134574) VLD1_UART: RESP OK[0m
+[0;32mI (134574) VLD1_UART: Distance [m]: 1.979 m[0m
+[0;32mI (134574) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (134574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47879 mm, Magnitude=21525[0m
+[0;32mI (135674) VLD1_UART: RESP OK[0m
+[0;32mI (135674) VLD1_UART: Distance [m]: 1.960 m[0m
+[0;32mI (135674) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (135674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43015 mm, Magnitude=26645[0m
+[0;32mI (136774) VLD1_UART: RESP OK[0m
+[0;32mI (136774) VLD1_UART: Distance [m]: 1.981 m[0m
+[0;32mI (136774) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (136774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48391 mm, Magnitude=8725[0m
+[0;32mI (137874) VLD1_UART: RESP OK[0m
+[0;32mI (137874) VLD1_UART: Distance [m]: 1.999 m[0m
+[0;32mI (137874) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (137874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52743 mm, Magnitude=11285[0m
+[0;32mI (138974) VLD1_UART: RESP OK[0m
+[0;32mI (138974) VLD1_UART: Distance [m]: 1.992 m[0m
+[0;32mI (138974) VLD1_UART: Magnitude [dB]: 5350[0m
+[0;32mI (138974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50951 mm, Magnitude=58900[0m
+[0;32mI (140074) VLD1_UART: RESP OK[0m
+[0;32mI (140074) VLD1_UART: Distance [m]: 1.986 m[0m
+[0;32mI (140074) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (140074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49415 mm, Magnitude=61460[0m
+[0;32mI (141174) VLD1_UART: RESP OK[0m
+[0;32mI (141174) VLD1_UART: Distance [m]: 1.982 m[0m
+[0;32mI (141174) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (141174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48391 mm, Magnitude=61460[0m
+[0;32mI (142274) VLD1_UART: RESP OK[0m
+[0;32mI (142274) VLD1_UART: Distance [m]: 1.978 m[0m
+[0;32mI (142274) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (142274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47623 mm, Magnitude=24085[0m
+[0;32mI (143374) VLD1_UART: RESP OK[0m
+[0;32mI (143374) VLD1_UART: Distance [m]: 1.976 m[0m
+[0;32mI (143374) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (143374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46855 mm, Magnitude=31765[0m
+[0;32mI (144474) VLD1_UART: RESP OK[0m
+[0;32mI (144474) VLD1_UART: Distance [m]: 1.993 m[0m
+[0;32mI (144474) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (144474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51463 mm, Magnitude=11285[0m
+[0;32mI (145574) VLD1_UART: RESP OK[0m
+[0;32mI (145574) VLD1_UART: Distance [m]: 2.008 m[0m
+[0;32mI (145574) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (145574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55047 mm, Magnitude=16405[0m
+[0;32mI (146674) VLD1_UART: RESP OK[0m
+[0;32mI (146674) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (146674) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (146674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58119 mm, Magnitude=24085[0m
+[0;32mI (147774) VLD1_UART: RESP OK[0m
+[0;32mI (147774) VLD1_UART: Distance [m]: 2.008 m[0m
+[0;32mI (147774) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (147774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55047 mm, Magnitude=13845[0m
+[0;32mI (148874) VLD1_UART: RESP OK[0m
+[0;32mI (148874) VLD1_UART: Distance [m]: 2.022 m[0m
+[0;32mI (148874) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (148874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58631 mm, Magnitude=21525[0m
+[0;32mI (149974) VLD1_UART: RESP OK[0m
+[0;32mI (149974) VLD1_UART: Distance [m]: 2.032 m[0m
+[0;32mI (149974) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (149974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61447 mm, Magnitude=21525[0m
+[0;32mI (151074) VLD1_UART: RESP OK[0m
+[0;32mI (151074) VLD1_UART: Distance [m]: 2.018 m[0m
+[0;32mI (151074) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (151074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57863 mm, Magnitude=24085[0m
+[0;32mI (152174) VLD1_UART: RESP OK[0m
+[0;32mI (152174) VLD1_UART: Distance [m]: 2.029 m[0m
+[0;32mI (152174) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (152174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60423 mm, Magnitude=21525[0m
+[0;32mI (153274) VLD1_UART: RESP OK[0m
+[0;32mI (153274) VLD1_UART: Distance [m]: 2.038 m[0m
+[0;32mI (153274) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (153274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62727 mm, Magnitude=26645[0m
+[0;32mI (154374) VLD1_UART: RESP OK[0m
+[0;32mI (154374) VLD1_UART: Distance [m]: 2.023 m[0m
+[0;32mI (154374) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (154374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58887 mm, Magnitude=18965[0m
+[0;32mI (155474) VLD1_UART: RESP OK[0m
+[0;32mI (155474) VLD1_UART: Distance [m]: 2.034 m[0m
+[0;32mI (155474) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (155474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61703 mm, Magnitude=24085[0m
+[0;32mI (156574) VLD1_UART: RESP OK[0m
+[0;32mI (156574) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (156574) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (156574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58119 mm, Magnitude=21525[0m
+[0;32mI (157674) VLD1_UART: RESP OK[0m
+[0;32mI (157674) VLD1_UART: Distance [m]: 2.008 m[0m
+[0;32mI (157674) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (157674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55303 mm, Magnitude=29205[0m
+[0;32mI (158774) VLD1_UART: RESP OK[0m
+[0;32mI (158774) VLD1_UART: Distance [m]: 2.020 m[0m
+[0;32mI (158774) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (158774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58119 mm, Magnitude=8725[0m
+[0;32mI (159874) VLD1_UART: RESP OK[0m
+[0;32mI (159874) VLD1_UART: Distance [m]: 2.008 m[0m
+[0;32mI (159874) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (159874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55303 mm, Magnitude=18965[0m
+[0;32mI (160974) VLD1_UART: RESP OK[0m
+[0;32mI (160974) VLD1_UART: Distance [m]: 1.999 m[0m
+[0;32mI (160974) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (160974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52999 mm, Magnitude=44565[0m
+[0;32mI (162074) VLD1_UART: RESP OK[0m
+[0;32mI (162074) VLD1_UART: Distance [m]: 1.992 m[0m
+[0;32mI (162074) VLD1_UART: Magnitude [dB]: 5670[0m
+[0;32mI (162074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51207 mm, Magnitude=9750[0m
+[0;32mI (163174) VLD1_UART: RESP OK[0m
+[0;32mI (163174) VLD1_UART: Distance [m]: 1.987 m[0m
+[0;32mI (163174) VLD1_UART: Magnitude [dB]: 5630[0m
+[0;32mI (163174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49671 mm, Magnitude=65045[0m
+[0;32mI (164274) VLD1_UART: RESP OK[0m
+[0;32mI (164274) VLD1_UART: Distance [m]: 1.982 m[0m
+[0;32mI (164274) VLD1_UART: Magnitude [dB]: 5660[0m
+[0;32mI (164274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48647 mm, Magnitude=7190[0m
+[0;32mI (165374) VLD1_UART: RESP OK[0m
+[0;32mI (165374) VLD1_UART: Distance [m]: 1.979 m[0m
+[0;32mI (165374) VLD1_UART: Magnitude [dB]: 5610[0m
+[0;32mI (165374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47623 mm, Magnitude=59925[0m
+[0;32mI (166474) VLD1_UART: RESP OK[0m
+[0;32mI (166474) VLD1_UART: Distance [m]: 1.996 m[0m
+[0;32mI (166474) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (166474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51975 mm, Magnitude=13845[0m
+[0;32mI (167574) VLD1_UART: RESP OK[0m
+[0;32mI (167574) VLD1_UART: Distance [m]: 1.990 m[0m
+[0;32mI (167574) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (167574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50439 mm, Magnitude=24085[0m
+[0;32mI (168674) VLD1_UART: RESP OK[0m
+[0;32mI (168674) VLD1_UART: Distance [m]: 1.984 m[0m
+[0;32mI (168674) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (168674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49159 mm, Magnitude=31765[0m
+[0;32mI (169774) VLD1_UART: RESP OK[0m
+[0;32mI (169774) VLD1_UART: Distance [m]: 1.980 m[0m
+[0;32mI (169774) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (169774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48135 mm, Magnitude=34325[0m
+[0;32mI (170874) VLD1_UART: RESP OK[0m
+[0;32mI (170874) VLD1_UART: Distance [m]: 1.977 m[0m
+[0;32mI (170874) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (170874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=47111 mm, Magnitude=61460[0m
+[0;32mI (171974) VLD1_UART: RESP OK[0m
+[0;32mI (171974) VLD1_UART: Distance [m]: 1.995 m[0m
+[0;32mI (171974) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (171974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51975 mm, Magnitude=11285[0m
+[0;32mI (173074) VLD1_UART: RESP OK[0m
+[0;32mI (173074) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (173074) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (173074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=21525[0m
+[0;32mI (174174) VLD1_UART: RESP OK[0m
+[0;32mI (174174) VLD1_UART: Distance [m]: 2.002 m[0m
+[0;32mI (174174) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (174174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=53511 mm, Magnitude=31765[0m
+[0;32mI (175274) VLD1_UART: RESP OK[0m
+[0;32mI (175274) VLD1_UART: Distance [m]: 1.994 m[0m
+[0;32mI (175274) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (175274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51463 mm, Magnitude=24085[0m
+[0;32mI (176374) VLD1_UART: RESP OK[0m
+[0;32mI (176374) VLD1_UART: Distance [m]: 2.008 m[0m
+[0;32mI (176374) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (176374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55047 mm, Magnitude=24085[0m
+[0;32mI (177474) VLD1_UART: RESP OK[0m
+[0;32mI (177474) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (177474) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (177474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57863 mm, Magnitude=18965[0m
+[0;32mI (178574) VLD1_UART: RESP OK[0m
+[0;32mI (178574) VLD1_UART: Distance [m]: 2.007 m[0m
+[0;32mI (178574) VLD1_UART: Magnitude [dB]: 5570[0m
+[0;32mI (178574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55047 mm, Magnitude=49685[0m
+[0;32mI (179674) VLD1_UART: RESP OK[0m
+[0;32mI (179674) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (179674) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (179674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57863 mm, Magnitude=6165[0m
+[0;32mI (180774) VLD1_UART: RESP OK[0m
+[0;32mI (180774) VLD1_UART: Distance [m]: 2.008 m[0m
+[0;32mI (180774) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (180774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55047 mm, Magnitude=11285[0m
+[0;32mI (181874) VLD1_UART: RESP OK[0m
+[0;32mI (181874) VLD1_UART: Distance [m]: 1.998 m[0m
+[0;32mI (181874) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (181874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52743 mm, Magnitude=24085[0m
+[0;32mI (182974) VLD1_UART: RESP OK[0m
+[0;32mI (182974) VLD1_UART: Distance [m]: 1.991 m[0m
+[0;32mI (182974) VLD1_UART: Magnitude [dB]: 5560[0m
+[0;32mI (182974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50951 mm, Magnitude=47125[0m
+[0;32mI (184074) VLD1_UART: RESP OK[0m
+[0;32mI (184074) VLD1_UART: Distance [m]: 1.986 m[0m
+[0;32mI (184074) VLD1_UART: Magnitude [dB]: 5590[0m
+[0;32mI (184074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49415 mm, Magnitude=54805[0m
+[0;32mI (185174) VLD1_UART: RESP OK[0m
+[0;32mI (185174) VLD1_UART: Distance [m]: 1.980 m[0m
+[0;32mI (185174) VLD1_UART: Magnitude [dB]: 5570[0m
+[0;32mI (185174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48135 mm, Magnitude=49685[0m
+[0;32mI (186274) VLD1_UART: RESP OK[0m
+[0;32mI (186274) VLD1_UART: Distance [m]: 1.976 m[0m
+[0;32mI (186274) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (186274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46855 mm, Magnitude=34325[0m
+[0;32mI (187374) VLD1_UART: RESP OK[0m
+[0;32mI (187374) VLD1_UART: Distance [m]: 1.973 m[0m
+[0;32mI (187374) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (187374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46343 mm, Magnitude=31765[0m
+[0;32mI (188474) VLD1_UART: RESP OK[0m
+[0;32mI (188474) VLD1_UART: Distance [m]: 1.972 m[0m
+[0;32mI (188474) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (188474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45831 mm, Magnitude=16405[0m
+[0;32mI (189574) VLD1_UART: RESP OK[0m
+[0;32mI (189574) VLD1_UART: Distance [m]: 1.970 m[0m
+[0;32mI (189574) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (189574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45575 mm, Magnitude=31765[0m
+[0;32mI (190674) VLD1_UART: RESP OK[0m
+[0;32mI (190674) VLD1_UART: Distance [m]: 1.970 m[0m
+[0;32mI (190674) VLD1_UART: Magnitude [dB]: 5590[0m
+[0;32mI (190674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45319 mm, Magnitude=54805[0m
+[0;32mI (191774) VLD1_UART: RESP OK[0m
+[0;32mI (191774) VLD1_UART: Distance [m]: 1.969 m[0m
+[0;32mI (191774) VLD1_UART: Magnitude [dB]: 5580[0m
+[0;32mI (191774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=45063 mm, Magnitude=52245[0m
+[0;32mI (192874) VLD1_UART: RESP OK[0m
+[0;32mI (192874) VLD1_UART: Distance [m]: 1.988 m[0m
+[0;32mI (192874) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (192874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50183 mm, Magnitude=13845[0m
+[0;32mI (193974) VLD1_UART: RESP OK[0m
+[0;32mI (193974) VLD1_UART: Distance [m]: 1.983 m[0m
+[0;32mI (193974) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (193974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48647 mm, Magnitude=8725[0m
+[0;32mI (195074) VLD1_UART: RESP OK[0m
+[0;32mI (195074) VLD1_UART: Distance [m]: 2.000 m[0m
+[0;32mI (195074) VLD1_UART: Magnitude [dB]: 5370[0m
+[0;32mI (195074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=53255 mm, Magnitude=64020[0m
+[0;32mI (196174) VLD1_UART: RESP OK[0m
+[0;32mI (196174) VLD1_UART: Distance [m]: 1.992 m[0m
+[0;32mI (196174) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (196174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51207 mm, Magnitude=16405[0m
+[0;32mI (197274) VLD1_UART: RESP OK[0m
+[0;32mI (197274) VLD1_UART: Distance [m]: 2.007 m[0m
+[0;32mI (197274) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (197274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=54791 mm, Magnitude=34325[0m
+[0;32mI (198374) VLD1_UART: RESP OK[0m
+[0;32mI (198374) VLD1_UART: Distance [m]: 2.008 m[0m
+[0;32mI (198374) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (198374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55303 mm, Magnitude=18965[0m
+[0;32mI (199474) VLD1_UART: RESP OK[0m
+[0;32mI (199474) VLD1_UART: Distance [m]: 2.000 m[0m
+[0;32mI (199474) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (199474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52999 mm, Magnitude=24085[0m
+[0;32mI (200574) VLD1_UART: RESP OK[0m
+[0;32mI (200574) VLD1_UART: Distance [m]: 2.013 m[0m
+[0;32mI (200574) VLD1_UART: Magnitude [dB]: 5300[0m
+[0;32mI (200574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=46100[0m
+[0;32mI (201674) VLD1_UART: RESP OK[0m
+[0;32mI (201674) VLD1_UART: Distance [m]: 2.002 m[0m
+[0;32mI (201674) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (201674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=53511 mm, Magnitude=21525[0m
+[0;32mI (202774) VLD1_UART: RESP OK[0m
+[0;32mI (202774) VLD1_UART: Distance [m]: 1.994 m[0m
+[0;32mI (202774) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (202774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51463 mm, Magnitude=16405[0m
+[0;32mI (203874) VLD1_UART: RESP OK[0m
+[0;32mI (203874) VLD1_UART: Distance [m]: 1.986 m[0m
+[0;32mI (203874) VLD1_UART: Magnitude [dB]: 5340[0m
+[0;32mI (203874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49671 mm, Magnitude=56340[0m
+[0;32mI (204974) VLD1_UART: RESP OK[0m
+[0;32mI (204974) VLD1_UART: Distance [m]: 1.981 m[0m
+[0;32mI (204974) VLD1_UART: Magnitude [dB]: 5390[0m
+[0;32mI (204974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48135 mm, Magnitude=3605[0m
+[0;32mI (206074) VLD1_UART: RESP OK[0m
+[0;32mI (206074) VLD1_UART: Distance [m]: 2.042 m[0m
+[0;32mI (206074) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (206074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63751 mm, Magnitude=8725[0m
+[0;32mI (207174) VLD1_UART: RESP OK[0m
+[0;32mI (207174) VLD1_UART: Distance [m]: 2.047 m[0m
+[0;32mI (207174) VLD1_UART: Magnitude [dB]: 5350[0m
+[0;32mI (207174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=65287 mm, Magnitude=58900[0m
+[0;32mI (208274) VLD1_UART: RESP OK[0m
+[0;32mI (208274) VLD1_UART: Distance [m]: 2.029 m[0m
+[0;32mI (208274) VLD1_UART: Magnitude [dB]: 5350[0m
+[0;32mI (208274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60423 mm, Magnitude=58900[0m
+[0;32mI (209374) VLD1_UART: RESP OK[0m
+[0;32mI (209374) VLD1_UART: Distance [m]: 2.037 m[0m
+[0;32mI (209374) VLD1_UART: Magnitude [dB]: 5350[0m
+[0;32mI (209374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62471 mm, Magnitude=58900[0m
+[0;32mI (210474) VLD1_UART: RESP OK[0m
+[0;32mI (210474) VLD1_UART: Distance [m]: 2.043 m[0m
+[0;32mI (210474) VLD1_UART: Magnitude [dB]: 5340[0m
+[0;32mI (210474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64263 mm, Magnitude=56340[0m
+[0;32mI (211574) VLD1_UART: RESP OK[0m
+[0;32mI (211574) VLD1_UART: Distance [m]: 2.048 m[0m
+[0;32mI (211574) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (211574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=8 mm, Magnitude=24085[0m
+[0;32mI (212674) VLD1_UART: RESP OK[0m
+[0;32mI (212674) VLD1_UART: Distance [m]: 2.028 m[0m
+[0;32mI (212674) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (212674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60423 mm, Magnitude=61460[0m
+[0;32mI (213774) VLD1_UART: RESP OK[0m
+[0;32mI (213774) VLD1_UART: Distance [m]: 2.036 m[0m
+[0;32mI (213774) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (213774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62215 mm, Magnitude=8725[0m
+[0;32mI (214874) VLD1_UART: RESP OK[0m
+[0;32mI (214874) VLD1_UART: Distance [m]: 2.042 m[0m
+[0;32mI (214874) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (214874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63751 mm, Magnitude=24085[0m
+[0;32mI (215974) VLD1_UART: RESP OK[0m
+[0;32mI (215974) VLD1_UART: Distance [m]: 2.046 m[0m
+[0;32mI (215974) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (215974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=65031 mm, Magnitude=21525[0m
+[0;32mI (217074) VLD1_UART: RESP OK[0m
+[0;32mI (217074) VLD1_UART: Distance [m]: 2.050 m[0m
+[0;32mI (217074) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (217074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=264 mm, Magnitude=36885[0m
+[0;32mI (218174) VLD1_UART: RESP OK[0m
+[0;32mI (218174) VLD1_UART: Distance [m]: 2.053 m[0m
+[0;32mI (218174) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (218174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1032 mm, Magnitude=31765[0m
+[0;32mI (219274) VLD1_UART: RESP OK[0m
+[0;32mI (219274) VLD1_UART: Distance [m]: 2.055 m[0m
+[0;32mI (219274) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (219274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1544 mm, Magnitude=36885[0m
+[0;32mI (220374) VLD1_UART: RESP OK[0m
+[0;32mI (220374) VLD1_UART: Distance [m]: 2.057 m[0m
+[0;32mI (220374) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (220374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=2056 mm, Magnitude=13845[0m
+[0;32mI (221474) VLD1_UART: RESP OK[0m
+[0;32mI (221474) VLD1_UART: Distance [m]: 2.045 m[0m
+[0;32mI (221474) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (221474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64775 mm, Magnitude=26645[0m
+[0;32mI (222574) VLD1_UART: RESP OK[0m
+[0;32mI (222574) VLD1_UART: Distance [m]: 2.037 m[0m
+[0;32mI (222574) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (222574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62727 mm, Magnitude=36885[0m
+[0;32mI (223674) VLD1_UART: RESP OK[0m
+[0;32mI (223674) VLD1_UART: Distance [m]: 2.018 m[0m
+[0;32mI (223674) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (223674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57863 mm, Magnitude=1045[0m
+[0;32mI (224774) VLD1_UART: RESP OK[0m
+[0;32mI (224774) VLD1_UART: Distance [m]: 2.027 m[0m
+[0;32mI (224774) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (224774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60167 mm, Magnitude=11285[0m
+[0;32mI (225874) VLD1_UART: RESP OK[0m
+[0;32mI (225874) VLD1_UART: Distance [m]: 2.035 m[0m
+[0;32mI (225874) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (225874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61959 mm, Magnitude=24085[0m
+[0;32mI (226974) VLD1_UART: RESP OK[0m
+[0;32mI (226974) VLD1_UART: Distance [m]: 2.041 m[0m
+[0;32mI (226974) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (226974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63495 mm, Magnitude=24085[0m
+[0;32mI (228074) VLD1_UART: RESP OK[0m
+[0;32mI (228074) VLD1_UART: Distance [m]: 2.045 m[0m
+[0;32mI (228074) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (228074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64775 mm, Magnitude=1045[0m
+[0;32mI (229174) VLD1_UART: RESP OK[0m
+[0;32mI (229174) VLD1_UART: Distance [m]: 2.050 m[0m
+[0;32mI (229174) VLD1_UART: Magnitude [dB]: 5590[0m
+[0;32mI (229174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=520 mm, Magnitude=54805[0m
+[0;32mI (230274) VLD1_UART: RESP OK[0m
+[0;32mI (230274) VLD1_UART: Distance [m]: 2.054 m[0m
+[0;32mI (230274) VLD1_UART: Magnitude [dB]: 5580[0m
+[0;32mI (230274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1288 mm, Magnitude=52245[0m
+[0;32mI (231374) VLD1_UART: RESP OK[0m
+[0;32mI (231374) VLD1_UART: Distance [m]: 2.057 m[0m
+[0;32mI (231374) VLD1_UART: Magnitude [dB]: 5560[0m
+[0;32mI (231374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=2056 mm, Magnitude=47125[0m
+[0;32mI (232474) VLD1_UART: RESP OK[0m
+[0;32mI (232474) VLD1_UART: Distance [m]: 2.048 m[0m
+[0;32mI (232474) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (232474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=65287 mm, Magnitude=11285[0m
+[0;32mI (233574) VLD1_UART: RESP OK[0m
+[0;32mI (233574) VLD1_UART: Distance [m]: 2.052 m[0m
+[0;32mI (233574) VLD1_UART: Magnitude [dB]: 5350[0m
+[0;32mI (233574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1032 mm, Magnitude=58900[0m
+[0;32mI (234674) VLD1_UART: RESP OK[0m
+[0;32mI (234674) VLD1_UART: Distance [m]: 2.033 m[0m
+[0;32mI (234674) VLD1_UART: Magnitude [dB]: 5290[0m
+[0;32mI (234674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61447 mm, Magnitude=43540[0m
+[0;32mI (235774) VLD1_UART: RESP OK[0m
+[0;32mI (235774) VLD1_UART: Distance [m]: 2.040 m[0m
+[0;32mI (235774) VLD1_UART: Magnitude [dB]: 5340[0m
+[0;32mI (235774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63239 mm, Magnitude=56340[0m
+[0;32mI (236874) VLD1_UART: RESP OK[0m
+[0;32mI (236874) VLD1_UART: Distance [m]: 2.046 m[0m
+[0;32mI (236874) VLD1_UART: Magnitude [dB]: 5370[0m
+[0;32mI (236874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=65031 mm, Magnitude=64020[0m
+[0;32mI (237974) VLD1_UART: RESP OK[0m
+[0;32mI (237974) VLD1_UART: Distance [m]: 2.040 m[0m
+[0;32mI (237974) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (237974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63495 mm, Magnitude=18965[0m
+[0;32mI (239074) VLD1_UART: RESP OK[0m
+[0;32mI (239074) VLD1_UART: Distance [m]: 2.047 m[0m
+[0;32mI (239074) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (239074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=65031 mm, Magnitude=6165[0m
+[0;32mI (240174) VLD1_UART: RESP OK[0m
+[0;32mI (240174) VLD1_UART: Distance [m]: 2.041 m[0m
+[0;32mI (240174) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (240174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63495 mm, Magnitude=16405[0m
+[0;32mI (241274) VLD1_UART: RESP OK[0m
+[0;32mI (241274) VLD1_UART: Distance [m]: 2.035 m[0m
+[0;32mI (241274) VLD1_UART: Magnitude [dB]: 5310[0m
+[0;32mI (241274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62215 mm, Magnitude=48660[0m
+[0;32mI (242374) VLD1_UART: RESP OK[0m
+[0;32mI (242374) VLD1_UART: Distance [m]: 2.042 m[0m
+[0;32mI (242374) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (242374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63751 mm, Magnitude=29205[0m
+[0;32mI (243474) VLD1_UART: RESP OK[0m
+[0;32mI (243474) VLD1_UART: Distance [m]: 2.036 m[0m
+[0;32mI (243474) VLD1_UART: Magnitude [dB]: 5560[0m
+[0;32mI (243474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62471 mm, Magnitude=47125[0m
+[0;32mI (244574) VLD1_UART: RESP OK[0m
+[0;32mI (244574) VLD1_UART: Distance [m]: 1.699 m[0m
+[0;32mI (244574) VLD1_UART: Magnitude [dB]: 6780[0m
+[0;32mI (244574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=41734 mm, Magnitude=31770[0m
+[0;32mI (245674) VLD1_UART: RESP OK[0m
+[0;32mI (245674) VLD1_UART: Distance [m]: 1.751 m[0m
+[0;32mI (245674) VLD1_UART: Magnitude [dB]: 5370[0m
+[0;32mI (245674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55046 mm, Magnitude=64020[0m
+[0;32mI (246774) VLD1_UART: RESP OK[0m
+[0;32mI (246774) VLD1_UART: Distance [m]: 1.468 m[0m
+[0;32mI (246774) VLD1_UART: Magnitude [dB]: 6280[0m
+[0;32mI (246774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=48133 mm, Magnitude=34840[0m
+[0;32mI (247874) VLD1_UART: RESP OK[0m
+[0;32mI (247874) VLD1_UART: Distance [m]: 1.577 m[0m
+[0;32mI (247874) VLD1_UART: Magnitude [dB]: 5770[0m
+[0;32mI (247874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=10502 mm, Magnitude=35350[0m
+[0;32mI (248974) VLD1_UART: RESP OK[0m
+[0;32mI (248974) VLD1_UART: Distance [m]: 1.676 m[0m
+[0;32mI (248974) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (248974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=35590 mm, Magnitude=44565[0m
+[0;32mI (250074) VLD1_UART: RESP OK[0m
+[0;32mI (250074) VLD1_UART: Distance [m]: 1.743 m[0m
+[0;32mI (250074) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (250074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52742 mm, Magnitude=29205[0m
+[0;32mI (251174) VLD1_UART: RESP OK[0m
+[0;32mI (251174) VLD1_UART: Distance [m]: 1.797 m[0m
+[0;32mI (251174) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (251174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1031 mm, Magnitude=44565[0m
+[0;32mI (252274) VLD1_UART: RESP OK[0m
+[0;32mI (252274) VLD1_UART: Distance [m]: 1.840 m[0m
+[0;32mI (252274) VLD1_UART: Magnitude [dB]: 5530[0m
+[0;32mI (252274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=12295 mm, Magnitude=39445[0m
+[0;32mI (253374) VLD1_UART: RESP OK[0m
+[0;32mI (253374) VLD1_UART: Distance [m]: 1.874 m[0m
+[0;32mI (253374) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (253374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=20999 mm, Magnitude=8725[0m
+[0;32mI (254474) VLD1_UART: RESP OK[0m
+[0;32mI (254474) VLD1_UART: Distance [m]: 1.912 m[0m
+[0;32mI (254474) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (254474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=30727 mm, Magnitude=18965[0m
+[0;32mI (255574) VLD1_UART: RESP OK[0m
+[0;32mI (255574) VLD1_UART: Distance [m]: 1.942 m[0m
+[0;32mI (255574) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (255574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=38407 mm, Magnitude=6165[0m
+[0;32mI (256674) VLD1_UART: RESP OK[0m
+[0;32mI (256674) VLD1_UART: Distance [m]: 1.967 m[0m
+[0;32mI (256674) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (256674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=44551 mm, Magnitude=13845[0m
+[0;32mI (257774) VLD1_UART: RESP OK[0m
+[0;32mI (257774) VLD1_UART: Distance [m]: 1.986 m[0m
+[0;32mI (257774) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (257774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49671 mm, Magnitude=26645[0m
+[0;32mI (258874) VLD1_UART: RESP OK[0m
+[0;32mI (258874) VLD1_UART: Distance [m]: 1.990 m[0m
+[0;32mI (258874) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (258874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=50695 mm, Magnitude=18965[0m
+[0;32mI (259974) VLD1_UART: RESP OK[0m
+[0;32mI (259974) VLD1_UART: Distance [m]: 1.995 m[0m
+[0;32mI (259974) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (259974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51719 mm, Magnitude=36885[0m
+[0;32mI (261074) VLD1_UART: RESP OK[0m
+[0;32mI (261074) VLD1_UART: Distance [m]: 1.998 m[0m
+[0;32mI (261074) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (261074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52487 mm, Magnitude=16405[0m
+[0;32mI (262174) VLD1_UART: RESP OK[0m
+[0;32mI (262174) VLD1_UART: Distance [m]: 2.000 m[0m
+[0;32mI (262174) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (262174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52999 mm, Magnitude=11285[0m
+[0;32mI (263274) VLD1_UART: RESP OK[0m
+[0;32mI (263274) VLD1_UART: Distance [m]: 2.013 m[0m
+[0;32mI (263274) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (263274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=11285[0m
+[0;32mI (264374) VLD1_UART: RESP OK[0m
+[0;32mI (264374) VLD1_UART: Distance [m]: 2.012 m[0m
+[0;32mI (264374) VLD1_UART: Magnitude [dB]: 5540[0m
+[0;32mI (264374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=42005[0m
+[0;32mI (265474) VLD1_UART: RESP OK[0m
+[0;32mI (265474) VLD1_UART: Distance [m]: 2.012 m[0m
+[0;32mI (265474) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (265474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=29205[0m
+[0;32mI (266574) VLD1_UART: RESP OK[0m
+[0;32mI (266574) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (266574) VLD1_UART: Magnitude [dB]: 5540[0m
+[0;32mI (266574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=42005[0m
+[0;32mI (267674) VLD1_UART: RESP OK[0m
+[0;32mI (267674) VLD1_UART: Distance [m]: 2.022 m[0m
+[0;32mI (267674) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (267674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58631 mm, Magnitude=11285[0m
+[0;32mI (268774) VLD1_UART: RESP OK[0m
+[0;32mI (268774) VLD1_UART: Distance [m]: 2.030 m[0m
+[0;32mI (268774) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (268774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60935 mm, Magnitude=11285[0m
+[0;32mI (269874) VLD1_UART: RESP OK[0m
+[0;32mI (269874) VLD1_UART: Distance [m]: 2.037 m[0m
+[0;32mI (269874) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (269874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62727 mm, Magnitude=16405[0m
+[0;32mI (270974) VLD1_UART: RESP OK[0m
+[0;32mI (270974) VLD1_UART: Distance [m]: 2.042 m[0m
+[0;32mI (270974) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (270974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64007 mm, Magnitude=13845[0m
+[0;32mI (272074) VLD1_UART: RESP OK[0m
+[0;32mI (272074) VLD1_UART: Distance [m]: 2.097 m[0m
+[0;32mI (272074) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (272074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=12552 mm, Magnitude=6165[0m
+[0;32mI (273174) VLD1_UART: RESP OK[0m
+[0;32mI (273174) VLD1_UART: Distance [m]: 2.091 m[0m
+[0;32mI (273174) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (273174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=10760 mm, Magnitude=34325[0m
+[0;32mI (274274) VLD1_UART: RESP OK[0m
+[0;32mI (274274) VLD1_UART: Distance [m]: 2.085 m[0m
+[0;32mI (274274) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (274274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=9480 mm, Magnitude=36885[0m
+[0;32mI (275374) VLD1_UART: RESP OK[0m
+[0;32mI (275374) VLD1_UART: Distance [m]: 2.070 m[0m
+[0;32mI (275374) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (275374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=5640 mm, Magnitude=1045[0m
+[0;32mI (276474) VLD1_UART: RESP OK[0m
+[0;32mI (276474) VLD1_UART: Distance [m]: 2.069 m[0m
+[0;32mI (276474) VLD1_UART: Magnitude [dB]: 5370[0m
+[0;32mI (276474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=5384 mm, Magnitude=64020[0m
+[0;32mI (277574) VLD1_UART: RESP OK[0m
+[0;32mI (277574) VLD1_UART: Distance [m]: 2.068 m[0m
+[0;32mI (277574) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (277574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=5128 mm, Magnitude=61460[0m
+[0;32mI (278674) VLD1_UART: RESP OK[0m
+[0;32mI (278674) VLD1_UART: Distance [m]: 2.057 m[0m
+[0;32mI (278674) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (278674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=2312 mm, Magnitude=8725[0m
+[0;32mI (279774) VLD1_UART: RESP OK[0m
+[0;32mI (279774) VLD1_UART: Distance [m]: 2.048 m[0m
+[0;32mI (279774) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (279774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=65287 mm, Magnitude=31765[0m
+[0;32mI (280874) VLD1_UART: RESP OK[0m
+[0;32mI (280874) VLD1_UART: Distance [m]: 2.040 m[0m
+[0;32mI (280874) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (280874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63495 mm, Magnitude=29205[0m
+[0;32mI (281974) VLD1_UART: RESP OK[0m
+[0;32mI (281974) VLD1_UART: Distance [m]: 2.035 m[0m
+[0;32mI (281974) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (281974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61959 mm, Magnitude=31765[0m
+[0;32mI (283074) VLD1_UART: RESP OK[0m
+[0;32mI (283074) VLD1_UART: Distance [m]: 2.030 m[0m
+[0;32mI (283074) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (283074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60935 mm, Magnitude=29205[0m
+[0;32mI (284174) VLD1_UART: RESP OK[0m
+[0;32mI (284174) VLD1_UART: Distance [m]: 2.027 m[0m
+[0;32mI (284174) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (284174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59911 mm, Magnitude=24085[0m
+[0;32mI (285274) VLD1_UART: RESP OK[0m
+[0;32mI (285274) VLD1_UART: Distance [m]: 2.024 m[0m
+[0;32mI (285274) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (285274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59143 mm, Magnitude=31765[0m
+[0;32mI (286374) VLD1_UART: RESP OK[0m
+[0;32mI (286374) VLD1_UART: Distance [m]: 2.021 m[0m
+[0;32mI (286374) VLD1_UART: Magnitude [dB]: 5510[0m
+[0;32mI (286374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58631 mm, Magnitude=34325[0m
+[0;32mI (287474) VLD1_UART: RESP OK[0m
+[0;32mI (287474) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (287474) VLD1_UART: Magnitude [dB]: 5540[0m
+[0;32mI (287474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58119 mm, Magnitude=42005[0m
+[0;32mI (288574) VLD1_UART: RESP OK[0m
+[0;32mI (288574) VLD1_UART: Distance [m]: 2.018 m[0m
+[0;32mI (288574) VLD1_UART: Magnitude [dB]: 5550[0m
+[0;32mI (288574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57607 mm, Magnitude=44565[0m
+[0;32mI (289674) VLD1_UART: RESP OK[0m
+[0;32mI (289674) VLD1_UART: Distance [m]: 2.016 m[0m
+[0;32mI (289674) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (289674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57351 mm, Magnitude=29205[0m
+[0;32mI (290774) VLD1_UART: RESP OK[0m
+[0;32mI (290774) VLD1_UART: Distance [m]: 2.015 m[0m
+[0;32mI (290774) VLD1_UART: Magnitude [dB]: 5770[0m
+[0;32mI (290774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56839 mm, Magnitude=35350[0m
+[0;32mI (291874) VLD1_UART: RESP OK[0m
+[0;32mI (291874) VLD1_UART: Distance [m]: 2.014 m[0m
+[0;32mI (291874) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (291874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56583 mm, Magnitude=26645[0m
+[0;32mI (292974) VLD1_UART: RESP OK[0m
+[0;32mI (292974) VLD1_UART: Distance [m]: 2.068 m[0m
+[0;32mI (292974) VLD1_UART: Magnitude [dB]: 6020[0m
+[0;32mI (292974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=4872 mm, Magnitude=33815[0m
+[0;32mI (294074) VLD1_UART: RESP OK[0m
+[0;32mI (294074) VLD1_UART: Distance [m]: 2.111 m[0m
+[0;32mI (294074) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (294074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=15880 mm, Magnitude=21525[0m
+[0;32mI (295174) VLD1_UART: RESP OK[0m
+[0;32mI (295174) VLD1_UART: Distance [m]: 1.830 m[0m
+[0;32mI (295174) VLD1_UART: Magnitude [dB]: 5050[0m
+[0;32mI (295174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=9479 mm, Magnitude=47635[0m
+[0;32mI (296274) VLD1_UART: RESP OK[0m
+[0;32mI (296274) VLD1_UART: Distance [m]: 1.835 m[0m
+[0;32mI (296274) VLD1_UART: Magnitude [dB]: 4600[0m
+[0;32mI (296274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=10759 mm, Magnitude=63505[0m
+[0;32mI (297374) VLD1_UART: RESP OK[0m
+[0;32mI (297374) VLD1_UART: Distance [m]: 1.924 m[0m
+[0;32mI (297374) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (297374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=33799 mm, Magnitude=31765[0m
+[0;32mI (298474) VLD1_UART: RESP OK[0m
+[0;32mI (298474) VLD1_UART: Distance [m]: 2.000 m[0m
+[0;32mI (298474) VLD1_UART: Magnitude [dB]: 6020[0m
+[0;32mI (298474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=52999 mm, Magnitude=33815[0m
+[0;32mI (299574) VLD1_UART: RESP OK[0m
+[0;32mI (299574) VLD1_UART: Distance [m]: 2.058 m[0m
+[0;32mI (299574) VLD1_UART: Magnitude [dB]: 6060[0m
+[0;32mI (299574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=2568 mm, Magnitude=44055[0m
+[0;32mI (300674) VLD1_UART: RESP OK[0m
+[0;32mI (300674) VLD1_UART: Distance [m]: 2.103 m[0m
+[0;32mI (300674) VLD1_UART: Magnitude [dB]: 5810[0m
+[0;32mI (300674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=14088 mm, Magnitude=45590[0m
+[0;32mI (301774) VLD1_UART: RESP OK[0m
+[0;32mI (301774) VLD1_UART: Distance [m]: 2.141 m[0m
+[0;32mI (301774) VLD1_UART: Magnitude [dB]: 5940[0m
+[0;32mI (301774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=23816 mm, Magnitude=13335[0m
+[0;32mI (302874) VLD1_UART: RESP OK[0m
+[0;32mI (302874) VLD1_UART: Distance [m]: 2.173 m[0m
+[0;32mI (302874) VLD1_UART: Magnitude [dB]: 5880[0m
+[0;32mI (302874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=32008 mm, Magnitude=63510[0m
+[0;32mI (303974) VLD1_UART: RESP OK[0m
+[0;32mI (303974) VLD1_UART: Distance [m]: 2.196 m[0m
+[0;32mI (303974) VLD1_UART: Magnitude [dB]: 5750[0m
+[0;32mI (303974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=37896 mm, Magnitude=30230[0m
+[0;32mI (305074) VLD1_UART: RESP OK[0m
+[0;32mI (305074) VLD1_UART: Distance [m]: 2.217 m[0m
+[0;32mI (305074) VLD1_UART: Magnitude [dB]: 5880[0m
+[0;32mI (305074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=43016 mm, Magnitude=63510[0m
+[0;32mI (306174) VLD1_UART: RESP OK[0m
+[0;32mI (306174) VLD1_UART: Distance [m]: 2.231 m[0m
+[0;32mI (306174) VLD1_UART: Magnitude [dB]: 5860[0m
+[0;32mI (306174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=46600 mm, Magnitude=58390[0m
+[0;32mI (307274) VLD1_UART: RESP OK[0m
+[0;32mI (307274) VLD1_UART: Distance [m]: 2.241 m[0m
+[0;32mI (307274) VLD1_UART: Magnitude [dB]: 5890[0m
+[0;32mI (307274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=49416 mm, Magnitude=535[0m
+[0;32mI (308374) VLD1_UART: RESP OK[0m
+[0;32mI (308374) VLD1_UART: Distance [m]: 2.251 m[0m
+[0;32mI (308374) VLD1_UART: Magnitude [dB]: 5970[0m
+[0;32mI (308374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=51720 mm, Magnitude=21015[0m
+[0;32mI (309474) VLD1_UART: RESP OK[0m
+[0;32mI (309474) VLD1_UART: Distance [m]: 2.258 m[0m
+[0;32mI (309474) VLD1_UART: Magnitude [dB]: 5600[0m
+[0;32mI (309474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=53512 mm, Magnitude=57365[0m
+[0;32mI (310574) VLD1_UART: RESP OK[0m
+[0;32mI (310574) VLD1_UART: Distance [m]: 2.208 m[0m
+[0;32mI (310574) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (310574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=40968 mm, Magnitude=31765[0m
+[0;32mI (311674) VLD1_UART: RESP OK[0m
+[0;32mI (311674) VLD1_UART: Distance [m]: 2.169 m[0m
+[0;32mI (311674) VLD1_UART: Magnitude [dB]: 5430[0m
+[0;32mI (311674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=30728 mm, Magnitude=13845[0m
+[0;32mI (312774) VLD1_UART: RESP OK[0m
+[0;32mI (312774) VLD1_UART: Distance [m]: 2.137 m[0m
+[0;32mI (312774) VLD1_UART: Magnitude [dB]: 5330[0m
+[0;32mI (312774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=22792 mm, Magnitude=53780[0m
+[0;32mI (313874) VLD1_UART: RESP OK[0m
+[0;32mI (313874) VLD1_UART: Distance [m]: 2.112 m[0m
+[0;32mI (313874) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (313874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=16136 mm, Magnitude=29205[0m
+[0;32mI (314974) VLD1_UART: RESP OK[0m
+[0;32mI (314974) VLD1_UART: Distance [m]: 2.091 m[0m
+[0;32mI (314974) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (314974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=11016 mm, Magnitude=8725[0m
+[0;32mI (316074) VLD1_UART: RESP OK[0m
+[0;32mI (316074) VLD1_UART: Distance [m]: 2.075 m[0m
+[0;32mI (316074) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (316074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=6920 mm, Magnitude=16405[0m
+[0;32mI (317174) VLD1_UART: RESP OK[0m
+[0;32mI (317174) VLD1_UART: Distance [m]: 2.062 m[0m
+[0;32mI (317174) VLD1_UART: Magnitude [dB]: 5370[0m
+[0;32mI (317174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=3592 mm, Magnitude=64020[0m
+[0;32mI (318274) VLD1_UART: RESP OK[0m
+[0;32mI (318274) VLD1_UART: Distance [m]: 2.053 m[0m
+[0;32mI (318274) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (318274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1032 mm, Magnitude=24085[0m
+[0;32mI (319374) VLD1_UART: RESP OK[0m
+[0;32mI (319374) VLD1_UART: Distance [m]: 2.045 m[0m
+[0;32mI (319374) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (319374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64775 mm, Magnitude=16405[0m
+[0;32mI (320474) VLD1_UART: RESP OK[0m
+[0;32mI (320474) VLD1_UART: Distance [m]: 2.040 m[0m
+[0;32mI (320474) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (320474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63495 mm, Magnitude=26645[0m
+[0;32mI (321574) VLD1_UART: RESP OK[0m
+[0;32mI (321574) VLD1_UART: Distance [m]: 2.035 m[0m
+[0;32mI (321574) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (321574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61959 mm, Magnitude=31765[0m
+[0;32mI (322674) VLD1_UART: RESP OK[0m
+[0;32mI (322674) VLD1_UART: Distance [m]: 2.031 m[0m
+[0;32mI (322674) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (322674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61191 mm, Magnitude=36885[0m
+[0;32mI (323774) VLD1_UART: RESP OK[0m
+[0;32mI (323774) VLD1_UART: Distance [m]: 2.028 m[0m
+[0;32mI (323774) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (323774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60167 mm, Magnitude=8725[0m
+[0;32mI (324874) VLD1_UART: RESP OK[0m
+[0;32mI (324874) VLD1_UART: Distance [m]: 2.025 m[0m
+[0;32mI (324874) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (324874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59399 mm, Magnitude=11285[0m
+[0;32mI (325974) VLD1_UART: RESP OK[0m
+[0;32mI (325974) VLD1_UART: Distance [m]: 2.022 m[0m
+[0;32mI (325974) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (325974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58887 mm, Magnitude=8725[0m
+[0;32mI (327074) VLD1_UART: RESP OK[0m
+[0;32mI (327074) VLD1_UART: Distance [m]: 2.020 m[0m
+[0;32mI (327074) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (327074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58375 mm, Magnitude=11285[0m
+[0;32mI (328174) VLD1_UART: RESP OK[0m
+[0;32mI (328174) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (328174) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (328174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57863 mm, Magnitude=1045[0m
+[0;32mI (329274) VLD1_UART: RESP OK[0m
+[0;32mI (329274) VLD1_UART: Distance [m]: 2.072 m[0m
+[0;32mI (329274) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (329274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=5896 mm, Magnitude=61460[0m
+[0;32mI (330374) VLD1_UART: RESP OK[0m
+[0;32mI (330374) VLD1_UART: Distance [m]: 2.060 m[0m
+[0;32mI (330374) VLD1_UART: Magnitude [dB]: 5350[0m
+[0;32mI (330374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=2824 mm, Magnitude=58900[0m
+[0;32mI (331474) VLD1_UART: RESP OK[0m
+[0;32mI (331474) VLD1_UART: Distance [m]: 2.051 m[0m
+[0;32mI (331474) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (331474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=520 mm, Magnitude=6165[0m
+[0;32mI (332574) VLD1_UART: RESP OK[0m
+[0;32mI (332574) VLD1_UART: Distance [m]: 2.043 m[0m
+[0;32mI (332574) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (332574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64263 mm, Magnitude=31765[0m
+[0;32mI (333674) VLD1_UART: RESP OK[0m
+[0;32mI (333674) VLD1_UART: Distance [m]: 2.037 m[0m
+[0;32mI (333674) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (333674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62727 mm, Magnitude=26645[0m
+[0;32mI (334774) VLD1_UART: RESP OK[0m
+[0;32mI (334774) VLD1_UART: Distance [m]: 2.032 m[0m
+[0;32mI (334774) VLD1_UART: Magnitude [dB]: 5320[0m
+[0;32mI (334774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61447 mm, Magnitude=51220[0m
+[0;32mI (335874) VLD1_UART: RESP OK[0m
+[0;32mI (335874) VLD1_UART: Distance [m]: 2.028 m[0m
+[0;32mI (335874) VLD1_UART: Magnitude [dB]: 5340[0m
+[0;32mI (335874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60423 mm, Magnitude=56340[0m
+[0;32mI (336974) VLD1_UART: RESP OK[0m
+[0;32mI (336974) VLD1_UART: Distance [m]: 2.059 m[0m
+[0;32mI (336974) VLD1_UART: Magnitude [dB]: 5280[0m
+[0;32mI (336974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=2568 mm, Magnitude=40980[0m
+[0;32mI (338074) VLD1_UART: RESP OK[0m
+[0;32mI (338074) VLD1_UART: Distance [m]: 2.084 m[0m
+[0;32mI (338074) VLD1_UART: Magnitude [dB]: 5230[0m
+[0;32mI (338074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=8968 mm, Magnitude=28180[0m
+[0;32mI (339174) VLD1_UART: RESP OK[0m
+[0;32mI (339174) VLD1_UART: Distance [m]: 2.070 m[0m
+[0;32mI (339174) VLD1_UART: Magnitude [dB]: 5280[0m
+[0;32mI (339174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=5384 mm, Magnitude=40980[0m
+[0;32mI (340274) VLD1_UART: RESP OK[0m
+[0;32mI (340274) VLD1_UART: Distance [m]: 2.092 m[0m
+[0;32mI (340274) VLD1_UART: Magnitude [dB]: 5340[0m
+[0;32mI (340274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=11016 mm, Magnitude=56340[0m
+[0;32mI (341374) VLD1_UART: RESP OK[0m
+[0;32mI (341374) VLD1_UART: Distance [m]: 2.076 m[0m
+[0;32mI (341374) VLD1_UART: Magnitude [dB]: 5340[0m
+[0;32mI (341374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=6920 mm, Magnitude=56340[0m
+[0;32mI (342474) VLD1_UART: RESP OK[0m
+[0;32mI (342474) VLD1_UART: Distance [m]: 2.097 m[0m
+[0;32mI (342474) VLD1_UART: Magnitude [dB]: 5260[0m
+[0;32mI (342474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=12296 mm, Magnitude=35860[0m
+[0;32mI (343574) VLD1_UART: RESP OK[0m
+[0;32mI (343574) VLD1_UART: Distance [m]: 2.079 m[0m
+[0;32mI (343574) VLD1_UART: Magnitude [dB]: 5240[0m
+[0;32mI (343574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=7944 mm, Magnitude=30740[0m
+[0;32mI (344674) VLD1_UART: RESP OK[0m
+[0;32mI (344674) VLD1_UART: Distance [m]: 2.065 m[0m
+[0;32mI (344674) VLD1_UART: Magnitude [dB]: 5220[0m
+[0;32mI (344674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=4360 mm, Magnitude=25620[0m
+[0;32mI (345774) VLD1_UART: RESP OK[0m
+[0;32mI (345774) VLD1_UART: Distance [m]: 2.054 m[0m
+[0;32mI (345774) VLD1_UART: Magnitude [dB]: 5230[0m
+[0;32mI (345774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1544 mm, Magnitude=28180[0m
+[0;32mI (346874) VLD1_UART: RESP OK[0m
+[0;32mI (346874) VLD1_UART: Distance [m]: 2.045 m[0m
+[0;32mI (346874) VLD1_UART: Magnitude [dB]: 5360[0m
+[0;32mI (346874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64775 mm, Magnitude=61460[0m
+[0;32mI (347974) VLD1_UART: RESP OK[0m
+[0;32mI (347974) VLD1_UART: Distance [m]: 2.038 m[0m
+[0;32mI (347974) VLD1_UART: Magnitude [dB]: 5320[0m
+[0;32mI (347974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=62983 mm, Magnitude=51220[0m
+[0;32mI (349074) VLD1_UART: RESP OK[0m
+[0;32mI (349074) VLD1_UART: Distance [m]: 2.032 m[0m
+[0;32mI (349074) VLD1_UART: Magnitude [dB]: 5300[0m
+[0;32mI (349074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61447 mm, Magnitude=46100[0m
+[0;32mI (350174) VLD1_UART: RESP OK[0m
+[0;32mI (350174) VLD1_UART: Distance [m]: 2.028 m[0m
+[0;32mI (350174) VLD1_UART: Magnitude [dB]: 5280[0m
+[0;32mI (350174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60167 mm, Magnitude=40980[0m
+[0;32mI (351274) VLD1_UART: RESP OK[0m
+[0;32mI (351274) VLD1_UART: Distance [m]: 2.024 m[0m
+[0;32mI (351274) VLD1_UART: Magnitude [dB]: 5300[0m
+[0;32mI (351274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59399 mm, Magnitude=46100[0m
+[0;32mI (352374) VLD1_UART: RESP OK[0m
+[0;32mI (352374) VLD1_UART: Distance [m]: 2.022 m[0m
+[0;32mI (352374) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (352374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58887 mm, Magnitude=16405[0m
+[0;32mI (353474) VLD1_UART: RESP OK[0m
+[0;32mI (353474) VLD1_UART: Distance [m]: 2.020 m[0m
+[0;32mI (353474) VLD1_UART: Magnitude [dB]: 5390[0m
+[0;32mI (353474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58375 mm, Magnitude=3605[0m
+[0;32mI (354574) VLD1_UART: RESP OK[0m
+[0;32mI (354574) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (354574) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (354574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58119 mm, Magnitude=11285[0m
+[0;32mI (355674) VLD1_UART: RESP OK[0m
+[0;32mI (355674) VLD1_UART: Distance [m]: 2.018 m[0m
+[0;32mI (355674) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (355674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57607 mm, Magnitude=8725[0m
+[0;32mI (356774) VLD1_UART: RESP OK[0m
+[0;32mI (356774) VLD1_UART: Distance [m]: 2.017 m[0m
+[0;32mI (356774) VLD1_UART: Magnitude [dB]: 5400[0m
+[0;32mI (356774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57351 mm, Magnitude=6165[0m
+[0;32mI (357874) VLD1_UART: RESP OK[0m
+[0;32mI (357874) VLD1_UART: Distance [m]: 2.016 m[0m
+[0;32mI (357874) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (357874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57095 mm, Magnitude=1045[0m
+[0;32mI (358974) VLD1_UART: RESP OK[0m
+[0;32mI (358974) VLD1_UART: Distance [m]: 2.015 m[0m
+[0;32mI (358974) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (358974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56839 mm, Magnitude=1045[0m
+[0;32mI (360074) VLD1_UART: RESP OK[0m
+[0;32mI (360074) VLD1_UART: Distance [m]: 2.014 m[0m
+[0;32mI (360074) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (360074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56583 mm, Magnitude=36885[0m
+[0;32mI (361174) VLD1_UART: RESP OK[0m
+[0;32mI (361174) VLD1_UART: Distance [m]: 2.068 m[0m
+[0;32mI (361174) VLD1_UART: Magnitude [dB]: 5310[0m
+[0;32mI (361174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=4872 mm, Magnitude=48660[0m
+[0;32mI (362274) VLD1_UART: RESP OK[0m
+[0;32mI (362274) VLD1_UART: Distance [m]: 2.056 m[0m
+[0;32mI (362274) VLD1_UART: Magnitude [dB]: 5260[0m
+[0;32mI (362274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1800 mm, Magnitude=35860[0m
+[0;32mI (363374) VLD1_UART: RESP OK[0m
+[0;32mI (363374) VLD1_UART: Distance [m]: 2.047 m[0m
+[0;32mI (363374) VLD1_UART: Magnitude [dB]: 5320[0m
+[0;32mI (363374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=65031 mm, Magnitude=51220[0m
+[0;32mI (364474) VLD1_UART: RESP OK[0m
+[0;32mI (364474) VLD1_UART: Distance [m]: 2.039 m[0m
+[0;32mI (364474) VLD1_UART: Magnitude [dB]: 5290[0m
+[0;32mI (364474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63239 mm, Magnitude=43540[0m
+[0;32mI (365574) VLD1_UART: RESP OK[0m
+[0;32mI (365574) VLD1_UART: Distance [m]: 2.035 m[0m
+[0;32mI (365574) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (365574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61959 mm, Magnitude=16405[0m
+[0;32mI (366674) VLD1_UART: RESP OK[0m
+[0;32mI (366674) VLD1_UART: Distance [m]: 2.030 m[0m
+[0;32mI (366674) VLD1_UART: Magnitude [dB]: 5280[0m
+[0;32mI (366674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60935 mm, Magnitude=40980[0m
+[0;32mI (367774) VLD1_UART: RESP OK[0m
+[0;32mI (367774) VLD1_UART: Distance [m]: 2.026 m[0m
+[0;32mI (367774) VLD1_UART: Magnitude [dB]: 5320[0m
+[0;32mI (367774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59911 mm, Magnitude=51220[0m
+[0;32mI (368874) VLD1_UART: RESP OK[0m
+[0;32mI (368874) VLD1_UART: Distance [m]: 2.024 m[0m
+[0;32mI (368874) VLD1_UART: Magnitude [dB]: 5240[0m
+[0;32mI (368874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59143 mm, Magnitude=30740[0m
+[0;32mI (369974) VLD1_UART: RESP OK[0m
+[0;32mI (369974) VLD1_UART: Distance [m]: 2.076 m[0m
+[0;32mI (369974) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (369974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=6920 mm, Magnitude=18965[0m
+[0;32mI (371074) VLD1_UART: RESP OK[0m
+[0;32mI (371074) VLD1_UART: Distance [m]: 2.063 m[0m
+[0;32mI (371074) VLD1_UART: Magnitude [dB]: 5190[0m
+[0;32mI (371074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=3848 mm, Magnitude=17940[0m
+[0;32mI (372174) VLD1_UART: RESP OK[0m
+[0;32mI (372174) VLD1_UART: Distance [m]: 2.053 m[0m
+[0;32mI (372174) VLD1_UART: Magnitude [dB]: 5200[0m
+[0;32mI (372174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=1288 mm, Magnitude=20500[0m
+[0;32mI (373274) VLD1_UART: RESP OK[0m
+[0;32mI (373274) VLD1_UART: Distance [m]: 2.046 m[0m
+[0;32mI (373274) VLD1_UART: Magnitude [dB]: 5310[0m
+[0;32mI (373274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=64775 mm, Magnitude=48660[0m
+[0;32mI (374374) VLD1_UART: RESP OK[0m
+[0;32mI (374374) VLD1_UART: Distance [m]: 2.040 m[0m
+[0;32mI (374374) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (374374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=63239 mm, Magnitude=11285[0m
+[0;32mI (375474) VLD1_UART: RESP OK[0m
+[0;32mI (375474) VLD1_UART: Distance [m]: 2.034 m[0m
+[0;32mI (375474) VLD1_UART: Magnitude [dB]: 5340[0m
+[0;32mI (375474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=61959 mm, Magnitude=56340[0m
+[0;32mI (376574) VLD1_UART: RESP OK[0m
+[0;32mI (376574) VLD1_UART: Distance [m]: 2.030 m[0m
+[0;32mI (376574) VLD1_UART: Magnitude [dB]: 5290[0m
+[0;32mI (376574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=60935 mm, Magnitude=43540[0m
+[0;32mI (377674) VLD1_UART: RESP OK[0m
+[0;32mI (377674) VLD1_UART: Distance [m]: 2.026 m[0m
+[0;32mI (377674) VLD1_UART: Magnitude [dB]: 5270[0m
+[0;32mI (377674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59911 mm, Magnitude=38420[0m
+[0;32mI (378774) VLD1_UART: RESP OK[0m
+[0;32mI (378774) VLD1_UART: Distance [m]: 2.023 m[0m
+[0;32mI (378774) VLD1_UART: Magnitude [dB]: 5350[0m
+[0;32mI (378774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=59143 mm, Magnitude=58900[0m
+[0;32mI (379874) VLD1_UART: RESP OK[0m
+[0;32mI (379874) VLD1_UART: Distance [m]: 2.021 m[0m
+[0;32mI (379874) VLD1_UART: Magnitude [dB]: 5390[0m
+[0;32mI (379874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=58375 mm, Magnitude=3605[0m
+[0;32mI (380974) VLD1_UART: RESP OK[0m
+[0;32mI (380974) VLD1_UART: Distance [m]: 2.019 m[0m
+[0;32mI (380974) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (380974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57863 mm, Magnitude=31765[0m
+[0;32mI (382074) VLD1_UART: RESP OK[0m
+[0;32mI (382074) VLD1_UART: Distance [m]: 2.017 m[0m
+[0;32mI (382074) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (382074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57351 mm, Magnitude=26645[0m
+[0;32mI (383174) VLD1_UART: RESP OK[0m
+[0;32mI (383174) VLD1_UART: Distance [m]: 2.015 m[0m
+[0;32mI (383174) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (383174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57095 mm, Magnitude=26645[0m
+[0;32mI (384274) VLD1_UART: RESP OK[0m
+[0;32mI (384274) VLD1_UART: Distance [m]: 2.015 m[0m
+[0;32mI (384274) VLD1_UART: Magnitude [dB]: 5520[0m
+[0;32mI (384274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56839 mm, Magnitude=36885[0m
+[0;32mI (385374) VLD1_UART: RESP OK[0m
+[0;32mI (385374) VLD1_UART: Distance [m]: 2.015 m[0m
+[0;32mI (385374) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (385374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=57095 mm, Magnitude=26645[0m
+[0;32mI (386474) VLD1_UART: RESP OK[0m
+[0;32mI (386474) VLD1_UART: Distance [m]: 2.015 m[0m
+[0;32mI (386474) VLD1_UART: Magnitude [dB]: 5410[0m
+[0;32mI (386474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56839 mm, Magnitude=8725[0m
+[0;32mI (387574) VLD1_UART: RESP OK[0m
+[0;32mI (387574) VLD1_UART: Distance [m]: 2.014 m[0m
+[0;32mI (387574) VLD1_UART: Magnitude [dB]: 5490[0m
+[0;32mI (387574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56583 mm, Magnitude=29205[0m
+[0;32mI (388674) VLD1_UART: RESP OK[0m
+[0;32mI (388674) VLD1_UART: Distance [m]: 2.013 m[0m
+[0;32mI (388674) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (388674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=24085[0m
+[0;32mI (389774) VLD1_UART: RESP OK[0m
+[0;32mI (389774) VLD1_UART: Distance [m]: 2.013 m[0m
+[0;32mI (389774) VLD1_UART: Magnitude [dB]: 5500[0m
+[0;32mI (389774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=31765[0m
+[0;32mI (390874) VLD1_UART: RESP OK[0m
+[0;32mI (390874) VLD1_UART: Distance [m]: 2.012 m[0m
+[0;32mI (390874) VLD1_UART: Magnitude [dB]: 5480[0m
+[0;32mI (390874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=26645[0m
+[0;32mI (391974) VLD1_UART: RESP OK[0m
+[0;32mI (391974) VLD1_UART: Distance [m]: 2.012 m[0m
+[0;32mI (391974) VLD1_UART: Magnitude [dB]: 5460[0m
+[0;32mI (391974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=21525[0m
+[0;32mI (393074) VLD1_UART: RESP OK[0m
+[0;32mI (393074) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (393074) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (393074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=11285[0m
+[0;32mI (394174) VLD1_UART: RESP OK[0m
+[0;32mI (394174) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (394174) VLD1_UART: Magnitude [dB]: 5440[0m
+[0;32mI (394174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=16405[0m
+[0;32mI (395274) VLD1_UART: RESP OK[0m
+[0;32mI (395274) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (395274) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (395274) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=18965[0m
+[0;32mI (396374) VLD1_UART: RESP OK[0m
+[0;32mI (396374) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (396374) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (396374) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55815 mm, Magnitude=11285[0m
+[0;32mI (397474) VLD1_UART: RESP OK[0m
+[0;32mI (397474) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (397474) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (397474) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55815 mm, Magnitude=18965[0m
+[0;32mI (398574) VLD1_UART: RESP OK[0m
+[0;32mI (398574) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (398574) VLD1_UART: Magnitude [dB]: 5420[0m
+[0;32mI (398574) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55815 mm, Magnitude=11285[0m
+[0;32mI (399674) VLD1_UART: RESP OK[0m
+[0;32mI (399674) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (399674) VLD1_UART: Magnitude [dB]: 5450[0m
+[0;32mI (399674) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55815 mm, Magnitude=18965[0m
+[0;32mI (400774) VLD1_UART: RESP OK[0m
+[0;32mI (400774) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (400774) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (400774) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=1045[0m
+[0;32mI (401874) VLD1_UART: RESP OK[0m
+[0;32mI (401874) VLD1_UART: Distance [m]: 2.011 m[0m
+[0;32mI (401874) VLD1_UART: Magnitude [dB]: 5380[0m
+[0;32mI (401874) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=55815 mm, Magnitude=1045[0m
+[0;32mI (402974) VLD1_UART: RESP OK[0m
+[0;32mI (402974) VLD1_UART: Distance [m]: 2.012 m[0m
+[0;32mI (402974) VLD1_UART: Magnitude [dB]: 5470[0m
+[0;32mI (402974) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56071 mm, Magnitude=24085[0m
+[0;32mI (404074) VLD1_UART: RESP OK[0m
+[0;32mI (404074) VLD1_UART: Distance [m]: 2.012 m[0m
+[0;32mI (404074) VLD1_UART: Magnitude [dB]: 5530[0m
+[0;32mI (404074) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=39445[0m
+[0;32mI (405174) VLD1_UART: RESP OK[0m
+[0;32mI (405174) VLD1_UART: Distance [m]: 2.012 m[0m
+[0;32mI (405174) VLD1_UART: Magnitude [dB]: 5620[0m
+[0;32mI (405174) VLD1_UART: Forwarded PDAT to RS485 (Modbus RTU): Distance=56327 mm, Magnitude=62485[0m
