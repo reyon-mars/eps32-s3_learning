@@ -216,16 +216,15 @@ void uart_read_task(void *arg)
                         {
                             float distance;
                             memcpy(&distance, payload, sizeof(float));
-                            uint16_t magnitude =  payload[4] | (payload[5] << 8);
+                            uint16_t magnitude = payload[4] | (payload[5] << 8);
+                            magnitude /= 100;
 
                             ESP_LOGI(TAG, "Distance [m]: %.3f m", distance);
-                            ESP_LOGI(TAG, "Magnitude [dB]: %u.00 db", magnitude / 100);
+                            ESP_LOGI(TAG, "Magnitude [dB]: %u.00 db", magnitude);
 
                             uint16_t distance_mm = static_cast<uint16_t>(distance * 1000);
-                            uint16_t distance_mm_be = (distance_mm >> 8) | (distance_mm << 8);
-                            uint16_t magnitude_be = (magnitude >> 8) | (magnitude << 8);
-                            magnitude_be /= 100;
-                            forward_pdat_modbus( distance_mm_be, magnitude_be );
+
+                            forward_pdat_modbus(distance_mm, magnitude);
                         }
                     }
                     memmove(buffer, buffer + parsed_len, buf_len - parsed_len);
