@@ -1,0 +1,14 @@
+# Ignore build directories
+/build/
+/cmake-build-*/
+
+# Ignore CMake-generated files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
+
+# Ignore macOS metadata
+.DS_Store

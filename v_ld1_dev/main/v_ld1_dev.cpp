@@ -461,7 +461,7 @@ extern "C" void app_main()
 
     vld1_set_short_range_distance_filter(short_range_distance_t::disable);
     vld1_check_resp();
-    
+
     vld1_get_parameters(curr_param);
 
     while (1)
