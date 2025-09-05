@@ -39,6 +39,12 @@ enum class precision_mode_t : uint8_t
     high = 1
 };
 
+enum class short_range_distance_t : uint8_t 
+{
+    disable = 0,
+    enable = 1
+};
+
 #pragma pack(push, 1)
 struct vld1_packet_header
 {
@@ -153,14 +159,14 @@ uint16_t modbus_crc16(const uint8_t *data, uint16_t length)
     return crc;
 }
 
-void forward_pdat_modbus(uint16_t distance_mm, uint16_t magnitude)
+void forward_pdat_modbus(uint16_t distance_mm, uint16_t magnitude, uint16_t distance_avg)
 {
     uint8_t frame[256];
     int idx = 0;
 
     frame[idx++] = 0x01;
     frame[idx++] = 0x04;
-    frame[idx++] = 0x04; 
+    frame[idx++] = 0x06;
 
     frame[idx++] = static_cast<uint8_t>(distance_mm >> 8);
     frame[idx++] = static_cast<uint8_t>(distance_mm & 0xFF);
@@ -168,16 +174,30 @@ void forward_pdat_modbus(uint16_t distance_mm, uint16_t magnitude)
     frame[idx++] = static_cast<uint8_t>(magnitude >> 8);
     frame[idx++] = static_cast<uint8_t>(magnitude & 0xFF);
 
+    frame[idx++] = static_cast<uint8_t>(distance_avg >> 8);
+    frame[idx++] = static_cast<uint8_t>(distance_avg & 0xFF);
+
     uint16_t crc = modbus_crc16(frame, idx);
-    frame[idx++] = crc & 0xFF;        
-    frame[idx++] = (crc >> 8) & 0xFF; 
+    frame[idx++] = crc & 0xFF;
+    frame[idx++] = (crc >> 8) & 0xFF;
 
     gpio_set_level(RS485_RE_DE_PIN, 1);
     uart_write_bytes(UART_RS485, (const char *)frame, idx);
     uart_wait_tx_done(UART_RS485, pdMS_TO_TICKS(100));
     gpio_set_level(RS485_RE_DE_PIN, 0);
 
-    ESP_LOGI(TAG, "Forwarded PDAT to RS485 (Modbus RTU): Distance=%u mm, Magnitude=%u", distance_mm, magnitude);
+    ESP_LOGI(TAG, "Forwarded PDAT to RS485 (Modbus RTU): Distance=%u mm, Magnitude=%u, Average Distance =%u mm", distance_mm, magnitude, distance_avg);
+}
+
+uint16_t running_average(float curr_sample)
+{
+    static uint32_t total_sample_count = 0;
+    static double curr_avg = 0;
+
+    total_sample_count++;
+    curr_avg += (curr_sample - curr_avg) / total_sample_count;
+
+    return static_cast<uint16_t>(curr_avg * 1000);
 }
 
 void uart_read_task(void *arg)
@@ -217,14 +237,14 @@ void uart_read_task(void *arg)
                             float distance;
                             memcpy(&distance, payload, sizeof(float));
                             uint16_t magnitude = payload[4] | (payload[5] << 8);
-                            magnitude /= 100;
 
                             ESP_LOGI(TAG, "Distance [m]: %.3f m", distance);
                             ESP_LOGI(TAG, "Magnitude [dB]: %u.00 db", magnitude);
 
                             uint16_t distance_mm = static_cast<uint16_t>(distance * 1000);
+                            uint16_t avg_distance = running_average(distance);
 
-                            forward_pdat_modbus(distance_mm, magnitude);
+                            forward_pdat_modbus(distance_mm, magnitude, avg_distance);
                         }
                     }
                     memmove(buffer, buffer + parsed_len, buf_len - parsed_len);
@@ -235,56 +255,95 @@ void uart_read_task(void *arg)
     }
 }
 
-void vld1_init_sequence()
+inline void vld1_init_sequence()
 {
     uint8_t payload_init = 0x00;
     send_vld1_packet("INIT", &payload_init, 1);
     blink_led(MAIN_LED_PIN, 2, 200);
 }
 
-void vld1_read_distance_sequence()
+inline void vld1_check_resp(uint32_t timeout_ms = 500)
+{
+    uint8_t buffer[BUF_SIZE] = {0};
+    int len = uart_read_bytes(UART_VLD1, buffer, BUF_SIZE, pdMS_TO_TICKS(timeout_ms));
+
+    if(len >= 8 && buffer[0]=='R' && buffer[1]=='E' && buffer[2]=='S' && buffer[3]=='P')
+    {
+        if(len >= 9 && buffer[8] == 0x00)
+        {
+            ESP_LOGI(TAG, "RESP OK received");
+        }
+        else
+        {
+            ESP_LOGW(TAG, "RESP received with unexpected payload");
+        }
+    }
+    else
+    {
+        ESP_LOGW(TAG, "RESP not received or invalid");
+    }
+}
+
+
+inline void vld1_read_distance_sequence()
 {
     uint8_t payload_gnfd = 0x04;
     send_vld1_packet("GNFD", &payload_gnfd, 1);
 }
 
-void vld1_set_range_param(vld1_distance_range_t range)
+inline void vld1_set_distance_range(vld1_distance_range_t range)
 {
     uint8_t payload = static_cast<uint8_t>(range);
     send_vld1_packet("RRAI", &payload, SIZE(payload));
 }
 
-void vld1_set_thres_offset(uint8_t val)
+inline void vld1_set_thres_offset(uint8_t val)
 {
     send_vld1_packet("THOF", &val, SIZE(val));
 }
 
-void vld1_set_min_range_filter(uint16_t val)
+inline void vld1_set_min_range_filter(uint16_t val)
 {
     send_vld1_packet("MIRA", (uint8_t *)&val, SIZE(val));
 }
 
-void vld1_set_max_range_filter(uint16_t val)
+inline void vld1_set_max_range_filter(uint16_t val)
 {
     send_vld1_packet("MARA", (uint8_t *)&val, SIZE(val));
 }
 
-void vld1_set_target_filter(target_filter_t filter)
+inline void vld1_set_target_filter(target_filter_t filter)
 {
     uint8_t payload = static_cast<uint8_t>(filter);
     send_vld1_packet("TGFI", &payload, SIZE(payload));
 }
 
-void vld1_set_precision_mode(precision_mode_t mode)
+inline void vld1_set_precision_mode(precision_mode_t mode)
 {
     uint8_t payload = static_cast<uint8_t>(mode);
     send_vld1_packet("PREC", &payload, SIZE(payload));
 }
 
-void vld1_exit_sequence()
+inline void vld1_exit_sequence()
 {
     send_vld1_packet("GBYE", nullptr, 0);
 }
+
+inline void vld1_set_chirp_integration_count( uint8_t val )
+{
+    send_vld1_packet( "INTN", &val, SIZE(val) );
+}
+
+inline void vld1_set_tx_power( uint8_t power ){
+    send_vld1_packet( "TXPW", &power, SIZE(power));
+}
+
+inline void vld1_set_short_range_distance_filter( short_range_distance_t state )
+{
+    uint8_t payload = static_cast<uint8_t>(state);
+    send_vld1_packet( "SRDF", &payload, SIZE(state) );
+}
+
 
 extern "C" void app_main()
 {
@@ -301,6 +360,34 @@ extern "C" void app_main()
     xTaskCreate(uart_read_task, "uart_read_task", 4096, NULL, 10, NULL);
 
     vld1_init_sequence();
+    vld1_check_resp();
+
+    vld1_set_distance_range( vld1_distance_range_t::range_50 );
+    vld1_check_resp();
+
+    vld1_set_thres_offset( 40 );
+    vld1_check_resp();
+
+    vld1_set_min_range_filter( 1 );
+    vld1_check_resp();
+
+    vld1_set_max_range_filter( 505 );
+    vld1_check_resp();
+
+    vld1_set_target_filter( target_filter_t::strongest );
+    vld1_check_resp();
+
+    vld1_set_precision_mode( precision_mode_t::high );
+    vld1_check_resp();
+
+    vld1_set_chirp_integration_count( 1 );
+    vld1_check_resp();
+
+    vld1_set_tx_power( 31 );
+    vld1_check_resp();
+
+    vld1_set_short_range_distance_filter( short_range_distance_t::disable );
+    vld1_check_resp();
 
     while (1)
     {

@@ -1,0 +1,76 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/sdkconfig
+-- App "v_ld1_dev" version: 9ac024f3-dirty
+-- Adding linker script /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/reyon/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /Users/reyon/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/reyon/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/reyon/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/reyon/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /Users/reyon/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /Users/reyon/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/reyon/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /Users/reyon/esp/esp-idf/components/app_trace /Users/reyon/esp/esp-idf/components/app_update /Users/reyon/esp/esp-idf/components/bootloader /Users/reyon/esp/esp-idf/components/bootloader_support /Users/reyon/esp/esp-idf/components/bt /Users/reyon/esp/esp-idf/components/cmock /Users/reyon/esp/esp-idf/components/console /Users/reyon/esp/esp-idf/components/cxx /Users/reyon/esp/esp-idf/components/driver /Users/reyon/esp/esp-idf/components/efuse /Users/reyon/esp/esp-idf/components/esp-tls /Users/reyon/esp/esp-idf/components/esp_adc /Users/reyon/esp/esp-idf/components/esp_app_format /Users/reyon/esp/esp-idf/components/esp_coex /Users/reyon/esp/esp-idf/components/esp_common /Users/reyon/esp/esp-idf/components/esp_eth /Users/reyon/esp/esp-idf/components/esp_event /Users/reyon/esp/esp-idf/components/esp_gdbstub /Users/reyon/esp/esp-idf/components/esp_hid /Users/reyon/esp/esp-idf/components/esp_http_client /Users/reyon/esp/esp-idf/components/esp_http_server /Users/reyon/esp/esp-idf/components/esp_https_ota /Users/reyon/esp/esp-idf/components/esp_https_server /Users/reyon/esp/esp-idf/components/esp_hw_support /Users/reyon/esp/esp-idf/components/esp_lcd /Users/reyon/esp/esp-idf/components/esp_local_ctrl /Users/reyon/esp/esp-idf/components/esp_mm /Users/reyon/esp/esp-idf/components/esp_netif /Users/reyon/esp/esp-idf/components/esp_netif_stack /Users/reyon/esp/esp-idf/components/esp_partition /Users/reyon/esp/esp-idf/components/esp_phy /Users/reyon/esp/esp-idf/components/esp_pm /Users/reyon/esp/esp-idf/components/esp_psram /Users/reyon/esp/esp-idf/components/esp_ringbuf /Users/reyon/esp/esp-idf/components/esp_rom /Users/reyon/esp/esp-idf/components/esp_system /Users/reyon/esp/esp-idf/components/esp_timer /Users/reyon/esp/esp-idf/components/esp_wifi /Users/reyon/esp/esp-idf/components/espcoredump /Users/reyon/esp/esp-idf/components/esptool_py /Users/reyon/esp/esp-idf/components/fatfs /Users/reyon/esp/esp-idf/components/freertos /Users/reyon/esp/esp-idf/components/hal /Users/reyon/esp/esp-idf/components/heap /Users/reyon/esp/esp-idf/components/http_parser /Users/reyon/esp/esp-idf/components/idf_test /Users/reyon/esp/esp-idf/components/ieee802154 /Users/reyon/esp/esp-idf/components/json /Users/reyon/esp/esp-idf/components/log /Users/reyon/esp/esp-idf/components/lwip /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/main /Users/reyon/esp/esp-idf/components/mbedtls /Users/reyon/esp/esp-idf/components/mqtt /Users/reyon/esp/esp-idf/components/newlib /Users/reyon/esp/esp-idf/components/nvs_flash /Users/reyon/esp/esp-idf/components/openthread /Users/reyon/esp/esp-idf/components/partition_table /Users/reyon/esp/esp-idf/components/perfmon /Users/reyon/esp/esp-idf/components/protobuf-c /Users/reyon/esp/esp-idf/components/protocomm /Users/reyon/esp/esp-idf/components/pthread /Users/reyon/esp/esp-idf/components/sdmmc /Users/reyon/esp/esp-idf/components/soc /Users/reyon/esp/esp-idf/components/spi_flash /Users/reyon/esp/esp-idf/components/spiffs /Users/reyon/esp/esp-idf/components/tcp_transport /Users/reyon/esp/esp-idf/components/ulp /Users/reyon/esp/esp-idf/components/unity /Users/reyon/esp/esp-idf/components/usb /Users/reyon/esp/esp-idf/components/vfs /Users/reyon/esp/esp-idf/components/wear_levelling /Users/reyon/esp/esp-idf/components/wifi_provisioning /Users/reyon/esp/esp-idf/components/wpa_supplicant /Users/reyon/esp/esp-idf/components/xtensa
+-- Configuring done (2.8s)
+-- Generating done (0.3s)
+-- Build files have been written to: /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build
+[1/11] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[2/11] Performing build step for 'bootloader'
+[1/1] cd /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build/bootloader/esp-idf/esptool_py && /Users/reyon/.espressif/python_env/idf5.1_py3.12_env/bin/python /Users/reyon/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build/bootloader/bootloader.bin
+Bootloader binary size 0x6810 bytes. 0x7f0 bytes (7%) free.
+[3/11] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[4/11] No install step for 'bootloader'
+[5/11] Completed 'bootloader'
+[6/11] Generating ld/sections.ld
+[7/11] Linking CXX executable v_ld1_dev.elf
+[8/11] Generating binary image from built executable
+esptool.py v4.9.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build/v_ld1_dev.bin
+[9/11] cd /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build/esp-idf/esptool_py && /Users/reyon/.espressif/python_env/idf5.1_py3.12_env/bin/python /Users/reyon/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build/partition_table/partition-table.bin /Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build/v_ld1_dev.bin
+v_ld1_dev.bin binary size 0x30830 bytes. Smallest app partition is 0x100000 bytes. 0xcf7d0 bytes (81%) free.
+[9/11] cd /Users/reyon/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/reyon/esp/esp-idf -D "SERIAL_TOOL=/Users/reyon/.espressif/python_env/idf5.1_py3.12_env/bin/python;;/Users/reyon/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/reyon/Firmware_programming/esp32_projects/v_ld1_dev/build -P /Users/reyon/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/tty.usbserial-0001 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 v_ld1_dev.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.0
+Serial port /dev/tty.usbserial-0001
+Connecting......
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 24:6f:28:16:a5:64
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00040fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26640 bytes to 16690...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000768e... (100 %)
+Wrote 26640 bytes (16690 compressed) at 0x00001000 in 0.7 seconds (effective 285.3 kbit/s)...
+Hash of data verified.
+Compressed 198704 bytes to 110229...
+Writing at 0x00010000... (14 %)
+Writing at 0x0001d0a9... (28 %)
+Writing at 0x00022906... (42 %)
+Writing at 0x000286e4... (57 %)
+Writing at 0x0002e95a... (71 %)
+Writing at 0x000367ab... (85 %)
+Writing at 0x0003c313... (100 %)
+Wrote 198704 bytes (110229 compressed) at 0x00010000 in 2.8 seconds (effective 574.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 352.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
