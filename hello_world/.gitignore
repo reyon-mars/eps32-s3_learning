@@ -1,0 +1,28 @@
+# CMake build directory
+/build/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# ESP-IDF/SDK configs backups
+sdkconfig.old
+sdkconfig.ci.old
+
+# Editor/IDE stuff
+.vscode/
+.idea/
+*.swp
+
+# Compilation outputs
+*.o
+*.elf
+*.bin
+*.map
+*.log
+
+# Other temporary files
+*.bak
+*.tmp
+
