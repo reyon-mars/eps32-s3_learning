@@ -10,18 +10,18 @@ if(NOT EXISTS "/Users/reyon/esp/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/Users/reyon/esp/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader"
-  "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader-prefix"
-  "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader-prefix/tmp"
-  "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp"
-  "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader-prefix/src"
-  "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader"
+  "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader-prefix"
+  "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader-prefix/tmp"
+  "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp"
+  "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader-prefix/src"
+  "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/Users/reyon/Firmware_programming/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/Users/reyon/Firmware/esp32_projects/logging/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

@@ -1,4 +1,4 @@
-/* * Data converted from /Users/reyon/Firmware_programming/esp32_projects/logging/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /Users/reyon/Firmware/esp32_projects/logging/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded
