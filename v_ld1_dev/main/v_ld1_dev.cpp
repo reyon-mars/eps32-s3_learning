@@ -1,9 +1,11 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_timer.h"
 #include "driver/uart.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include <string.h>
+#include <array>
 #include <inttypes.h>
 
 #define SIZE(x) sizeof(x)
@@ -208,21 +210,16 @@ void forward_pdat_modbus(uint16_t distance_mm, uint16_t magnitude, uint16_t dist
     ESP_LOGI(TAG, "Forwarded PDAT to RS485 (Modbus RTU): Distance=%u mm, Magnitude=%u, Average Distance =%u mm", distance_mm, magnitude, distance_avg);
 }
 
-uint16_t running_average(float curr_sample)
-{
-    static uint32_t total_sample_count = 0;
-    static double curr_avg = 0;
-
-    total_sample_count++;
-    curr_avg += (curr_sample - curr_avg) / total_sample_count;
-
-    return static_cast<uint16_t>(curr_avg * 1000);
-}
-
 void uart_read_task(void *arg)
 {
+    static std::array<float, 20> data_samples = {0};
+    static uint8_t sample_index = 0;
+    static uint8_t sample_count = 0;
+    static uint64_t start_time = 0;
+
     uint8_t buffer[BUF_SIZE];
     int buf_len = 0;
+
     while (1)
     {
         int len = uart_read_bytes(UART_VLD1, buffer + buf_len, BUF_SIZE - buf_len, pdMS_TO_TICKS(100));
@@ -235,6 +232,7 @@ void uart_read_task(void *arg)
                 char header[5] = {0};
                 uint8_t payload[128] = {0};
                 uint32_t payload_len = 0;
+
                 parsed_len = parse_vld1_message(buffer, buf_len, header, payload, &payload_len);
                 if (parsed_len > 0)
                 {
@@ -256,16 +254,43 @@ void uart_read_task(void *arg)
                             float distance;
                             memcpy(&distance, payload, sizeof(float));
                             uint16_t magnitude = payload[4] | (payload[5] << 8);
+                            magnitude /= 100;
 
                             ESP_LOGI(TAG, "Distance [m]: %.3f m", distance);
                             ESP_LOGI(TAG, "Magnitude [dB]: %u.00 db", magnitude);
 
                             uint16_t distance_mm = static_cast<uint16_t>(distance * 1000);
-                            uint16_t avg_distance = running_average(distance);
+
+                            if( sample_count == 0 ){
+                                start_time = esp_timer_get_time();
+                            }
+
+                            data_samples[sample_index++] = distance;
+                            sample_count++;
+                            if (sample_index >= data_samples.size()) sample_index = 0;
+
+                            uint16_t avg_distance = 0;
+                            if (sample_count == 20)
+                            {
+                                double sum = 0.0;
+                                for (float s : data_samples) sum += s;
+                                avg_distance = static_cast<uint16_t>((sum / 20.0) * 1000);
+
+                                uint64_t end_time = esp_timer_get_time();
+                                uint64_t elapsed_us = end_time - start_time;
+                                double elapsed_ms = elapsed_us / 1000.0;
+                                
+                                ESP_LOGI(TAG, "Time to collect 20 samples: %.3f ms", elapsed_ms);
+
+                                
+                                sample_count = 0;
+                                sample_index = 0;
+                            }
 
                             forward_pdat_modbus(distance_mm, magnitude, avg_distance);
                         }
                     }
+
                     memmove(buffer, buffer + parsed_len, buf_len - parsed_len);
                     buf_len -= parsed_len;
                 }
@@ -273,6 +298,7 @@ void uart_read_task(void *arg)
         }
     }
 }
+
 
 inline void vld1_init_sequence()
 {
