@@ -1,9 +1,10 @@
 #pragma once
 #include "driver/gpio.h"
 
-class LedManager {
+class led
+{
 public:
-    explicit LedManager(gpio_num_t led_pin) noexcept;
+    explicit led(gpio_num_t led_pin) noexcept;
     void init() noexcept;
     void blink(int times, int delay_ms) noexcept;
     void set(bool on) noexcept;

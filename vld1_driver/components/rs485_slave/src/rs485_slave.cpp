@@ -1,7 +1,7 @@
-#include "rs485.hpp"
+#include "rs485_slave.hpp"
 #include "esp_log.h"
 
-static constexpr char TAG[] = "Rs485";
+static constexpr char TAG[] = "RS485";
 
 rs485::rs485(uart &uart_no, gpio_num_t de_re_pin) noexcept
     : uart_(uart_no), de_re_pin_(de_re_pin),
@@ -41,11 +41,11 @@ esp_err_t rs485::configure_pins() noexcept
         ESP_LOGE(TAG, "Failed to configure DE/RE pin: %s", esp_err_to_name(err));
         return err;
     }
-    gpio_set_level(de_re_pin_, 0); // default receive mode
+    gpio_set_level(de_re_pin_, 0);
     return ESP_OK;
 }
 
-esp_err_t rs485::init(uint8_t slave_addr, size_t input_reg_count) noexcept
+esp_err_t rs485::init(uint8_t slave_addr, mb_param_type_t reg_type, size_t input_reg_count) noexcept
 {
     slave_address_ = slave_addr;
     input_count_ = input_reg_count;
@@ -56,14 +56,13 @@ esp_err_t rs485::init(uint8_t slave_addr, size_t input_reg_count) noexcept
 
     mb_communication_info_t comm_config{};
     comm_config.ser_opts.port = uart_.port();
-    comm_config.ser_opts.baudrate = uart_.baud();
-    comm_config.ser_opts.parity = MB_PARITY_NONE;
-    comm_config.ser_opts.data_bits = UART_DATA_8_BITS;
-    comm_config.ser_opts.stop_bits = UART_STOP_BITS_1;
+    comm_config.ser_opts.baudrate = uart_.baud_rate();
+    comm_config.ser_opts.data_bits = uart_.data_bits();
+    comm_config.ser_opts.parity = uart_.parity();
+    comm_config.ser_opts.stop_bits = uart_.stop_bits();
     comm_config.ser_opts.mode = MB_MODE_RTU;
     comm_config.ser_opts.uid = slave_address_;
 
-    // Create Modbus slave controller
     err = mbc_slave_create_serial(&comm_config, &mbc_slave_handle_);
     if (err != ESP_OK)
     {
@@ -71,21 +70,22 @@ esp_err_t rs485::init(uint8_t slave_addr, size_t input_reg_count) noexcept
         return err;
     }
 
-    // Allocate input registers
     free_registers();
     input_registers_ = new uint16_t[input_count_]();
 
-    // Register input registers area
     mb_register_area_descriptor_t reg_area{};
-    reg_area.type = MB_PARAM_INPUT;
+    reg_area.type = reg_type;
     reg_area.start_offset = 0x00;
-    reg_area.address = input_registers_;
+    reg_area.address = static_cast<void *>(input_registers_);
     reg_area.size = sizeof(uint16_t) * input_count_;
-    reg_area.access = MB_ACCESS_RW;
 
-    ESP_ERROR_CHECK(mbc_slave_set_descriptor(mbc_slave_handle_, reg_area));
+    err = mbc_slave_set_descriptor(mbc_slave_handle_, reg_area);
+    if (err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Failed to set Modbus input register descriptor: %s", esp_err_to_name(err));
+        return err;
+    }
 
-    // Start Modbus slave
     err = mbc_slave_start(mbc_slave_handle_);
     if (err != ESP_OK)
     {
