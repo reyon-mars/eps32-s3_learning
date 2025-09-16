@@ -6,13 +6,13 @@
 
 static constexpr char TAG[] = "Uart";
 
-uart::uart(uart_port_t port, int tx_pin, int rx_pin, size_t rx_buf_size) noexcept
-    : port_(port), tx_pin_(tx_pin), rx_pin_(rx_pin), rx_buf_size_(rx_buf_size) {}
+uart::uart(uart_port_t port, int tx_pin, int rx_pin, int baud_rate, size_t rx_buf_size) noexcept
+    : port_(port), tx_pin_(tx_pin), rx_pin_(rx_pin), baud_rate_(baud_rate), rx_buf_size_(rx_buf_size) {}
 
-esp_err_t uart::init(int baud, uart_word_length_t data_bits, uart_parity_t parity, uart_stop_bits_t stop_bits) noexcept
+esp_err_t uart::init(uart_word_length_t data_bits, uart_parity_t parity, uart_stop_bits_t stop_bits) noexcept
 {
     uart_config_t cfg = {};
-    cfg.baud_rate = baud;
+    cfg.baud_rate = baud_rate_;
     cfg.data_bits = data_bits;
     cfg.parity = parity;
     cfg.stop_bits = stop_bits;

@@ -1,5 +1,4 @@
 #include "averager.hpp"
-#include <iostream>
 
 batch_averager::batch_averager(size_t batch_size) noexcept
     : batch_size_(batch_size), count_(0), curr_avg_m_(0.0) {}

@@ -1,13 +1,12 @@
 #include "vld1.hpp"
-#include "hal_uart.hpp"
 #include "esp_log.h"
 #include <cstring>
 
-static const char* TAG = "VLD1";
+static constexpr char TAG[] = "VLD1";
 
-Vld1::Vld1(hal::Uart& uart) noexcept : uart_(uart) {}
+vld1::vld1(uart& uart_no) noexcept : uart_(uart_no) {}
 
-void Vld1::sendPacket(const char header[4], const uint8_t* payload, uint32_t payload_len) noexcept {
+void vld1::send_packet(const char header[4], const uint8_t* payload, uint32_t payload_len) noexcept {
     uint8_t buf[512];
     if (payload_len + 8 > sizeof(buf)) return;
     std::memcpy(buf, header, 4);
@@ -19,7 +18,7 @@ void Vld1::sendPacket(const char header[4], const uint8_t* payload, uint32_t pay
     uart_.write(buf, 8 + payload_len);
 }
 
-int Vld1::parseMessage(uint8_t* buffer, int len, char* out_header, uint8_t* out_payload, uint32_t* out_len) noexcept {
+int vld1::parse_message(uint8_t* buffer, int len, char* out_header, uint8_t* out_payload, uint32_t* out_len) noexcept {
     if (len < 8) return 0;
     std::memcpy(out_header, buffer, 4);
     out_header[4] = '\0';
