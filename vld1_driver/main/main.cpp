@@ -12,9 +12,8 @@
 static constexpr char TAG[] = "Main";
 
 extern "C" void app_main() {
-    ESP_LOGI(TAG, "Starting minimal VLD1 app");
+    ESP_LOGI(TAG, "Starting VLD1 app");
 
-    // UARTs
     static uart vld_uart(UART_NUM_1, 12, 13, 115200, 512);
     static uart rs485_uart(UART_NUM_2, 17, 18, 115200, 512);
     vld_uart.init();

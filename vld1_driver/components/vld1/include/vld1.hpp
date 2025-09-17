@@ -13,6 +13,14 @@ public:
     } vld1_header_t;
 #pragma pack(pop)
 
+#pragma pack(push, 1)
+    typedef struct
+    {
+        float distance;
+        uint16_t magnitude;
+    } pdat_resp_t;
+#pragma pack(pop)
+
     vld1(uart &uart_no) noexcept;
 
     void send_packet(const vld1_header_t &header, const uint8_t *payload) noexcept;
