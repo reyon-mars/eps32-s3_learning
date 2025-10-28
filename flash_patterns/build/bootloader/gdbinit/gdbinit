@@ -1,0 +1,2 @@
+source /Users/reyon/Firmware/learning/esp32_projects/flash_patterns/build/bootloader/gdbinit/symbols
+source /Users/reyon/Firmware/learning/esp32_projects/flash_patterns/build/bootloader/gdbinit/connect
