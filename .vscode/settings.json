@@ -1,0 +1,8 @@
+{
+    "idf.pythonInstallPath": "/Users/reyon/.espressif/python_env/idf5.4_py3.12_env/bin/python",
+    "files.associations": {
+        "inttypes.h": "c",
+        "esp_log.h": "c",
+        "freertos.h": "c"
+    }
+}

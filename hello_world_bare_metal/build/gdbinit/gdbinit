@@ -1,0 +1,2 @@
+source /Users/reyon/Firmware/learning/esp32_projects/hello_world_bare_metal/build/gdbinit/symbols
+source /Users/reyon/Firmware/learning/esp32_projects/hello_world_bare_metal/build/gdbinit/connect
